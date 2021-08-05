@@ -936,7 +936,7 @@ const CashoutCard = (props) => {
                   inputRef={(input) => {
                     address_input = input;
                   }}
-                  label="Address / Puzzle hash"
+                  label="Address hash"
                 />
               </Box>
               <Box></Box>

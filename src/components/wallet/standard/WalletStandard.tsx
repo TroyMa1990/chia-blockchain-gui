@@ -1,4 +1,4 @@
-import React /* , { ReactNode } */ from 'react';
+import React,{useState,useEffect} /* , { ReactNode } */ from 'react';
 import { Trans } from '@lingui/macro';
 import {
   More,
@@ -45,6 +45,7 @@ import {
 import { /* mojo_to_chia_string, */ chia_to_mojo } from '../../../util/chia';
 import { openDialog } from '../../../modules/dialog';
 import { get_transaction_result } from '../../../util/transaction_result';
+import { getWeb3 } from '../../../util/web3';
 import config from '../../../config/config';
 import type { RootState } from '../../../modules/rootReducer';
 import WalletHistory from '../WalletHistory';
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 100,
   },
   resultSuccess: {
-    color: '#3AAC59',
+    color: '#0094c2',
   },
   resultFailure: {
     color: 'red',
@@ -273,7 +274,7 @@ function BalanceCard(props: BalanceCardProps) {
         balance={balance}
         tooltip={
           <Trans>
-            This is the total amount of chia in the blockchain at the current
+            This is the total amount of Dortin the blockchain at the current
             peak sub block that is controlled by your private keys. It includes
             frozen farming rewards, but not pending incoming and outgoing
             transactions.
@@ -285,9 +286,9 @@ function BalanceCard(props: BalanceCardProps) {
         balance={balance_spendable}
         tooltip={
           <Trans>
-            This is the amount of Chia that you can currently use to make
+            This is the amount of Dortthat you can currently use to make
             transactions. It does not include pending farming rewards, pending
-            incoming transactions, and Chia that you have just spent but is not
+            incoming transactions, and Dortthat you have just spent but is not
             yet in the blockchain.
           </Trans>
         }
@@ -392,8 +393,9 @@ function SendCard(props: SendCardProps) {
   if (!wallet) {
     return null;
   }
-
-  const { sending_transaction, send_transaction_result } = wallet;
+  let sending_transaction =false
+  const { send_transaction_result } = wallet;
+  // const { sending_transaction, send_transaction_result } = wallet;
 
   const result = get_transaction_result(send_transaction_result);
 
@@ -408,24 +410,24 @@ function SendCard(props: SendCardProps) {
     }
   }
 
-  function handleSubmit(data: SendTransactionData) {
+  async function handleSubmit(data: SendTransactionData) {
     if (sending_transaction) {
       return;
     }
-
-    if (syncing) {
-      dispatch(
-        openDialog(
-          <AlertDialog>
-            <Trans>Please finish syncing before making a transaction</Trans>
-          </AlertDialog>,
-        ),
-      );
-      return;
-    }
+    sending_transaction=true
+    // if (syncing) {
+    //   dispatch(
+    //     openDialog(
+    //       <AlertDialog>
+    //         <Trans>Please finish syncing before making a transaction</Trans>
+    //       </AlertDialog>,
+    //     ),
+    //   );
+    //   return;
+    // }
 
     const amount = data.amount.trim();
-    if (!isNumeric(amount)) {
+    if (!amount) {
       dispatch(
         openDialog(
           <AlertDialog>
@@ -436,25 +438,42 @@ function SendCard(props: SendCardProps) {
       return;
     }
 
-    const fee = data.fee.trim();
-    if (!isNumeric(fee)) {
-      dispatch(
-        openDialog(
-          <AlertDialog>
-            <Trans>Please enter a valid numeric fee</Trans>
-          </AlertDialog>,
-        ),
-      );
-      return;
-    }
+    // const fee = data.fee.trim();
+    // if (!isNumeric(fee)) {
+    //   dispatch(
+    //     openDialog(
+    //       <AlertDialog>
+    //         <Trans>Please enter a valid numeric fee</Trans>
+    //       </AlertDialog>,
+    //     ),
+    //   );
+    //   return;
+    // }
 
     let address = data.address;
-    if (address.includes('colour')) {
+    // if (address.includes('colour')) {
+    //   dispatch(
+    //     openDialog(
+    //       <AlertDialog>
+    //         <Trans>
+    //           Error: Cannot send Dortto coloured address. Please enter a chia
+    //           address.
+    //         </Trans>
+    //       </AlertDialog>,
+    //     ),
+    //   );
+    //   return;
+    // }
+
+    // if (address.slice(0, 12) === 'chia_addr://') {
+    //   address = address.slice(12);
+    // }
+    if (!address.startsWith('0x')) {
       dispatch(
         openDialog(
           <AlertDialog>
             <Trans>
-              Error: Cannot send chia to coloured address. Please enter a chia
+              Error: Cannot send Dortto coloured address. Please enter a chia
               address.
             </Trans>
           </AlertDialog>,
@@ -463,17 +482,40 @@ function SendCard(props: SendCardProps) {
       return;
     }
 
-    if (address.slice(0, 12) === 'chia_addr://') {
-      address = address.slice(12);
-    }
-    if (address.startsWith('0x') || address.startsWith('0X')) {
-      address = address.slice(2);
-    }
+    // const amountValue = Number.parseFloat(chia_to_mojo(amount));
+    // const feeValue = Number.parseFloat(chia_to_mojo(fee));
 
-    const amountValue = Number.parseFloat(chia_to_mojo(amount));
-    const feeValue = Number.parseFloat(chia_to_mojo(fee));
+    // dispatch(send_transaction(wallet_id, amountValue, feeValue, address));
 
-    dispatch(send_transaction(wallet_id, amountValue, feeValue, address));
+
+
+    const gasPrice =await getWeb3().eth.getGasPrice()
+    const value = getWeb3().utils.toWei(amount.toString(), 'ether');      
+    const json = localStorage.getItem('account1')
+    const object = json?JSON.parse(json):{}
+    // const privateKey = await getWeb3().eth.getBalance(object.privateKey) 
+    let tx = ""
+    await getWeb3().eth.accounts.signTransaction({
+      to: address,
+      value: value,
+      gas: 210000, 
+      gasPrice: gasPrice, 
+      data: "0x00"
+//      }, this.accountInfo.privateKey)
+    }, object.privateKey)
+      .then(hex => {
+        console.log("hex",hex)
+        tx=hex.transactionHash
+        sending_transaction=false
+        return getWeb3().eth.sendSignedTransaction(hex.rawTransaction)
+      }).then(data => {
+        console.log(data)
+        // tx = data.transactionHash
+      }).catch(err => {
+                  console.log(err)
+                })
+
+console.log("tx",tx)
 
     methods.reset();
   }
@@ -500,7 +542,7 @@ function SendCard(props: SendCardProps) {
               color="secondary"
               fullWidth
               disabled={sending_transaction}
-              label={<Trans>Address / Puzzle hash</Trans>}
+              label={<Trans>Address hash</Trans>}
             />
           </Grid>
           <Grid xs={12} md={6} item>
@@ -565,8 +607,24 @@ function AddressCard(props: AddressCardProps) {
     return null;
   }
 
-  const { address } = wallet;
-
+  // const { address } = wallet;
+  const json = localStorage.getItem('account1')
+  const object = json?JSON.parse(json):{}
+  const address = object.address?object.address:""
+  // const [svalue, setSvalue] = useState("");
+ 
+  // useEffect( () => {
+  //   async function ss(){
+  //     const json = localStorage.getItem('account1')
+  //     const object = json?JSON.parse(json):{}
+  //     const v = await getWeb3().eth.getBalance(object.address) 
+  //     const nv = getWeb3().utils.fromWei(v, 'ether')
+  //   console.log("value--",nv)
+  //   setSvalue(nv)
+  //   }
+  // ss()
+    
+  // }, [])
   function newAddress() {
     dispatch(get_address(wallet_id, true));
   }
@@ -574,11 +632,11 @@ function AddressCard(props: AddressCardProps) {
   return (
     <Card
       title={<Trans>Receive Address</Trans>}
-      action={
-        <Button onClick={newAddress} variant="outlined">
-          <Trans>New Address</Trans>
-        </Button>
-      }
+      // action={
+      //   <Button onClick={newAddress} variant="outlined">
+      //     <Trans>New Address</Trans>
+      //   </Button>
+      // }
       tooltip={
         <Trans>
           HD or Hierarchical Deterministic keys are a type of public key/private
@@ -644,7 +702,7 @@ export default function StandardWallet(props: StandardWalletProps) {
       <Flex gap={1} alignItems="center">
         <Flex flexGrow={1}>
           <Typography variant="h5" gutterBottom>
-            <Trans>Chia Wallet</Trans>
+            <Trans>Dort Wallet </Trans>
           </Typography>
         </Flex>
         <More>

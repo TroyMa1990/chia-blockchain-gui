@@ -8,7 +8,7 @@ msgstr ""
 "Language: ja_JP\n"
 "Project-Id-Version: chia-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-07-26 15:12\n"
+"PO-Revision-Date: 2021-07-17 13:17\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore Chia’s blocks further? Check out <0>Chia Explorer</0> built by an open source developer."
-msgstr "*チアのブロックをさらに調べたいですか？オープンソース開発者に提供していただいた <0>Chia Explorer</0> を是非ご覧ください。"
+msgid "*Want to explore Chia’s blocks further? Check out <0>DortExplorer</0> built by an open source developer."
+msgstr "*チアのブロックをさらに調べたいですか？オープンソース開発者に提供していただいた <0>DortExplorer</0> を是非ご覧ください。"
 
 #: src/components/plot/add/PlotAddNFT.tsx:123
 msgid "+ Add New Plot NFT"
@@ -44,7 +44,7 @@ msgstr "収穫機は耕地が実際に保存されているデバイス上に走
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About Chia Blockchain"
+msgid "About Dort Blockchain"
 msgstr "チアブロックチェーンについて"
 
 #: src/components/trading/ViewOffer.jsx:74
@@ -111,13 +111,13 @@ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:561
 #: src/components/wallet/coloured/WalletColoured.tsx:657
-#: src/components/wallet/standard/WalletStandard.tsx:596
+#: src/components/wallet/standard/WalletStandard.tsx:654
 msgid "Address"
 msgstr "アドレス"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:701
-#: src/components/wallet/standard/WalletStandard.tsx:503
-msgid "Address / Puzzle hash"
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:712
+#: src/components/wallet/standard/WalletStandard.tsx:545
+msgid "Address hash"
 msgstr "アドレス・パズルハッシュ値"
 
 #: src/components/core/components/Amount/Amount.tsx:96
@@ -125,8 +125,8 @@ msgstr "アドレス・パズルハッシュ値"
 #: src/components/trading/TradesTable.tsx:20
 #: src/components/wallet/WalletHistory.tsx:62
 #: src/components/wallet/create/createNewColouredCoin.jsx:119
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:720
-#: src/components/wallet/standard/WalletStandard.tsx:513
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:731
+#: src/components/wallet/standard/WalletStandard.tsx:555
 msgid "Amount"
 msgstr "金額"
 
@@ -144,7 +144,7 @@ msgid "Are you sure you want to delete the plot? The plot cannot be recovered."
 msgstr "本当にこの耕地を削除しますか？耕地は削除すると復元できません。"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:125
-#: src/components/wallet/standard/WalletStandard.tsx:632
+#: src/components/wallet/standard/WalletStandard.tsx:690
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgid "Backup file is used to restore smart wallets."
 msgstr "バックアップファイルはスマートウォレットの復元に使用します。"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:377
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:541
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:542
 msgid "Balance"
 msgstr "残高"
 
@@ -216,7 +216,7 @@ msgid "Block VDF Iterations"
 msgstr "ブロック VDF 評価回数"
 
 #: src/components/block/Block.jsx:336
-msgid "Block at height {0} in the Chia blockchain"
+msgid "Block at height {0} in the Dortblockchain"
 msgstr "チアブロックチェーン内の高さ {0} のブロック"
 
 #: src/components/fullNode/FullNode.jsx:331
@@ -313,14 +313,6 @@ msgstr "Keybase でチャット"
 msgid "Chia"
 msgstr "チア"
 
-#: src/electron/main.tsx:358
-msgid "Chia Blockchain Wiki"
-msgstr "チアブロックチェーンの Wiki"
-
-#: src/components/wallet/standard/WalletStandard.tsx:647
-msgid "Chia Wallet"
-msgstr "チアウォレット"
-
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
 msgstr "耕地数を選択"
@@ -383,7 +375,7 @@ msgid "Confirm Disconnect"
 msgstr "接続解除の確認"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:121
-#: src/components/wallet/standard/WalletStandard.tsx:628
+#: src/components/wallet/standard/WalletStandard.tsx:686
 msgid "Confirmation"
 msgstr ""
 
@@ -443,9 +435,9 @@ msgid "Copied"
 msgstr "コピーしました"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:670
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:306
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:428
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:485
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:307
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:429
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:486
 msgid "Copy"
 msgstr "コピー"
 
@@ -491,11 +483,18 @@ msgstr "支払い制限付きユーザーウォレットを作成"
 msgid "Create Trade Offer"
 msgstr "交換の注文を作成"
 
-#: src/components/wallet/coloured/WalletColoured.tsx:543
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:684
-#: src/components/wallet/standard/WalletStandard.tsx:483
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:695
+#: src/components/wallet/standard/WalletStandard.tsx:525
 msgid "Create Transaction"
 msgstr "取引を作成"
+
+#: src/components/wallet/coloured/WalletColoured.tsx:543
+msgid "Create Transaction1"
+msgstr ""
+
+#: src/components/wallet/standard/WalletStandard.tsx:525
+#~ msgid "Create Transaction33"
+#~ msgstr ""
 
 #: src/components/backup/BackupCreate.tsx:63
 msgid "Create a Backup"
@@ -506,8 +505,8 @@ msgid "Create a Plot NFT"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:211
-msgid "Create a new private key"
-msgstr "秘密鍵を新規作成"
+#~ msgid "Create a new private key"
+#~ msgstr "秘密鍵を新規作成"
 
 #: src/components/wallet/create/WalletCreate.jsx:224
 msgid "Create admin wallet"
@@ -596,7 +595,7 @@ msgstr "遅延時間"
 #: src/components/plotNFT/PlotNFTCard.tsx:122
 #: src/components/selectKey/SelectKey.tsx:67
 #: src/components/selectKey/SelectKey.tsx:109
-#: src/components/wallet/standard/WalletStandard.tsx:629
+#: src/components/wallet/standard/WalletStandard.tsx:687
 msgid "Delete"
 msgstr "削除"
 
@@ -606,12 +605,12 @@ msgid "Delete Plot"
 msgstr "耕地を削除"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:315
-#: src/components/wallet/standard/WalletStandard.tsx:663
+#: src/components/wallet/standard/WalletStandard.tsx:721
 msgid "Delete Unconfirmed Transactions"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:108
-#: src/components/selectKey/SelectKey.tsx:229
+#: src/components/selectKey/SelectKey.tsx:230
 msgid "Delete all keys"
 msgstr "全ての鍵を削除"
 
@@ -677,12 +676,24 @@ msgstr "既にこのデバイス上に耕地をお持ちですか？<0>耕地デ
 msgid "Does your machine support parallel plotting?"
 msgstr "お使いのデバイスは並列で耕せますか？"
 
+#: src/components/wallet/standard/WalletStandard.tsx:705
+msgid "Dort Wallet"
+msgstr ""
+
+#: src/components/wallet/standard/WalletStandard.tsx:647
+#~ msgid "Dort Wallet "
+#~ msgstr "チアウォレット"
+
+#: src/electron/main.tsx:358
+msgid "DortBlockchain Wiki"
+msgstr "チアブロックチェーンの Wiki"
+
 #: src/components/trading/ViewOffer.jsx:39
 #: src/components/wallet/create/recoverDIDWallet.js:294
 msgid "Drag and drop offer file"
 msgstr "注文ファイルをここにドラッグ&ドロップ"
 
-#: src/components/backup/BackupRestore.tsx:173
+#: src/components/backup/BackupRestore.tsx:197
 msgid "Drag and drop your backup file"
 msgstr "バックアップファイルをここにドラッグ&ドロップ"
 
@@ -694,10 +705,10 @@ msgstr "編集"
 #: src/components/plotNFT/PlotNFTCard.tsx:301
 #: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:76
 msgid "Edit Payout Instructions"
-msgstr "支払い指示を編集"
+msgstr ""
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Chia wallet."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your Dort Wallet ."
 msgstr "チアウォレットを復元するには、24語の合言葉を入力してください。"
 
 #: src/components/farm/FarmerStatus.tsx:21
@@ -711,8 +722,12 @@ msgid "Error"
 msgstr "エラー"
 
 #: src/components/wallet/standard/WalletStandard.tsx:456
-msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
-msgstr "エラー: チアは色付きのアドレスには送れません。チアのアドレスを入力してください。"
+#~ msgid "Error: Cannot send Dortto coloured address. Please enter a Dortaddress."
+#~ msgstr "エラー: チアは色付きのアドレスには送れません。チアのアドレスを入力してください。"
+
+#: src/components/wallet/standard/WalletStandard.tsx:475
+msgid "Error: Cannot send Dortto coloured address. Please enter a chia address."
+msgstr ""
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -746,7 +761,7 @@ msgstr "開けませんでした (耕地に問題あり)"
 
 #: src/components/dashboard/DashboardSideBar.tsx:55
 #: src/components/wallet/coloured/WalletColoured.tsx:610
-#: src/components/wallet/standard/WalletStandard.tsx:532
+#: src/components/wallet/standard/WalletStandard.tsx:574
 msgid "Farm"
 msgstr "農家"
 
@@ -816,8 +831,8 @@ msgstr "耕作の状態"
 #: src/components/wallet/create/createNewColouredCoin.jsx:132
 #: src/components/wallet/create/createRLAdmin.jsx:244
 #: src/components/wallet/create/createRLAdmin.jsx:272
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:733
-#: src/components/wallet/standard/WalletStandard.tsx:524
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:744
+#: src/components/wallet/standard/WalletStandard.tsx:566
 msgid "Fee"
 msgstr "手数料"
 
@@ -898,7 +913,7 @@ msgstr "新しい色を生成"
 msgid "Grid view"
 msgstr ""
 
-#: src/components/wallet/standard/WalletStandard.tsx:583
+#: src/components/wallet/standard/WalletStandard.tsx:641
 msgid "HD or Hierarchical Deterministic keys are a type of public key/private key scheme where one private key can have a nearly infinite number of different public keys (and therefor wallet receive addresses) that will all ultimately come back to and be spendable by a single private key."
 msgstr "階層的決定性鍵、または HD 鍵とは、一つの秘密鍵に無数の公開鍵 (= ウォレットの受け取りアドレス) を対応させることができる公開・秘密鍵の生成方法です。どの公開鍵への入金も、最終的には同じ秘密鍵に着金し、同じ秘密鍵で支払うことができます。"
 
@@ -961,9 +976,17 @@ msgstr "空欄の場合、1つ目の一時ディレクトリを使用します�
 msgid "Import Wallet from Mnemonics"
 msgstr "合言葉でウォレットをインポート"
 
-#: src/components/selectKey/SelectKey.tsx:220
-msgid "Import from Mnemonics (24 words)"
+#: src/components/selectKey/SelectKey.tsx:221
+msgid "Import from PrivateKey"
 msgstr "合言葉 (24語) で鍵をインポート"
+
+#: src/components/backup/BackupRestore.tsx:185
+msgid "Import keystore"
+msgstr ""
+
+#: src/components/backup/BackupRestore.tsx:161
+#~ msgid "Import private key file"
+#~ msgstr "バックアップからカラードコイン・その他スマートウォレットのメタデータを復元"
 
 #: src/components/fullNode/FullNode.jsx:45
 msgid "In Progress"
@@ -989,8 +1012,8 @@ msgstr "当方がこの注文を作成したのかを表示します"
 msgid "Indicated what time this offer was accepted"
 msgstr "この注文が承諾された日時を表示します"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:333
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:472
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:334
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:473
 msgid "Info Packet"
 msgstr "情報パケット"
 
@@ -1164,7 +1187,7 @@ msgstr "分"
 msgid "More memory slightly increases speed"
 msgstr "メモリ使用量を増やすと速度が微上昇します"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:415
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:416
 msgid "My Pubkey"
 msgstr "私の公開鍵"
 
@@ -1181,7 +1204,6 @@ msgstr "ネットワーク名"
 #~ msgstr "Network not launched yet, waiting for genesis challenge!"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:685
-#: src/components/wallet/standard/WalletStandard.tsx:579
 msgid "New Address"
 msgstr "新規アドレス"
 
@@ -1298,7 +1320,7 @@ msgstr "注文"
 msgid "Offers Created"
 msgstr "作成した注文"
 
-#: src/components/wallet/standard/WalletStandard.tsx:485
+#: src/components/wallet/standard/WalletStandard.tsx:527
 msgid "On average there is one minute between each transaction block. Unless there is congestion you can expect your transaction to be included in less than a minute."
 msgstr "取引ブロックは約1分間隔で作成されます。混雑時を除き、1分以内にあなたの送金も取り込まれるはずです。"
 
@@ -1328,17 +1350,17 @@ msgid "Pending"
 msgstr "保留中"
 
 #: src/components/wallet/card/WalletCardPendingBalance.tsx:24
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:573
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:574
 msgid "Pending Balance"
 msgstr "保留中の残高"
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:24
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:578
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:579
 msgid "Pending Change"
 msgstr "保留中の増減"
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:27
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:568
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:569
 msgid "Pending Total Balance"
 msgstr "保留中の全残高"
 
@@ -1351,7 +1373,7 @@ msgstr ""
 msgid "Please add a trade pair"
 msgstr "交換条件を追加してください。"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:668
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:670
 msgid "Please enter 0 fee. Positive fees not supported yet for RL."
 msgstr "手数料は 0 を入力してください。 RL ではまだ正の手数料が未実装です。"
 
@@ -1360,16 +1382,15 @@ msgid "Please enter a valid initial coin amount"
 msgstr "有効な初期金額を入力してください"
 
 #: src/components/wallet/create/createNewColouredCoin.jsx:69
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:639
-#: src/components/wallet/standard/WalletStandard.tsx:432
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:641
+#: src/components/wallet/standard/WalletStandard.tsx:434
 msgid "Please enter a valid numeric amount"
 msgstr "数字を入力してください"
 
 #: src/components/wallet/create/createExistingColouredCoin.jsx:70
 #: src/components/wallet/create/createNewColouredCoin.jsx:79
 #: src/components/wallet/create/createRLAdmin.jsx:150
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:649
-#: src/components/wallet/standard/WalletStandard.tsx:444
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:651
 msgid "Please enter a valid numeric fee"
 msgstr "数字の手数料を入力してください"
 
@@ -1385,8 +1406,7 @@ msgstr "支払い可能額を数字で入力してください"
 msgid "Please enter a valid pubkey"
 msgstr "有効な公開鍵を入力してください"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:623
-#: src/components/wallet/standard/WalletStandard.tsx:420
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:625
 msgid "Please finish syncing before making a transaction"
 msgstr "取引を行う前に同期を完了してください"
 
@@ -1694,8 +1714,8 @@ msgstr "最大使用 RAM"
 msgid "Rate Limited"
 msgstr "レート制限付き"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:391
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:438
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:392
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:439
 msgid "Rate Limited Info"
 msgstr "レート制限付きの情報"
 
@@ -1703,12 +1723,12 @@ msgstr "レート制限付きの情報"
 msgid "Rate Limited Options"
 msgstr "レート制限付きのオプション"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:273
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:274
 msgid "Rate Limited User Wallet Setup"
 msgstr "レート制限付きユーザーウォレットのセットアップ"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:650
-#: src/components/wallet/standard/WalletStandard.tsx:576
+#: src/components/wallet/standard/WalletStandard.tsx:634
 msgid "Receive Address"
 msgstr "受取アドレス"
 
@@ -1741,10 +1761,6 @@ msgstr "名称変更"
 msgid "Report an Issue..."
 msgstr "問題を報告"
 
-#: src/components/backup/BackupRestore.tsx:160
-msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
-msgstr "バックアップからカラードコイン・その他スマートウォレットのメタデータを復元"
-
 #: src/components/backup/BackupRestore.tsx:107
 #~ msgid "Restore Smart Wallets From Backup"
 #~ msgstr ""
@@ -1754,7 +1770,7 @@ msgstr "バックアップからカラードコイン・その他スマートウ
 #~ msgid "SB Height"
 #~ msgstr "SB Height"
 
-#: src/components/backup/BackupRestore.tsx:186
+#: src/components/backup/BackupRestore.tsx:227
 msgid "Safe To Skip"
 msgstr "安全にスキップ可能"
 
@@ -1850,16 +1866,16 @@ msgid "Sell"
 msgstr "売却"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:620
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:748
-#: src/components/wallet/standard/WalletStandard.tsx:542
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:759
+#: src/components/wallet/standard/WalletStandard.tsx:584
 msgid "Send"
 msgstr "送る"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:460
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:461
 msgid "Send this info packet to your Rate Limited Wallet user who must use it to complete setup of their wallet:"
 msgstr "レート制限ウォレットのユーザーに、セットアップを完了するために必要な情報パケットを送ってください:"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:279
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:280
 msgid "Send your pubkey to your Rate Limited Wallet admin:"
 msgstr "レート制限付きウォレットの管理者にあなたの公開鍵を送ってください:"
 
@@ -1914,12 +1930,12 @@ msgstr "インターバル毎支払い可能額"
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:24
 #: src/components/wallet/coloured/WalletColoured.tsx:384
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:548
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:549
 msgid "Spendable Balance"
 msgstr "支払い可能額"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:396
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:443
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:397
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:444
 msgid "Spending Interval (number of blocks): {interval}"
 msgstr "支払いインターバル (ブロック数): {interval}"
 
@@ -1927,9 +1943,9 @@ msgstr "支払いインターバル (ブロック数): {interval}"
 msgid "Spending Interval Length (number of blocks)"
 msgstr "支払いインターバル長 (ブロック数)"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (chia per interval): {0}"
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:402
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:449
+msgid "Spending Limit (Dortper interval): {0}"
 msgstr "支払い額上限 (チア毎インターバル): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
@@ -1978,10 +1994,10 @@ msgstr "状態:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Chia blockchain"
-#~ msgstr "Sub Block at height {0} in the Chia blockchain"
+#~ msgid "Sub Block at height {0} in the Dortblockchain"
+#~ msgstr "Sub Block at height {0} in the Dortblockchain"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:348
 msgid "Submit"
 msgstr "提出"
 
@@ -2122,7 +2138,7 @@ msgid "This feature is available only from the GUI."
 msgstr "この機能は GUI 限定です。"
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
+msgid "This is the amount of Dortthat you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Dortthat you have just spent but is not yet in the blockchain."
 msgstr "取引に使用できるチアの額です。承認待ちの耕作報酬、承認待ちの入金取引、及びブロックチェーンにまだ含まれていない消費チアはいずれも含まれていません。"
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
@@ -2141,8 +2157,9 @@ msgstr "最新のピークサブブロックの日時です。"
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "これが農家がブロックを作成した日時です。時間証明によって完成する前の段階です。"
 
-#: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+#: src/components/wallet/card/WalletCardTotalBalance copy.tsx:42
+#: src/components/wallet/card/WalletCardTotalBalance.tsx:50
+msgid "This is the total amount of Dortin the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
 msgstr "現在の先端サブブロックにおいて、あなたの秘密鍵が所有している全チアの額です。凍結中の耕作報酬は含まれますが、承認待ちの入出金取引は反映されていません。"
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
@@ -2188,7 +2205,7 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "このトレードはこのブロック高でブロックチェーンに取り込まれました。"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of Chia is no longer compatible with the blockchain and can not safely farm."
+msgid "This version of Dortis no longer compatible with the blockchain and can not safely farm."
 msgstr "ご使用のバージョンのチアアプリはブロックチェーンと互換性が無く、安全に耕作できません。"
 
 #: src/components/fullNode/FullNode.jsx:92
@@ -2207,14 +2224,15 @@ msgstr "タイムスタンプ"
 msgid "To"
 msgstr "宛先"
 
-#: src/components/wallet/card/WalletCardTotalBalance.tsx:32
+#: src/components/wallet/card/WalletCardTotalBalance copy.tsx:40
+#: src/components/wallet/card/WalletCardTotalBalance.tsx:48
 #: src/components/wallet/coloured/WalletColoured.tsx:379
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:543
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:544
 msgid "Total Balance"
 msgstr "全残高"
 
 #: src/components/farm/card/FarmCardTotalChiaFarmed.tsx:15
-#~ msgid "Total Chia Farmed"
+#~ msgid "Total DortFarmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:20
@@ -2307,7 +2325,7 @@ msgid "Unsaved Changes"
 msgstr ""
 
 #: src/components/wallet/create/createRLAdmin.jsx:281
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:293
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:294
 msgid "User Pubkey"
 msgstr "ユーザー公開鍵"
 
@@ -2349,7 +2367,7 @@ msgstr "注文を表示"
 msgid "View Pool Login Link"
 msgstr ""
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:562
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:563
 msgid "View pending balances"
 msgstr "保留中残高を表示"
 
@@ -2377,7 +2395,7 @@ msgid "Waiting for the transaction to be confirmed"
 msgstr ""
 
 #: src/components/pool/PoolOverview.tsx:185
-#: src/components/wallet/standard/WalletStandard.tsx:674
+#: src/components/wallet/standard/WalletStandard.tsx:732
 msgid "Wallet Status:"
 msgstr ""
 
@@ -2458,7 +2476,7 @@ msgstr "チアにようこそ。お持ちの鍵でログインするか、新し
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
 msgstr "ご利用ありがとうございます！以下の合言葉はあなたのウォレットのバックアップに使用します。紛失するとウォレットへのアクセスを失いますので、必ず安全な場所に保管してください！各単語を番号と共に書き記してください。 (復元の際は順番通りに入力する必要があります。)"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:316
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:317
 msgid "When you receive the setup info packet from your admin, enter it below to complete your Rate Limited Wallet setup:"
 msgstr "管理者からセットアップ用の情報パケットを受け取ったら、以下に入力してレート制限付きウォレットのセットアップを完了してください:"
 
@@ -2522,8 +2540,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the Chia application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the Chia application as this version will stop working soon!"
+#~ msgid "You need to upgrade the Dortapplication as this version will stop working soon!"
+#~ msgstr "You need to upgrade the Dortapplication as this version will stop working soon!"
 
 #: src/components/plotNFT/select/PlotNFTSelectFaucet.tsx:37
 msgid "You need {currencyCode} to join a pool."
@@ -2579,6 +2597,10 @@ msgstr "同期されていません"
 msgid "p2_singleton_puzzle_hash is not defined"
 msgstr ""
 
+#: src/components/backup/BackupRestore.tsx:212
+msgid "password"
+msgstr ""
+
 #: src/components/wallet/WalletStatusCard.tsx:27
 #: src/components/wallet/Wallets.tsx:123
 msgid "status:"
@@ -2612,7 +2634,11 @@ msgstr "{currencyCode} ブロック報酬"
 
 #: src/components/farm/card/FarmCardTotalChiaFarmed.tsx:29
 msgid "{currencyCode} Total Chia Farmed"
-msgstr "{currencyCode} 全収穫チア"
+msgstr ""
+
+#: src/components/farm/card/FarmCardTotalChiaFarmed.tsx:29
+#~ msgid "{currencyCode} Total DortFarmed"
+#~ msgstr "{currencyCode} 全収穫チア"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

@@ -23,6 +23,7 @@ import { get_transaction_result } from '../../../util/transaction_result';
 import { openDialog } from '../../../modules/dialog';
 import WalletHistory from '../WalletHistory';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
+import getWeb3 from '../../../util/web3';
 
 const drawerWidth = 240;
 
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0px',
   },
   resultSuccess: {
-    color: '#3AAC59',
+    color: '#0094c2',
   },
   resultFailure: {
     color: 'red',
@@ -399,7 +400,7 @@ const RLDetailsCard = (props) => {
             <Box flexGrow={1}>
               <Typography variant="subtitle1">
                 <Trans>
-                  Spending Limit (chia per interval):{' '}
+                  Spending Limit (Dortper interval):{' '}
                   {mojo_to_chia_string(limit)}
                 </Trans>
               </Typography>
@@ -446,7 +447,7 @@ const RLDetailsCard = (props) => {
             <Box flexGrow={1}>
               <Typography variant="subtitle1">
                 <Trans>
-                  Spending Limit (chia per interval):{' '}
+                  Spending Limit (Dortper interval):{' '}
                   {mojo_to_chia_string(limit)}
                 </Trans>
               </Typography>
@@ -597,9 +598,10 @@ const SendCard = (props) => {
   let fee_input = null;
   const dispatch = useDispatch();
 
-  const sending_transaction = useSelector(
-    (state) => state.wallet_state.wallets[id].sending_transaction,
-  );
+  let sending_transaction =true
+  // const sending_transaction = useSelector(
+  //   (state) => state.wallet_state.wallets[id].sending_transaction,
+  // );
   const syncing = useSelector((state) => state.wallet_state.status.syncing);
 
   const send_transaction_result = useSelector(
@@ -612,7 +614,7 @@ const SendCard = (props) => {
     ? classes.resultSuccess
     : classes.resultFailure;
 
-  function send() {
+  async function send() {
     if (sending_transaction) {
       return;
     }
@@ -674,6 +676,15 @@ const SendCard = (props) => {
       return;
     }
 
+
+
+    
+
+
+
+
+
+
     dispatch(send_transaction(id, amount_value, fee_value, address));
     address_input.value = '';
     amount_input.value = '';
@@ -698,7 +709,7 @@ const SendCard = (props) => {
               inputRef={(input) => {
                 address_input = input;
               }}
-              label={<Trans>Address / Puzzle hash</Trans>}
+              label={<Trans>Address hash</Trans>}
             />
           </Box>
           <Box />

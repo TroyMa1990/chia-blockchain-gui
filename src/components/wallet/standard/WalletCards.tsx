@@ -19,7 +19,7 @@ export default function WalletCards(props: Props) {
         <Grid xs={12} md={4} item>
           <WalletCardTotalBalance wallet_id={wallet_id} />
         </Grid>
-        <Grid xs={12} md={8} item>
+        {/* <Grid xs={12} md={8} item>
           <Grid spacing={3} alignItems="stretch" container>
             <Grid xs={12} sm={6} item>
               <WalletCardSpendableBalance wallet_id={wallet_id} />
@@ -34,7 +34,7 @@ export default function WalletCards(props: Props) {
               <WalletCardPendingChange wallet_id={wallet_id} />
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

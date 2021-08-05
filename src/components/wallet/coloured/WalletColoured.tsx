@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0px',
   },
   resultSuccess: {
-    color: '#3AAC59',
+    color: '#0094c2',
   },
   resultFailure: {
     color: 'red',
@@ -346,15 +346,15 @@ function BalanceCard(props: BalanceCardProps) {
   const balancebox_unit = ` ${cc_unit}`;
   const balancebox_hline =
     "<tr><td colspan='2' style='text-align:center'><hr width='50%'></td></tr>";
-  const balance_ptotal_chia = mojo_to_colouredcoin_string(balance_ptotal);
-  const balance_pending_chia = mojo_to_colouredcoin_string(balance_pending);
-  const balance_change_chia = mojo_to_colouredcoin_string(balance_change);
+  const balance_ptotal_Dort= mojo_to_colouredcoin_string(balance_ptotal);
+  const balance_pending_Dort= mojo_to_colouredcoin_string(balance_pending);
+  const balance_change_Dort= mojo_to_colouredcoin_string(balance_change);
   const acc_content =
     balancebox_1 +
     balancebox_2 +
     balancebox_ptotal +
     balancebox_3 +
-    balance_ptotal_chia +
+    balance_ptotal_Dort+
     balancebox_unit +
     balancebox_hline +
     balancebox_4 +
@@ -362,14 +362,14 @@ function BalanceCard(props: BalanceCardProps) {
     balancebox_2 +
     balancebox_pending +
     balancebox_3 +
-    balance_pending_chia +
+    balance_pending_Dort+
     balancebox_unit +
     balancebox_4 +
     balancebox_row +
     balancebox_2 +
     balancebox_change +
     balancebox_3 +
-    balance_change_chia +
+    balance_change_Dort+
     balancebox_unit +
     balancebox_5;
 
@@ -540,7 +540,7 @@ function SendCard(props: SendCardProps) {
   }
 
   return (
-    <Card title={<Trans>Create Transaction</Trans>}>
+    <Card title={<Trans>Create Transaction1</Trans>}>
       {result_message && (
         <Grid item xs={12}>
           <p className={result_class}>{result_message}</p>

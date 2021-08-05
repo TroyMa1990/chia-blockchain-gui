@@ -8,7 +8,7 @@ msgstr ""
 "Language: ca_ES\n"
 "Project-Id-Version: chia-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-07-26 15:12\n"
+"PO-Revision-Date: 2021-07-17 00:02\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -23,8 +23,12 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore Chia’s blocks further? Check out <0>Chia Explorer</0> built by an open source developer."
-msgstr "*Vols explorar encara més els blocs de Chia? Dona un cop d'ull a <0>Chia Explorer</0> creat per un desenvolupador de codi lliure."
+#~ msgid "*Want to explore Chia’s blocks further? Check out <0>Chia Explorer</0> built by an open source developer."
+#~ msgstr "*Vols explorar encara més els blocs de Chia? Dona un cop d'ull a <0>Chia Explorer</0> creat per un desenvolupador de codi lliure."
+
+#: src/components/farm/FarmLatestBlockChallenges.tsx:64
+msgid "*Want to explore Chia’s blocks further? Check out <0>DortExplorer</0> built by an open source developer."
+msgstr ""
 
 #: src/components/plot/add/PlotAddNFT.tsx:123
 msgid "+ Add New Plot NFT"
@@ -44,8 +48,13 @@ msgstr "Un recol·lector és un servei que s'executa en una màquina on actualme
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About Chia Blockchain"
-msgstr "Sobre la cadena de blocs de Chia"
+#~ msgid "About Chia Blockchain"
+#~ msgstr "Sobre la cadena de blocs de Chia"
+
+#: src/electron/main.tsx:422
+#: src/electron/main.tsx:509
+msgid "About Dort Blockchain"
+msgstr ""
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -111,22 +120,27 @@ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:561
 #: src/components/wallet/coloured/WalletColoured.tsx:657
-#: src/components/wallet/standard/WalletStandard.tsx:596
+#: src/components/wallet/standard/WalletStandard.tsx:654
 msgid "Address"
 msgstr "Adreça"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:701
 #: src/components/wallet/standard/WalletStandard.tsx:503
-msgid "Address / Puzzle hash"
-msgstr "Adreça / Hash de trencaclosques"
+#~ msgid "Address / Puzzle hash"
+#~ msgstr "Adreça / Hash de trencaclosques"
+
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:712
+#: src/components/wallet/standard/WalletStandard.tsx:545
+msgid "Address hash"
+msgstr ""
 
 #: src/components/core/components/Amount/Amount.tsx:96
 #: src/components/trading/CreateOffer.jsx:196
 #: src/components/trading/TradesTable.tsx:20
 #: src/components/wallet/WalletHistory.tsx:62
 #: src/components/wallet/create/createNewColouredCoin.jsx:119
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:720
-#: src/components/wallet/standard/WalletStandard.tsx:513
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:731
+#: src/components/wallet/standard/WalletStandard.tsx:555
 msgid "Amount"
 msgstr "Quantitat"
 
@@ -144,7 +158,7 @@ msgid "Are you sure you want to delete the plot? The plot cannot be recovered."
 msgstr "Segur que vols eliminar la parcel·la? La parcel·la no podrà ser recuperada."
 
 #: src/components/plotNFT/PlotNFTCard.tsx:125
-#: src/components/wallet/standard/WalletStandard.tsx:632
+#: src/components/wallet/standard/WalletStandard.tsx:690
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr ""
 
@@ -179,7 +193,7 @@ msgid "Backup file is used to restore smart wallets."
 msgstr "El fitxer de còpia de seguretat es fa servir per restaurar els moneders intel·ligents."
 
 #: src/components/wallet/coloured/WalletColoured.tsx:377
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:541
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:542
 msgid "Balance"
 msgstr "Saldo"
 
@@ -216,8 +230,12 @@ msgid "Block VDF Iterations"
 msgstr "Iteracions de bloc VDF"
 
 #: src/components/block/Block.jsx:336
-msgid "Block at height {0} in the Chia blockchain"
-msgstr "Bloc a la alçada {0} a la cadena de blocs de Chia"
+#~ msgid "Block at height {0} in the Chia blockchain"
+#~ msgstr "Bloc a la alçada {0} a la cadena de blocs de Chia"
+
+#: src/components/block/Block.jsx:336
+msgid "Block at height {0} in the Dortblockchain"
+msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -314,12 +332,8 @@ msgid "Chia"
 msgstr "Chia"
 
 #: src/electron/main.tsx:358
-msgid "Chia Blockchain Wiki"
-msgstr "Wiki de la Cadena de Blocs de Chia"
-
-#: src/components/wallet/standard/WalletStandard.tsx:647
-msgid "Chia Wallet"
-msgstr "Moneder Chia"
+#~ msgid "Chia Blockchain Wiki"
+#~ msgstr "Wiki de la Cadena de Blocs de Chia"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -383,7 +397,7 @@ msgid "Confirm Disconnect"
 msgstr "Confirma la desconnexió"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:121
-#: src/components/wallet/standard/WalletStandard.tsx:628
+#: src/components/wallet/standard/WalletStandard.tsx:686
 msgid "Confirmation"
 msgstr ""
 
@@ -443,9 +457,9 @@ msgid "Copied"
 msgstr "Copiat"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:670
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:306
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:428
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:485
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:307
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:429
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:486
 msgid "Copy"
 msgstr "Copiar"
 
@@ -491,11 +505,18 @@ msgstr "Crear moneder d'usuari amb tarifa limitada"
 msgid "Create Trade Offer"
 msgstr "Crear oferta de transacció"
 
-#: src/components/wallet/coloured/WalletColoured.tsx:543
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:684
-#: src/components/wallet/standard/WalletStandard.tsx:483
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:695
+#: src/components/wallet/standard/WalletStandard.tsx:525
 msgid "Create Transaction"
 msgstr "Crear transacció"
+
+#: src/components/wallet/coloured/WalletColoured.tsx:543
+msgid "Create Transaction1"
+msgstr ""
+
+#: src/components/wallet/standard/WalletStandard.tsx:525
+#~ msgid "Create Transaction33"
+#~ msgstr ""
 
 #: src/components/backup/BackupCreate.tsx:63
 msgid "Create a Backup"
@@ -506,8 +527,8 @@ msgid "Create a Plot NFT"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:211
-msgid "Create a new private key"
-msgstr "Crear una nova clau privada"
+#~ msgid "Create a new private key"
+#~ msgstr "Crear una nova clau privada"
 
 #: src/components/wallet/create/WalletCreate.jsx:224
 msgid "Create admin wallet"
@@ -596,7 +617,7 @@ msgstr "Retard"
 #: src/components/plotNFT/PlotNFTCard.tsx:122
 #: src/components/selectKey/SelectKey.tsx:67
 #: src/components/selectKey/SelectKey.tsx:109
-#: src/components/wallet/standard/WalletStandard.tsx:629
+#: src/components/wallet/standard/WalletStandard.tsx:687
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -606,12 +627,12 @@ msgid "Delete Plot"
 msgstr "Eliminar parcel·la"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:315
-#: src/components/wallet/standard/WalletStandard.tsx:663
+#: src/components/wallet/standard/WalletStandard.tsx:721
 msgid "Delete Unconfirmed Transactions"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:108
-#: src/components/selectKey/SelectKey.tsx:229
+#: src/components/selectKey/SelectKey.tsx:230
 msgid "Delete all keys"
 msgstr "Eliminar totes les claus"
 
@@ -677,12 +698,24 @@ msgstr "Ja tens parcel·les en aquesta màquina? <0> Afegeix un directori de par
 msgid "Does your machine support parallel plotting?"
 msgstr "La teva màquina suporta parcel·lat en paral·lel?"
 
+#: src/components/wallet/standard/WalletStandard.tsx:705
+msgid "Dort Wallet"
+msgstr ""
+
+#: src/components/wallet/standard/WalletStandard.tsx:647
+#~ msgid "Dort Wallet "
+#~ msgstr "Moneder Chia"
+
+#: src/electron/main.tsx:358
+msgid "DortBlockchain Wiki"
+msgstr ""
+
 #: src/components/trading/ViewOffer.jsx:39
 #: src/components/wallet/create/recoverDIDWallet.js:294
 msgid "Drag and drop offer file"
 msgstr "Arrossega i deixa anar aquí el fitxer d’oferta"
 
-#: src/components/backup/BackupRestore.tsx:173
+#: src/components/backup/BackupRestore.tsx:197
 msgid "Drag and drop your backup file"
 msgstr "Arrossega i deixa anar aquí el teu fitxer de copia de seguretat"
 
@@ -697,7 +730,7 @@ msgid "Edit Payout Instructions"
 msgstr ""
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Chia wallet."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your Dort Wallet ."
 msgstr "Introdueix les 24 paraules mnemotècniques que has guardat per restaurar el moneder de Chia."
 
 #: src/components/farm/FarmerStatus.tsx:21
@@ -710,9 +743,13 @@ msgstr "Introdueix les 24 paraules mnemotècniques que has guardat per restaurar
 msgid "Error"
 msgstr "Error"
 
+#: src/components/wallet/standard/WalletStandard.tsx:475
+msgid "Error: Cannot send Dortto coloured address. Please enter a chia address."
+msgstr ""
+
 #: src/components/wallet/standard/WalletStandard.tsx:456
-msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
-msgstr "No és possible enviar Chia a l'adreça acolorida. Si us plau, introdueix una adreça Chia."
+#~ msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
+#~ msgstr "No és possible enviar Chia a l'adreça acolorida. Si us plau, introdueix una adreça Chia."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -746,7 +783,7 @@ msgstr "No ha estat possible obrir (parcel·les invàlides)"
 
 #: src/components/dashboard/DashboardSideBar.tsx:55
 #: src/components/wallet/coloured/WalletColoured.tsx:610
-#: src/components/wallet/standard/WalletStandard.tsx:532
+#: src/components/wallet/standard/WalletStandard.tsx:574
 msgid "Farm"
 msgstr "Cultiu"
 
@@ -816,8 +853,8 @@ msgstr "Estat del cultiu"
 #: src/components/wallet/create/createNewColouredCoin.jsx:132
 #: src/components/wallet/create/createRLAdmin.jsx:244
 #: src/components/wallet/create/createRLAdmin.jsx:272
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:733
-#: src/components/wallet/standard/WalletStandard.tsx:524
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:744
+#: src/components/wallet/standard/WalletStandard.tsx:566
 msgid "Fee"
 msgstr "Taxa"
 
@@ -898,7 +935,7 @@ msgstr "Genera un nou color"
 msgid "Grid view"
 msgstr ""
 
-#: src/components/wallet/standard/WalletStandard.tsx:583
+#: src/components/wallet/standard/WalletStandard.tsx:641
 msgid "HD or Hierarchical Deterministic keys are a type of public key/private key scheme where one private key can have a nearly infinite number of different public keys (and therefor wallet receive addresses) that will all ultimately come back to and be spendable by a single private key."
 msgstr "HD o Hierarchical Deterministic keys és un tipus de clau pública/privada que fa servir esquema on la clau privada pot tenir un nombre quasi infinit de diferents claus públiques (i per tant adreces de rebuda al moneder) que poden ser comprovades i utilitzades per una única clau privada."
 
@@ -961,9 +998,17 @@ msgstr "Si no en selecciones cap, anirà al directori temporal per defecte."
 msgid "Import Wallet from Mnemonics"
 msgstr "Importar el moneder des de mnemotècnics"
 
-#: src/components/selectKey/SelectKey.tsx:220
-msgid "Import from Mnemonics (24 words)"
+#: src/components/selectKey/SelectKey.tsx:221
+msgid "Import from PrivateKey"
 msgstr "Importar des de mnemotècnics (24 mots)"
+
+#: src/components/backup/BackupRestore.tsx:185
+msgid "Import keystore"
+msgstr ""
+
+#: src/components/backup/BackupRestore.tsx:161
+#~ msgid "Import private key file"
+#~ msgstr "Restaura la metadada per monedes acolorides i altres moneders intel·ligents des de còpia de seguretat"
 
 #: src/components/fullNode/FullNode.jsx:45
 msgid "In Progress"
@@ -989,8 +1034,8 @@ msgstr "Ha indicat si aquesta oferta va ser creada per tu"
 msgid "Indicated what time this offer was accepted"
 msgstr "Ha indicat en quin moment va ser acceptada aquesta oferta"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:333
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:472
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:334
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:473
 msgid "Info Packet"
 msgstr "Paquet d'informació"
 
@@ -1164,7 +1209,7 @@ msgstr "Minuts"
 msgid "More memory slightly increases speed"
 msgstr "Més memòria fa augmentar una mica la velocitat"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:415
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:416
 msgid "My Pubkey"
 msgstr "La meva clau pública"
 
@@ -1181,7 +1226,6 @@ msgstr "Nom de xarxa"
 #~ msgstr "Network not launched yet, waiting for genesis challenge!"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:685
-#: src/components/wallet/standard/WalletStandard.tsx:579
 msgid "New Address"
 msgstr "Nova adreça"
 
@@ -1298,7 +1342,7 @@ msgstr "Oferta"
 msgid "Offers Created"
 msgstr "Han estat creades ofertes"
 
-#: src/components/wallet/standard/WalletStandard.tsx:485
+#: src/components/wallet/standard/WalletStandard.tsx:527
 msgid "On average there is one minute between each transaction block. Unless there is congestion you can expect your transaction to be included in less than a minute."
 msgstr "De mitjana passa un minut entre cada transacció de block. A no ser que hi hagi saturació, la teva transacció hauria de ser inclosa en menys d'un minut."
 
@@ -1308,7 +1352,7 @@ msgstr "Sortint"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:361
 msgid "Payout Address"
-msgstr "Adreça de pagament"
+msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:20
 msgid "Peak Height"
@@ -1328,17 +1372,17 @@ msgid "Pending"
 msgstr "Pendent"
 
 #: src/components/wallet/card/WalletCardPendingBalance.tsx:24
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:573
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:574
 msgid "Pending Balance"
 msgstr "Saldo pendent"
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:24
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:578
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:579
 msgid "Pending Change"
 msgstr "Canvi pendent"
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:27
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:568
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:569
 msgid "Pending Total Balance"
 msgstr "Saldo total pendent"
 
@@ -1351,7 +1395,7 @@ msgstr ""
 msgid "Please add a trade pair"
 msgstr "Si us plau, afegeix la informació d'intercanvi"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:668
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:670
 msgid "Please enter 0 fee. Positive fees not supported yet for RL."
 msgstr "Si us plau, afegeix 0 de comissió. Encara no es poden enviar comissions positives per RL."
 
@@ -1360,16 +1404,15 @@ msgid "Please enter a valid initial coin amount"
 msgstr "Si us plau, introdueix una quantitat de moneda inicial vàlida"
 
 #: src/components/wallet/create/createNewColouredCoin.jsx:69
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:639
-#: src/components/wallet/standard/WalletStandard.tsx:432
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:641
+#: src/components/wallet/standard/WalletStandard.tsx:434
 msgid "Please enter a valid numeric amount"
 msgstr "Si us plau, introdueix una quantitat numèrica vàlida"
 
 #: src/components/wallet/create/createExistingColouredCoin.jsx:70
 #: src/components/wallet/create/createNewColouredCoin.jsx:79
 #: src/components/wallet/create/createRLAdmin.jsx:150
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:649
-#: src/components/wallet/standard/WalletStandard.tsx:444
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:651
 msgid "Please enter a valid numeric fee"
 msgstr "Si us plau, introdueix una comissió numèrica vàlida"
 
@@ -1385,8 +1428,7 @@ msgstr "Si us plau, introdueix una quantitat de despesa numèrica vàlida"
 msgid "Please enter a valid pubkey"
 msgstr "Si us plau introdueix una clau pública vàlida"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:623
-#: src/components/wallet/standard/WalletStandard.tsx:420
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:625
 msgid "Please finish syncing before making a transaction"
 msgstr "Si us plau, espera que acabi la sincronització abans de fer una transacció"
 
@@ -1694,8 +1736,8 @@ msgstr "Màxima RAM a fer servir"
 msgid "Rate Limited"
 msgstr "Límit de freqüència"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:391
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:438
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:392
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:439
 msgid "Rate Limited Info"
 msgstr "Informació de la limitació de la tarifa"
 
@@ -1703,12 +1745,12 @@ msgstr "Informació de la limitació de la tarifa"
 msgid "Rate Limited Options"
 msgstr "Opcions de la tarifa limitada"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:273
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:274
 msgid "Rate Limited User Wallet Setup"
 msgstr "Configuració del moneder de tarifa limitada"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:650
-#: src/components/wallet/standard/WalletStandard.tsx:576
+#: src/components/wallet/standard/WalletStandard.tsx:634
 msgid "Receive Address"
 msgstr "Adreça per rebre"
 
@@ -1741,10 +1783,6 @@ msgstr "Canvia el nom"
 msgid "Report an Issue..."
 msgstr "Informa d'un problema..."
 
-#: src/components/backup/BackupRestore.tsx:160
-msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
-msgstr "Restaura la metadada per monedes acolorides i altres moneders intel·ligents des de còpia de seguretat"
-
 #: src/components/backup/BackupRestore.tsx:107
 #~ msgid "Restore Smart Wallets From Backup"
 #~ msgstr ""
@@ -1754,7 +1792,7 @@ msgstr "Restaura la metadada per monedes acolorides i altres moneders intel·lig
 #~ msgid "SB Height"
 #~ msgstr "SB Height"
 
-#: src/components/backup/BackupRestore.tsx:186
+#: src/components/backup/BackupRestore.tsx:227
 msgid "Safe To Skip"
 msgstr "És segur saltar-se aquest pas"
 
@@ -1850,16 +1888,16 @@ msgid "Sell"
 msgstr "Vendre"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:620
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:748
-#: src/components/wallet/standard/WalletStandard.tsx:542
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:759
+#: src/components/wallet/standard/WalletStandard.tsx:584
 msgid "Send"
 msgstr "Enviar"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:460
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:461
 msgid "Send this info packet to your Rate Limited Wallet user who must use it to complete setup of their wallet:"
 msgstr "Envia aquest paquet d'informació a l'usuari del moneder amb tarifa limitada, que l'ha de fer servir per completar la configuració del seu moneder:"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:279
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:280
 msgid "Send your pubkey to your Rate Limited Wallet admin:"
 msgstr "Enviar la seva clau pública al teu administrador de moneder de tarifa limitada:"
 
@@ -1914,12 +1952,12 @@ msgstr "Quantitat gastable per interval"
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:24
 #: src/components/wallet/coloured/WalletColoured.tsx:384
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:548
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:549
 msgid "Spendable Balance"
 msgstr "Saldo gastable"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:396
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:443
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:397
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:444
 msgid "Spending Interval (number of blocks): {interval}"
 msgstr "Interval gastable (en nombre de blocs): {interval}"
 
@@ -1927,10 +1965,15 @@ msgstr "Interval gastable (en nombre de blocs): {interval}"
 msgid "Spending Interval Length (number of blocks)"
 msgstr "Longitud de l'interval gastable (en nombre de blocs)"
 
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:402
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:449
+msgid "Spending Limit (Dortper interval): {0}"
+msgstr ""
+
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (chia per interval): {0}"
-msgstr "Límit de despesa (Chia per interval): {0}"
+#~ msgid "Spending Limit (chia per interval): {0}"
+#~ msgstr "Límit de despesa (Chia per interval): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1981,7 +2024,7 @@ msgstr "Estat:"
 #~ msgid "Sub Block at height {0} in the Chia blockchain"
 #~ msgstr "Sub Block at height {0} in the Chia blockchain"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:348
 msgid "Submit"
 msgstr "Enviar"
 
@@ -2122,8 +2165,12 @@ msgid "This feature is available only from the GUI."
 msgstr "Aquesta característica només està disponible a la interfície gràfica."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
-msgstr "Aquesta és la quantitat de Chia que pots fer servir per fer transaccions. No inclou les recompenses agrícoles pendents, transaccions entrants pendents ni Chia que acabis de gastar, però que encara no es troba a la cadena de blocs."
+#~ msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
+#~ msgstr "Aquesta és la quantitat de Chia que pots fer servir per fer transaccions. No inclou les recompenses agrícoles pendents, transaccions entrants pendents ni Chia que acabis de gastar, però que encara no es troba a la cadena de blocs."
+
+#: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
+msgid "This is the amount of Dortthat you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Dortthat you have just spent but is not yet in the blockchain."
+msgstr ""
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2141,9 +2188,14 @@ msgstr "Aquesta és l'hora de l'últim sub bloc de punt més alt."
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "Moment en què el bloc ha estat creat pel pagès, abans de ser finalitzat amb una prova de temps"
 
+#: src/components/wallet/card/WalletCardTotalBalance copy.tsx:42
+#: src/components/wallet/card/WalletCardTotalBalance.tsx:50
+msgid "This is the total amount of Dortin the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgstr ""
+
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Aquesta és la quantitat total de Chia, a la cadena de blocs del sub bloc pic actual, controlada per les teves claus privades. Inclou les recompenses pel cultiu congelades, però no les transaccions entrants i sortints pendents."
+#~ msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+#~ msgstr "Aquesta és la quantitat total de Chia, a la cadena de blocs del sub bloc pic actual, controlada per les teves claus privades. Inclou les recompenses pel cultiu congelades, però no les transaccions entrants i sortints pendents."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
@@ -2188,8 +2240,12 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Aquesta transacció va ser inclosa en aquesta alçada de bloc"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of Chia is no longer compatible with the blockchain and can not safely farm."
-msgstr "Aquesta versió de Chia ja no és compatible amb la cadena de blocs i pot no cultivar amb seguretat."
+#~ msgid "This version of Chia is no longer compatible with the blockchain and can not safely farm."
+#~ msgstr "Aquesta versió de Chia ja no és compatible amb la cadena de blocs i pot no cultivar amb seguretat."
+
+#: src/components/app/AppTimeBombAlert.tsx:19
+msgid "This version of Dortis no longer compatible with the blockchain and can not safely farm."
+msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2207,9 +2263,10 @@ msgstr "Segell de temps"
 msgid "To"
 msgstr "Per a"
 
-#: src/components/wallet/card/WalletCardTotalBalance.tsx:32
+#: src/components/wallet/card/WalletCardTotalBalance copy.tsx:40
+#: src/components/wallet/card/WalletCardTotalBalance.tsx:48
 #: src/components/wallet/coloured/WalletColoured.tsx:379
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:543
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:544
 msgid "Total Balance"
 msgstr "Saldo total"
 
@@ -2307,7 +2364,7 @@ msgid "Unsaved Changes"
 msgstr ""
 
 #: src/components/wallet/create/createRLAdmin.jsx:281
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:293
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:294
 msgid "User Pubkey"
 msgstr "Clau pública de l'usuari"
 
@@ -2349,7 +2406,7 @@ msgstr "Veure les ofertes"
 msgid "View Pool Login Link"
 msgstr ""
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:562
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:563
 msgid "View pending balances"
 msgstr "Veure els saldos pendents"
 
@@ -2377,7 +2434,7 @@ msgid "Waiting for the transaction to be confirmed"
 msgstr ""
 
 #: src/components/pool/PoolOverview.tsx:185
-#: src/components/wallet/standard/WalletStandard.tsx:674
+#: src/components/wallet/standard/WalletStandard.tsx:732
 msgid "Wallet Status:"
 msgstr ""
 
@@ -2458,7 +2515,7 @@ msgstr "Benvingut a Chia. Inicia la sessió amb una clau existent o crea'n una d
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
 msgstr "Benvingut/da! Les paraules següents són necessàries per a la còpia de seguretat de la cartera. Sense elles, perdràs l'accés a la teva cartera, guarda-les a un lloc segur. Guarda cada paraula juntament amb el número d’ordre al costat. (L'ordre és important)"
 
-#: src/components/wallet/rateLimited/WalletRateLimited.jsx:316
+#: src/components/wallet/rateLimited/WalletRateLimited.jsx:317
 msgid "When you receive the setup info packet from your admin, enter it below to complete your Rate Limited Wallet setup:"
 msgstr "Quan rebis el paquet d'informació sobre la configuració del teu administrador, introdueix-lo aquí per completar la configuració de la cartera de tarifa limitada:"
 
@@ -2577,6 +2634,10 @@ msgstr "no sincronitzat"
 
 #: src/components/plot/add/PlotAdd.tsx:105
 msgid "p2_singleton_puzzle_hash is not defined"
+msgstr ""
+
+#: src/components/backup/BackupRestore.tsx:212
+msgid "password"
 msgstr ""
 
 #: src/components/wallet/WalletStatusCard.tsx:27

@@ -1,4 +1,4 @@
-const chia = require('../../util/chia');
+const Dort= require('../../util/chia');
 
 describe('chia', () => {
   it('converts number mojo to chia', () => {
@@ -11,22 +11,22 @@ describe('chia', () => {
 
     expect(result).toBe(0.000001);
   });
-  it('converts number mojo to chia string', () => {
+  it('converts number mojo to Dortstring', () => {
     const result = chia.mojo_to_chia_string(1000000);
 
     expect(result).toBe('0.000001');
   });
-  it('converts string mojo to chia string', () => {
+  it('converts string mojo to Dortstring', () => {
     const result = chia.mojo_to_chia_string('1000000');
 
     expect(result).toBe('0.000001');
   });
-  it('converts number chia to mojo', () => {
+  it('converts number Dortto mojo', () => {
     const result = chia.chia_to_mojo(0.000001);
 
     expect(result).toBe(1000000);
   });
-  it('converts string chia to mojo', () => {
+  it('converts string Dortto mojo', () => {
     const result = chia.chia_to_mojo('0.000001');
 
     expect(result).toBe(1000000);

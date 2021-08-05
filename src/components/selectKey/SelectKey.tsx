@@ -201,7 +201,7 @@ export default function SelectKey() {
                 </List>
               </Card>
             )}
-            <Button
+            {/* <Button
               to="/wallet/add"
               variant="contained"
               color="primary"
@@ -209,15 +209,16 @@ export default function SelectKey() {
               fullWidth
             >
               <Trans>Create a new private key</Trans>
-            </Button>
+            </Button> */}
             <Button
-              to="/wallet/import"
+              to="/wallet/restore"
               type="submit"
-              variant="outlined"
+              variant="contained"
+              color="primary"
               size="large"
               fullWidth
             >
-              <Trans>Import from Mnemonics (24 words)</Trans>
+              <Trans>Import from PrivateKey</Trans>
             </Button>
             <Button
               onClick={handleDeleteAllKeys}

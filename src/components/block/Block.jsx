@@ -27,7 +27,7 @@ import {
   sha256,
 } from '../../util/utils';
 import { getBlockRecord, getBlock } from '../../modules/fullnodeMessages';
-import { mojo_to_chia } from '../../util/chia';
+import { mojo_to_Dort} from '../../util/chia';
 import {
   calculatePoolReward,
   calculateBaseFarmerReward,
@@ -334,7 +334,7 @@ export default function Block() {
         title={
           <BlockTitle>
             <Trans>
-              Block at height {blockRecord.height} in the Chia blockchain
+              Block at height {blockRecord.height} in the Dortblockchain
             </Trans>
           </BlockTitle>
         }

@@ -1,8 +1,8 @@
 {
-  "name": "chia-blockchain",
-  "author": "Chia Network <hello@chia.net> (https://chia.net/)",
-  "description": "GUI for Chia Blockchain",
-  "productName": "Chia Blockchain",
+  "name": "Dort-blockchain",
+  "author": "Dort Network <hello@Dort.net> (https://Dort.net/)",
+  "description": "GUI for DortBlockchain",
+  "productName": "Dort Blockchain",
   "private": true,
   "homepage": "./",
   "main": "build/electron/main.js",
@@ -38,6 +38,7 @@
     "@nivo/core": "^0.72.0",
     "@nivo/line": "^0.72.0",
     "@rehooks/local-storage": "2.4.0",
+    "@web3-react/core": "^6.1.9",
     "bech32": "^2.0.0",
     "big.js": "^6.1.1",
     "byte-size": "^7.0.1",
@@ -81,6 +82,7 @@
     "unique-names-generator": "^4.5.0",
     "use-dark-mode": "^2.3.1",
     "validator": "^13.6.0",
+    "web3": "^1.5.0",
     "ws": "^7.5.2",
     "yarn": "^1.22.10"
   },

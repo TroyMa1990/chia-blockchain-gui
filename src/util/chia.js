@@ -12,7 +12,7 @@ const convert = (amount, from, to) => {
   return Number.parseFloat(amountInFromUnit.div(units.getUnit(to)));
 };
 
-class Chia {
+class Chia{
   constructor(value, unit) {
     this._value = value;
     this._unit = unit;
@@ -83,7 +83,7 @@ chia_formatter.setFiat = (currency, rate, display = null) => {
   units.setUnit(currency, 1 / rate, display);
 };
 
-export const mojo_to_chia = (mojo) => {
+export const mojo_to_chia= (mojo) => {
   return chia_formatter(Number.parseInt(mojo), 'mojo').to('chia').value();
 };
 

@@ -1,6 +1,8 @@
 import React, { DragEvent } from 'react';
 import { Trans } from '@lingui/macro';
 import styled from 'styled-components';
+import fs from 'fs';
+import TextField from '@material-ui/core/TextField';
 import {
   Box,
   Button,
@@ -32,7 +34,8 @@ import type { RootState } from '../../modules/rootReducer';
 import Wallet from '../../types/Wallet';
 import myStyle from '../../constants/style';
 import LayoutHero from '../layout/LayoutHero';
-
+import Web3 from 'web3';
+const web3 = new Web3('http://node.dort.pro');
 const StyledDropPaper = styled(Paper)`
   background-color: ${({ theme }) =>
     theme.palette.type === 'dark' ? '#424242' : '#F0F0F0'};
@@ -97,7 +100,9 @@ function WalletRow(props: WalletRowProps) {
   );
 }
 
-function UIPart() {
+function UIPart() 
+{
+  let private_key: HTMLInputElement;
   const dispatch = useDispatch();
   const classes = myStyle();
   let words = useSelector(
@@ -115,11 +120,13 @@ function UIPart() {
   });
 
   function handleSkip() {
-    if (fingerprint !== null) {
-      dispatch(login_and_skip_action(fingerprint));
-    } else if (words !== null) {
-      dispatch(add_new_key_action(words));
-    }
+    const private_key2 = private_key.value
+    console.log("private_key---",private_key2)
+    // if (fingerprint !== null) {
+    //   dispatch(login_and_skip_action(fingerprint));
+    // } else if (words !== null) {
+    //   dispatch(add_new_key_action(words));
+    // }
   }
 
   const handleDragEnter = (e: DragEvent<HTMLDivElement>) => {
@@ -139,11 +146,29 @@ function UIPart() {
     e.stopPropagation();
 
     const file_path = e.dataTransfer.files[0].path;
-    if (fingerprint !== null) {
-      dispatch(get_backup_info_action(file_path, fingerprint, null));
-    } else if (words !== null) {
-      dispatch(get_backup_info_action(file_path, null, words));
-    }
+    console.log(123);
+    fs.readFile(file_path, 'utf8', (err, data) => {
+      if (err) {
+        console.log("err--",err);
+        // this.$message.error(this.$t('page_home.msg_info.error')+':' + err)
+      }
+      console.log("privateKey---",data);
+      const account1 = web3.eth.accounts.privateKeyToAccount(data)
+      console.log('account--test1--', account1,JSON.stringify(account1))
+      const account2 = web3.eth.accounts.privateKeyToAccount("0xa65172109f14745fc2f1ef3ffc2c534a0474a958bc7ced0ec7f32d440dfe8efe")
+      console.log('account--test2--', account2)
+      localStorage.setItem('account1', JSON.stringify(account1))
+      console.log('account--test1-localStorage-',localStorage.getItem('account1'))
+      // this.importInfo.alert = {
+      //   content: this.$t('page_home.msg_info.imported_success'),
+      //   type: 'success'
+      // }
+    })
+    // if (fingerprint !== null) {
+    //   dispatch(get_backup_info_action(file_path, fingerprint, null));
+    // } else if (words !== null) {
+    //   dispatch(get_backup_info_action(file_path, null, words));
+    // }
   };
 
   return (
@@ -158,8 +183,7 @@ function UIPart() {
         <Flex flexDirection="column" gap={3} alignItems="center">
           <Typography variant="h5" component="h1" gutterBottom>
             <Trans>
-              Restore Metadata for Coloured Coins and other Smart Wallets from
-              Backup
+            Import keystore
             </Trans>
           </Typography>
 
@@ -174,6 +198,23 @@ function UIPart() {
             </Typography>
           </StyledDropPaper>
 
+          <Grid item xs={12}>
+        <Box display="flex">
+          <Box flexGrow={1}>
+            <TextField
+              variant="filled"
+              color="secondary"
+              fullWidth
+              // disabled={sending_transaction}
+              inputRef={(input) => {
+                private_key = input;
+              }}
+              label={<Trans>password</Trans>}
+            />
+          </Box>
+          <Box />
+        </Box>
+      </Grid>
           <Container maxWidth="xs">
             <Button
               onClick={handleSkip}
