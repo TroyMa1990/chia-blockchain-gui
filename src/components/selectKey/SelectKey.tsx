@@ -213,12 +213,11 @@ export default function SelectKey() {
             <Button
               to="/wallet/restore"
               type="submit"
-              variant="contained"
-              color="primary"
+              variant="outlined"
               size="large"
               fullWidth
             >
-              <Trans>Import from PrivateKey</Trans>
+              <Trans>Import from Mnemonics (24 words)</Trans>
             </Button>
             <Button
               onClick={handleDeleteAllKeys}

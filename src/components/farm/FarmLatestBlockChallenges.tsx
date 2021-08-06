@@ -68,7 +68,7 @@ export default function FarmLatestBlockChallenges() {
             href="https://www.chiaexplorer.com/"
             target="_blank"
           >
-            DortExplorer
+            Chia Explorer
           </Link>{' '}
           built by an open source developer.
         </Trans>

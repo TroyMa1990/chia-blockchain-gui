@@ -66,7 +66,7 @@ export default function Amount(props: AmountProps) {
           spellCheck: false,
           inputComponent: NumberFormatCustom as any,
           endAdornment: (
-            <InputAdornment position="end">DTC</InputAdornment>
+            <InputAdornment position="end">{currencyCode}</InputAdornment>
           ),
         }}
         {...rest}

@@ -48,7 +48,7 @@ const getExecutablePath = (dist_file) => {
 const getChiaVersion = () => {
   let version = null;
   const exePath = getExecutablePath('chia');
-  // first see if we can get a Dortexe in a standard location relative to where we are
+  // first see if we can get a chia exe in a standard location relative to where we are
   try {
     version = child_process
       .execFileSync(exePath, ['version'], {
@@ -56,7 +56,7 @@ const getChiaVersion = () => {
       })
       .trim();
   } catch (e1) {
-    // that didn't work, let's try as if we're in the venv or Dortis on the path
+    // that didn't work, let's try as if we're in the venv or chia is on the path
     try {
       version = child_process
         .execFileSync(path.basename(exePath), ['version'], {

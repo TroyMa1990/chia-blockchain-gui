@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore Chia’s blocks further? Check out <0>DortExplorer</0> built by an open source developer."
-msgstr "* Bạn muốn khám phá thêm về DortBlockchain? Xem <0> DortExplorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
+msgid "*Want to explore Chia’s blocks further? Check out <0>Chia Explorer</0> built by an open source developer."
+msgstr "* Bạn muốn khám phá thêm về Chia Blockchain? Xem <0> Chia Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
 
 #: src/components/plot/add/PlotAddNFT.tsx:123
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "Harvester là một dịch vụ chạy trên một máy chứa các tệ
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About Dort Blockchain"
-msgstr "Về DortBlockchain"
+msgid "About Chia Blockchain"
+msgstr "Về Chia Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -117,7 +117,7 @@ msgstr "Địa chỉ (ví)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:701
 #: src/components/wallet/standard/WalletStandard.tsx:503
-msgid "Address hash"
+msgid "Address / Puzzle hash"
 msgstr "Địa chỉ / Puzzle hash"
 
 #: src/components/core/components/Amount/Amount.tsx:96
@@ -216,8 +216,8 @@ msgid "Block VDF Iterations"
 msgstr "Khối VDF lặp lại"
 
 #: src/components/block/Block.jsx:336
-msgid "Block at height {0} in the Dortblockchain"
-msgstr "Khối tại height {0} trong Dortblockchain"
+msgid "Block at height {0} in the Chia blockchain"
+msgstr "Khối tại height {0} trong Chia blockchain"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -313,11 +313,11 @@ msgid "Chia"
 msgstr "Chia"
 
 #: src/electron/main.tsx:358
-msgid "DortBlockchain Wiki"
-msgstr "DortBlockchain Wiki"
+msgid "Chia Blockchain Wiki"
+msgstr "Chia Blockchain Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:647
-msgid "Dort Wallet "
+msgid "Chia Wallet"
 msgstr "Ví Chia"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
@@ -690,8 +690,8 @@ msgid "Edit"
 msgstr "Chỉnh sửa"
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Dort Wallet ."
-msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví Dortcủa bạn."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your Chia wallet."
+msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví Chia của bạn."
 
 #: src/components/farm/FarmerStatus.tsx:21
 #: src/components/farm/FarmerStatus.tsx:22
@@ -704,8 +704,8 @@ msgid "Error"
 msgstr "Lỗi"
 
 #: src/components/wallet/standard/WalletStandard.tsx:456
-msgid "Error: Cannot send Dortto coloured address. Please enter a Dortaddress."
-msgstr "Lỗi: Không thể gửi Dortđến địa chỉ coloured. Vui lòng nhập địa chỉ chia."
+msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
+msgstr "Lỗi: Không thể gửi chia đến địa chỉ coloured. Vui lòng nhập địa chỉ chia."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -955,7 +955,7 @@ msgid "Import Wallet from Mnemonics"
 msgstr "Nhập ví từ Mnemonics"
 
 #: src/components/selectKey/SelectKey.tsx:220
-msgid "Import from PrivateKey"
+msgid "Import from Mnemonics (24 words)"
 msgstr "Nhập ví từ Mnemonics"
 
 #: src/components/fullNode/FullNode.jsx:45
@@ -1736,7 +1736,7 @@ msgid "Report an Issue..."
 msgstr "Báo cáo vấn đề..."
 
 #: src/components/backup/BackupRestore.tsx:160
-msgid "Import private key file"
+msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
 msgstr "Khôi phục siêu dữ liệu cho  coin sắc màu và các ví thông minh khác từ bản sao lưu"
 
 #: src/components/backup/BackupRestore.tsx:107
@@ -1922,8 +1922,8 @@ msgstr "Chi tiêu thời gian khoảng (số khối): {thời gian khoảng các
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (Dortper interval): {0}"
-msgstr "Giới hạn Chi tiêu (Dortcho mỗi khoảng thời gian): {0}"
+msgid "Spending Limit (chia per interval): {0}"
+msgstr "Giới hạn Chi tiêu (chia cho mỗi khoảng thời gian): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1971,8 +1971,8 @@ msgstr "Tình trạng:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Dortblockchain"
-#~ msgstr "Sub Block at height {0} in the Dortblockchain"
+#~ msgid "Sub Block at height {0} in the Chia blockchain"
+#~ msgstr "Sub Block at height {0} in the Chia blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2115,8 +2115,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Tính năng này chỉ khả dụng trên GUI."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of Dortthat you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Dortthat you have just spent but is not yet in the blockchain."
-msgstr "Đây là số lượng Dortmà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và Dortmà bạn vừa chi tiêu nhưng chưa có trong blockchain."
+msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
+msgstr "Đây là số lượng Chia mà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và Chia mà bạn vừa chi tiêu nhưng chưa có trong blockchain."
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2135,7 +2135,7 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Đây là thời gian khối được tạo ra bởi farmer, trước khi nó được hoàn thiện với một bằng chứng về thời gian"
 
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of Dortin the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
 msgstr "Đây là tổng lượng XCH trong chuỗi khối ở khối phụ cao nhất hiện tại được kiểm soát bởi các khóa riêng của bạn. Nó bao gồm phần thưởng farm bị đóng băng, nhưng không phải là các giao dịch đến và đi đang chờ xử lý."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
@@ -2181,8 +2181,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Giao dịch này đã được đưa vào blockchain ở chiều cao khối này"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of Dortis no longer compatible with the blockchain and can not safely farm."
-msgstr "Phiên bản Dortnày không còn tương thích với blockchain và không thể farm một cách an toàn."
+msgid "This version of Chia is no longer compatible with the blockchain and can not safely farm."
+msgstr "Phiên bản Chia này không còn tương thích với blockchain và không thể farm một cách an toàn."
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2207,7 +2207,7 @@ msgid "Total Balance"
 msgstr "Tổng số dư"
 
 #: src/components/farm/card/FarmCardTotalChiaFarmed.tsx:15
-#~ msgid "Total DortFarmed"
+#~ msgid "Total Chia Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:20
@@ -2515,8 +2515,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the Dortapplication as this version will stop working soon!"
-#~ msgstr "You need to upgrade the Dortapplication as this version will stop working soon!"
+#~ msgid "You need to upgrade the Chia application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the Chia application as this version will stop working soon!"
 
 #: src/components/plotNFT/select/PlotNFTSelectFaucet.tsx:37
 msgid "You need {currencyCode} to join a pool."
@@ -2604,8 +2604,8 @@ msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} phần thưởng khối"
 
 #: src/components/farm/card/FarmCardTotalChiaFarmed.tsx:29
-msgid "{currencyCode} Total DortFarmed"
-msgstr "{currencyCode} Tổng số Dortthu được"
+msgid "{currencyCode} Total Chia Farmed"
+msgstr "{currencyCode} Tổng số Chia thu được"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

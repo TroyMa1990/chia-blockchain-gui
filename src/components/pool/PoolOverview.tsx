@@ -31,7 +31,7 @@ import PlotNFTStateEnum from '../../constants/PlotNFTState';
 import PlotNFTUnconfirmedCard from '../plotNFT/PlotNFTUnconfirmedCard';
 import PlotNFTState from '../plotNFT/PlotNFTState';
 import useUnconfirmedPlotNFTs from '../../hooks/useUnconfirmedPlotNFTs';
-import { mojo_to_Dort} from '../../util/chia';
+import { mojo_to_chia } from '../../util/chia';
 import WalletStatus from '../wallet/WalletStatus';
 
 const groupsCols = [

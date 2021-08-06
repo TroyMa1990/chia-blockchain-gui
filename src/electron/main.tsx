@@ -176,7 +176,7 @@ if (!handleSquirrelEvent()) {
       }
       // Uncomment this to open devtools by default
       // if (!guessPackaged()) {
-        // mainWindow.webContents.openDevTools();
+      //   mainWindow.webContents.openDevTools();
       // }
       mainWindow.on('close', (e) => {
         // if the daemon isn't local we aren't going to try to start/stop it
@@ -355,7 +355,7 @@ if (!handleSquirrelEvent()) {
         role: 'help',
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'DortBlockchain Wiki' }),
+            label: i18n._(/* i18n */ { id: 'Chia Blockchain Wiki' }),
             click: () => {
               openExternal(
                 'https://github.com/Chia-Network/chia-blockchain/wiki',
@@ -414,12 +414,12 @@ if (!handleSquirrelEvent()) {
     ];
 
     if (process.platform === 'darwin') {
-      // DortBlockchain menu (Mac)
+      // Chia Blockchain menu (Mac)
       template.unshift({
         label: i18n._(/* i18n */ { id: 'Chia' }),
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
+            label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
             click: () => {
               openAbout();
             },
@@ -506,7 +506,7 @@ if (!handleSquirrelEvent()) {
           type: 'separator',
         },
         {
-          label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
+          label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
           click() {
             openAbout();
           },
