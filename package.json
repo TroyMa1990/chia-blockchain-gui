@@ -10,6 +10,7 @@
     "node": ">=12.13.0"
   },
   "scripts": {
+    "package": "electron-packager . dortminer --platform=win32 --arch=x64    --out=./out  --app-version=0.0.1 --asar  --ignore='(.git)' --overwrite --electron-version 11.4.10",
     "start": "cross-env NODE_ENV=development webpack serve --config ./webpack.react.babel.ts",
     "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.babel.ts --mode development && electron .",
     "dev:react": "cross-env NODE_ENV=development NODE_OPTIONS=--max_old_space_size=4096 webpack serve --config webpack.react.babel.ts --mode development",

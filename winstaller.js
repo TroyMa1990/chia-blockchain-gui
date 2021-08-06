@@ -4,6 +4,7 @@ const path = require('path')
 getInstallerConfig()
   .then(createWindowsInstaller)
   .catch((error) => {
+    console.log(123)
     console.error(error.message || error)
     process.exit(1)
   })
@@ -15,7 +16,7 @@ function getInstallerConfig () {
 
   return Promise.resolve({
     appDirectory: path.join(rootPath, 'Chia-win32-x64'),
-    authors: 'Chia Network',
+    authors: 'DortNetwork',
     version: process.env.CHIA_INSTALLER_VERSION,
     noMsi: true,
     iconUrl: 'https://raw.githubusercontent.com/Chia-Network/chia-blockchain/master/electron-react/src/assets/img/chia.ico',
