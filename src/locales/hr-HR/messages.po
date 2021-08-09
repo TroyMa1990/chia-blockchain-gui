@@ -42,8 +42,8 @@ msgstr "128 kanti je preporučeno"
 msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "Sakupljač je servis pokrenut na računalu gdje su spremljena zemljišta. Farmer i sakupljač razgovaraju sa Punim Čvorom radi provjere stanja lanca. Niže možeš vidjeti spojene sakupljače Saznaj više"
 
-#: src/electron/main.tsx:422
-#: src/electron/main.tsx:509
+#: src/electron/main.tsx:428
+#: src/electron/main.tsx:515
 msgid "About Chia Blockchain"
 msgstr "O Chia Blockchainu"
 
@@ -86,14 +86,14 @@ msgstr "Dodaj Zemljište u red čekanja"
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:46
 #: src/components/plot/PlotHeader.tsx:63
-#: src/components/plot/add/PlotAdd.tsx:160
+#: src/components/plot/add/PlotAdd.tsx:170
 #: src/components/plot/overview/PlotOverviewHero.tsx:54
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:230
 #: src/components/plotNFT/PlotNFTCard.tsx:272
 msgid "Add a Plot"
 msgstr "Dodaj Zemljište"
 
-#: src/components/plotNFT/PlotNFTAdd.tsx:51
+#: src/components/plotNFT/PlotNFTAdd.tsx:62
 msgid "Add a Plot NFT"
 msgstr ""
 
@@ -112,16 +112,13 @@ msgstr ""
 #: src/components/wallet/coloured/WalletColoured.tsx:561
 #: src/components/wallet/coloured/WalletColoured.tsx:657
 #: src/components/wallet/standard/WalletStandard.tsx:654
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:561
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:657
-#: src/components/wallet.bak/standard/WalletStandard.tsx:596
 msgid "Address"
 msgstr "Adresa"
 
 #: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:701
 #: src/components/wallet.bak/standard/WalletStandard.tsx:503
-msgid "Address / Puzzle hash"
-msgstr "Adresa / Zagonetni hash"
+#~ msgid "Address / Puzzle hash"
+#~ msgstr "Adresa / Zagonetni hash"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:712
 #: src/components/wallet/standard/WalletStandard.tsx:545
@@ -135,20 +132,14 @@ msgstr ""
 #: src/components/wallet/create/createNewColouredCoin.jsx:119
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:731
 #: src/components/wallet/standard/WalletStandard.tsx:555
-#: src/components/wallet.bak/WalletHistory.tsx:62
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:119
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:720
-#: src/components/wallet.bak/standard/WalletStandard.tsx:513
 msgid "Amount"
 msgstr "Iznos"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:581
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:581
 msgid "Amount ({cc_unit})"
 msgstr "Iznos ({cc_unit})"
 
 #: src/components/wallet/create/createRLAdmin.jsx:239
-#: src/components/wallet.bak/create/createRLAdmin.jsx:239
 msgid "Amount For Initial Coin"
 msgstr "Iznos za Inicijalni novčić"
 
@@ -159,7 +150,6 @@ msgstr "Sigurno želiš ukloniti zemljište? Zemljište se ne može vratiti."
 
 #: src/components/plotNFT/PlotNFTCard.tsx:125
 #: src/components/wallet/standard/WalletStandard.tsx:690
-#: src/components/wallet.bak/standard/WalletStandard.tsx:632
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr ""
 
@@ -167,7 +157,7 @@ msgstr ""
 msgid "Are you sure you want to disconnect?"
 msgstr "Sigurno želiš prekinuti vezu?"
 
-#: src/electron/main.tsx:197
+#: src/electron/main.tsx:198
 msgid "Are you sure you want to quit? GUI Plotting and farming will stop."
 msgstr "Sigurno želiš izaći? Obrada zemljišta i uzgoj će prestati sa radom."
 
@@ -195,8 +185,6 @@ msgstr "Datoteka sigurnosne kopije se koristi za povrat pametnih novčanika."
 
 #: src/components/wallet/coloured/WalletColoured.tsx:377
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:542
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:377
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:541
 msgid "Balance"
 msgstr "Stanje"
 
@@ -322,21 +310,21 @@ msgstr ""
 msgid "Change Pool"
 msgstr ""
 
-#: src/electron/main.tsx:401
+#: src/electron/main.tsx:407
 msgid "Chat on KeyBase"
 msgstr "Razgovaraj na KeyBase"
 
-#: src/electron/main.tsx:419
+#: src/electron/main.tsx:425
 msgid "Chia"
 msgstr "Chia"
 
-#: src/electron/main.tsx:358
+#: src/electron/main.tsx:364
 msgid "Chia Blockchain Wiki"
 msgstr "Chia Blockchain Wiki"
 
 #: src/components/wallet.bak/standard/WalletStandard.tsx:647
-msgid "Chia Wallet"
-msgstr "Chia Novčanik"
+#~ msgid "Chia Wallet"
+#~ msgstr "Chia Novčanik"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -370,32 +358,27 @@ msgid "Colour"
 msgstr "Boja"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:223
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:223
 msgid "Colour Info"
 msgstr "Info boje"
 
 #: src/components/wallet/create/createExistingColouredCoin.jsx:110
-#: src/components/wallet.bak/create/createExistingColouredCoin.jsx:110
 msgid "Colour String"
 msgstr "Lanac boje"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:228
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:228
 msgid "Colour:"
 msgstr "Boja:"
 
 #: src/components/wallet/create/WalletCreate.jsx:118
-#: src/components/wallet.bak/create/WalletCreate.jsx:118
 msgid "Coloured Coin"
 msgstr "Obojani novčić"
 
 #: src/components/wallet/create/WalletCreate.jsx:160
-#: src/components/wallet.bak/create/WalletCreate.jsx:160
 msgid "Coloured Coin Options"
 msgstr "Opcije obojanog novčića"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:168
-#: src/electron/main.tsx:195
+#: src/electron/main.tsx:196
 #: src/hooks/useAbsorbRewards.tsx:46
 msgid "Confirm"
 msgstr "Potvrdi"
@@ -406,7 +389,6 @@ msgstr "Potvrdi odjavu"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:121
 #: src/components/wallet/standard/WalletStandard.tsx:686
-#: src/components/wallet.bak/standard/WalletStandard.tsx:628
 msgid "Confirmation"
 msgstr ""
 
@@ -415,7 +397,6 @@ msgid "Confirmed at block:"
 msgstr "Potvrđeno na bloku:"
 
 #: src/components/wallet/WalletHistory.tsx:51
-#: src/components/wallet.bak/WalletHistory.tsx:51
 msgid "Confirmed at height {0}"
 msgstr "Potvrđeno na visini {0}"
 
@@ -458,7 +439,7 @@ msgstr "Vrsta veze"
 msgid "Connections"
 msgstr "Veze"
 
-#: src/electron/main.tsx:382
+#: src/electron/main.tsx:388
 msgid "Contribute on GitHub"
 msgstr "Doprinos na GitHub"
 
@@ -470,10 +451,6 @@ msgstr "Kopirano"
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:307
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:429
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:486
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:670
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:306
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:428
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:485
 msgid "Copy"
 msgstr "Kopiraj"
 
@@ -482,21 +459,16 @@ msgid "Copy to Clipboard"
 msgstr "Kopiraj u Međuspremnik"
 
 #: src/components/backup/BackupCreate.tsx:78
-#: src/components/plot/add/PlotAdd.tsx:177
-#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:175
+#: src/components/plot/add/PlotAdd.tsx:187
+#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:176
 #: src/components/wallet/create/createExistingColouredCoin.jsx:133
 #: src/components/wallet/create/createNewColouredCoin.jsx:142
 #: src/components/wallet/create/createRLAdmin.jsx:307
 #: src/components/wallet/create/createRLUser.jsx:99
-#: src/components/wallet.bak/create/createExistingColouredCoin.jsx:133
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:142
-#: src/components/wallet.bak/create/createRLAdmin.jsx:307
-#: src/components/wallet.bak/create/createRLUser.jsx:99
 msgid "Create"
 msgstr "Kreiraj"
 
 #: src/components/wallet/create/WalletCreate.jsx:276
-#: src/components/wallet.bak/create/WalletCreate.jsx:276
 msgid "Create DID wallet"
 msgstr "Stvori DID novčanik"
 
@@ -509,12 +481,10 @@ msgstr "Kreiraj Ponudu"
 #~ msgstr "Create Plot"
 
 #: src/components/wallet/create/createRLAdmin.jsx:188
-#: src/components/wallet.bak/create/createRLAdmin.jsx:188
 msgid "Create Rate Limited Admin Wallet"
 msgstr "Kreiraj ograničeni Administratorski novčanik"
 
 #: src/components/wallet/create/createRLUser.jsx:78
-#: src/components/wallet.bak/create/createRLUser.jsx:78
 msgid "Create Rate Limited User Wallet"
 msgstr "Kreiraj ograničeni Korisnički novčanik"
 
@@ -528,9 +498,6 @@ msgstr "Kreiraj Ponudu"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:695
 #: src/components/wallet/standard/WalletStandard.tsx:525
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:543
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:684
-#: src/components/wallet.bak/standard/WalletStandard.tsx:483
 msgid "Create Transaction"
 msgstr "Kreiraj Transakciju"
 
@@ -551,27 +518,22 @@ msgid "Create a new private key"
 msgstr "Kreiraj novi privatni ključ"
 
 #: src/components/wallet/create/WalletCreate.jsx:224
-#: src/components/wallet.bak/create/WalletCreate.jsx:224
 msgid "Create admin wallet"
 msgstr "Kreiraj administratorski novčanik"
 
 #: src/components/wallet/create/WalletCreate.jsx:170
-#: src/components/wallet.bak/create/WalletCreate.jsx:170
 msgid "Create new coloured coin"
 msgstr "Kreiraj novi obojani novčić"
 
 #: src/components/wallet/create/WalletCreate.jsx:230
-#: src/components/wallet.bak/create/WalletCreate.jsx:230
 msgid "Create user wallet"
 msgstr "Kreiraj korisnički novčanik"
 
 #: src/components/wallet/create/createExistingColouredCoin.jsx:93
-#: src/components/wallet.bak/create/createExistingColouredCoin.jsx:93
 msgid "Create wallet for colour"
 msgstr "Kreiraj novčanik za boju"
 
 #: src/components/wallet/create/WalletCreate.jsx:177
-#: src/components/wallet.bak/create/WalletCreate.jsx:177
 msgid "Create wallet for existing colour"
 msgstr "Kreiraj novčanik za postojeću boju"
 
@@ -596,8 +558,8 @@ msgid "Creating Plot NFT for Self Pooling"
 msgstr ""
 
 #: src/components/plot/add/PlotAdd.tsx:86
-msgid "Currency code is not defined"
-msgstr ""
+#~ msgid "Currency code is not defined"
+#~ msgstr ""
 
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:139
 #: src/components/plotNFT/PlotNFTCard.tsx:181
@@ -628,7 +590,6 @@ msgstr "OPREZ: Trajno brisanje privatnog ključa"
 #: src/components/farm/FarmLastAttemptedProof.tsx:32
 #: src/components/trading/TradingOverview.jsx:137
 #: src/components/wallet/WalletHistory.tsx:46
-#: src/components/wallet.bak/WalletHistory.tsx:46
 msgid "Date"
 msgstr "Datum"
 
@@ -644,7 +605,6 @@ msgstr "Odgoda"
 #: src/components/selectKey/SelectKey.tsx:67
 #: src/components/selectKey/SelectKey.tsx:109
 #: src/components/wallet/standard/WalletStandard.tsx:687
-#: src/components/wallet.bak/standard/WalletStandard.tsx:629
 msgid "Delete"
 msgstr "Ukloni"
 
@@ -655,7 +615,6 @@ msgstr "Ukloni Zemljište"
 
 #: src/components/plotNFT/PlotNFTCard.tsx:315
 #: src/components/wallet/standard/WalletStandard.tsx:721
-#: src/components/wallet.bak/standard/WalletStandard.tsx:663
 msgid "Delete Unconfirmed Transactions"
 msgstr ""
 
@@ -680,11 +639,11 @@ msgstr "Brisanjem svih ključeva, ključevi spremljeni na računalu biti će tra
 msgid "Deleting the key will permanently remove the key from your computer, make sure you have backups. Are you sure you want to continue?"
 msgstr "Brisanjem ključa, ključ spremljen na računalu biti će trajno uklonjeni. Provjeri da imaš sigurnosnu kopiju. Sigurno želiš nastaviti?"
 
-#: src/electron/main.tsx:304
+#: src/electron/main.tsx:310
 msgid "Developer"
 msgstr "Razvojni programer"
 
-#: src/electron/main.tsx:307
+#: src/electron/main.tsx:313
 msgid "Developer Tools"
 msgstr "Alati za razvojne programere"
 
@@ -714,7 +673,6 @@ msgstr "Odspoji se"
 #~ msgstr ""
 
 #: src/components/wallet/create/WalletCreate.jsx:266
-#: src/components/wallet.bak/create/WalletCreate.jsx:266
 msgid "Distributed Identity Options"
 msgstr "Opcije Distribuiranog Identiteta"
 
@@ -733,7 +691,6 @@ msgstr ""
 
 #: src/components/trading/ViewOffer.jsx:39
 #: src/components/wallet/create/recoverDIDWallet.js:294
-#: src/components/wallet.bak/create/recoverDIDWallet.js:294
 msgid "Drag and drop offer file"
 msgstr "Povuci i ispusti datoteku ponuda"
 
@@ -741,7 +698,7 @@ msgstr "Povuci i ispusti datoteku ponuda"
 msgid "Drag and drop your backup file"
 msgstr "Povuci i ispusti datoteku sigurnosne kopije"
 
-#: src/electron/main.tsx:263
+#: src/electron/main.tsx:269
 msgid "Edit"
 msgstr "Uredi"
 
@@ -752,8 +709,8 @@ msgid "Edit Payout Instructions"
 msgstr ""
 
 #: src/components/wallet.bak/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Chia wallet."
-msgstr "Unesi 24 mnemonic riječi koje su kreirane prilikom kreiranja novčanika kako bi mogao vratiti postojeći Chia novčanik."
+#~ msgid "Enter the 24 word mnemonic that you have saved in order to restore your Chia wallet."
+#~ msgstr "Unesi 24 mnemonic riječi koje su kreirane prilikom kreiranja novčanika kako bi mogao vratiti postojeći Chia novčanik."
 
 #: src/components/wallet/WalletImport.tsx:147
 msgid "Enter the 24 word mnemonic that you have saved in order to restore your Dort Wallet ."
@@ -774,8 +731,8 @@ msgid "Error: Cannot send Dortto coloured address. Please enter a chia address."
 msgstr ""
 
 #: src/components/wallet.bak/standard/WalletStandard.tsx:456
-msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
-msgstr "Greška: Nemogu poslati Chia na obojanu adresu. Unesi Chia adresu."
+#~ msgid "Error: Cannot send chia to coloured address. Please enter a chia address."
+#~ msgstr "Greška: Nemogu poslati Chia na obojanu adresu. Unesi Chia adresu."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -810,8 +767,6 @@ msgstr "Neuspjelo otvaranje (neispravna zemljišta)"
 #: src/components/dashboard/DashboardSideBar.tsx:55
 #: src/components/wallet/coloured/WalletColoured.tsx:610
 #: src/components/wallet/standard/WalletStandard.tsx:574
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:610
-#: src/components/wallet.bak/standard/WalletStandard.tsx:532
 msgid "Farm"
 msgstr "Farma"
 
@@ -875,7 +830,6 @@ msgstr "Stanje uzgoja"
 #: src/components/core/components/Fee/Fee.tsx:48
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:154
 #: src/components/plotNFT/select/PlotNFTSelectBase.tsx:147
-#: src/components/pool/PoolInfo.tsx:17
 #: src/components/wallet/WalletHistory.tsx:66
 #: src/components/wallet/create/createExistingColouredCoin.jsx:123
 #: src/components/wallet/create/createNewColouredCoin.jsx:132
@@ -883,13 +837,6 @@ msgstr "Stanje uzgoja"
 #: src/components/wallet/create/createRLAdmin.jsx:272
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:744
 #: src/components/wallet/standard/WalletStandard.tsx:566
-#: src/components/wallet.bak/WalletHistory.tsx:66
-#: src/components/wallet.bak/create/createExistingColouredCoin.jsx:123
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:132
-#: src/components/wallet.bak/create/createRLAdmin.jsx:244
-#: src/components/wallet.bak/create/createRLAdmin.jsx:272
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:733
-#: src/components/wallet.bak/standard/WalletStandard.tsx:524
 msgid "Fee"
 msgstr "Naknada"
 
@@ -902,7 +849,6 @@ msgstr "Naknada"
 #~ msgstr "Fee ({0})"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:595
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:595
 msgid "Fee ({currencyCode})"
 msgstr "Naknada ({currencyCode})"
 
@@ -914,8 +860,8 @@ msgstr "Iznos naknada"
 #~ msgid "Fees Puzzle Hash"
 #~ msgstr ""
 
-#: src/electron/main.tsx:255
-#: src/electron/main.tsx:456
+#: src/electron/main.tsx:261
+#: src/electron/main.tsx:462
 msgid "File"
 msgstr "Datoteka"
 
@@ -934,11 +880,11 @@ msgstr "Lokacija krajnjeg direktorija"
 msgid "Finished"
 msgstr "Završeno"
 
-#: src/electron/main.tsx:407
+#: src/electron/main.tsx:413
 msgid "Follow on Twitter"
 msgstr "Prati na Twitteru"
 
-#: src/electron/main.tsx:366
+#: src/electron/main.tsx:372
 msgid "Frequently Asked Questions"
 msgstr "Često Postavljana Pitanja"
 
@@ -955,12 +901,11 @@ msgstr ""
 #~ msgid "Full Node Status"
 #~ msgstr "Full Node Status"
 
-#: src/electron/main.tsx:332
+#: src/electron/main.tsx:338
 msgid "Full Screen"
 msgstr "Puni zaslon"
 
 #: src/components/wallet/create/createNewColouredCoin.jsx:102
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:102
 msgid "Generate New Colour"
 msgstr "Generiraj novu boju"
 
@@ -973,7 +918,6 @@ msgid "Grid view"
 msgstr ""
 
 #: src/components/wallet/standard/WalletStandard.tsx:641
-#: src/components/wallet.bak/standard/WalletStandard.tsx:583
 msgid "HD or Hierarchical Deterministic keys are a type of public key/private key scheme where one private key can have a nearly infinite number of different public keys (and therefor wallet receive addresses) that will all ultimately come back to and be spendable by a single private key."
 msgstr "HD ili Hijerarhijski deterministički ključevi su vrste javnih/privatnih ključeva gdje jedan privatni ključ može imati neograničen broj različitih javnih ključeva (pa tako i ulazne adrese za novčanik) koji će se u konačnici vratiti i potrošiti jednim privatnim ključem."
 
@@ -999,7 +943,7 @@ msgstr "Hash zaglavlja"
 msgid "Height"
 msgstr "Visina"
 
-#: src/electron/main.tsx:354
+#: src/electron/main.tsx:360
 msgid "Help"
 msgstr "Pomoć"
 
@@ -1012,7 +956,6 @@ msgid "Hide Advanced Options"
 msgstr "Sakrij napredne opcije"
 
 #: src/components/wallet/WalletHistory.tsx:91
-#: src/components/wallet.bak/WalletHistory.tsx:91
 msgid "History"
 msgstr "Povijest"
 
@@ -1034,7 +977,6 @@ msgid "If none selected, then it will default to the temporary directory."
 msgstr "Ako ništa nije odabrano, automatski će ići u privremeni direktorij."
 
 #: src/components/wallet/WalletImport.tsx:144
-#: src/components/wallet.bak/WalletImport.tsx:144
 msgid "Import Wallet from Mnemonics"
 msgstr "Uvezi Novčanik sa Mnemonics"
 
@@ -1047,7 +989,6 @@ msgid "In Progress"
 msgstr "U tijeku"
 
 #: src/components/wallet/WalletHistory.tsx:23
-#: src/components/wallet.bak/WalletHistory.tsx:23
 msgid "Incoming"
 msgstr "Dolazni"
 
@@ -1069,23 +1010,18 @@ msgstr "Označeno kada je ova ponuda prihvaćena"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:334
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:473
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:333
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:472
 msgid "Info Packet"
 msgstr "Informacijski Paket"
 
 #: src/components/wallet/create/createRLAdmin.jsx:260
-#: src/components/wallet.bak/create/createRLAdmin.jsx:260
 msgid "Initial Amount"
 msgstr "Početni iznos"
 
 #: src/components/wallet/create/createRLUser.jsx:87
-#: src/components/wallet.bak/create/createRLUser.jsx:87
 msgid "Initialize a Rate Limited User Wallet:"
 msgstr "Inicijaliziraj ograničeni Korisnički novčanik:"
 
 #: src/components/wallet/create/createRLAdmin.jsx:218
-#: src/components/wallet.bak/create/createRLAdmin.jsx:218
 msgid "Interval"
 msgstr "Interval"
 
@@ -1112,7 +1048,7 @@ msgstr ""
 msgid "Join a pool and get consistent XCH farming rewards. The average returns are the same, but it is much less volatile."
 msgstr ""
 
-#: src/components/plotNFT/PlotNFTAdd.tsx:59
+#: src/components/plotNFT/PlotNFTAdd.tsx:70
 msgid "Join a pool and get consistent XCH farming rewards. The average returns are the same, but it is much less volatile. Assign plots to a plot NFT. You can easily switch pools without having to re-plot."
 msgstr ""
 
@@ -1168,7 +1104,6 @@ msgid "Loading Plot NFTs"
 msgstr ""
 
 #: src/components/wallet/Wallets.tsx:172
-#: src/components/wallet.bak/Wallets.tsx:172
 msgid "Loading list of wallets"
 msgstr ""
 
@@ -1237,8 +1172,8 @@ msgid "MiB Up/Down"
 msgstr "MiB Odlaz/Dolaz"
 
 #: src/components/pool/PoolInfo.tsx:27
-msgid "Minimum Difficulty"
-msgstr ""
+#~ msgid "Minimum Difficulty"
+#~ msgstr ""
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:97
 msgid "Minutes"
@@ -1249,7 +1184,6 @@ msgid "More memory slightly increases speed"
 msgstr "Više memorije povećava brzinu"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:416
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:415
 msgid "My Pubkey"
 msgstr "Moj Pubkey"
 
@@ -1266,31 +1200,25 @@ msgstr "Ime mreže"
 #~ msgstr "Network not launched yet, waiting for genesis challenge!"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:685
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:685
-#: src/components/wallet.bak/standard/WalletStandard.tsx:579
 msgid "New Address"
 msgstr "Nova Adresa"
 
 #: src/components/wallet/WalletAdd.tsx:63
-#: src/components/wallet.bak/WalletAdd.tsx:63
 msgid "New Wallet"
 msgstr "Novi novčanik"
 
 #: src/components/block/Block.jsx:350
 #: src/components/wallet/WalletAdd.tsx:95
 #: src/components/wallet/WalletImport.tsx:163
-#: src/components/wallet.bak/WalletAdd.tsx:95
-#: src/components/wallet.bak/WalletImport.tsx:163
 msgid "Next"
 msgstr "Dalje"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:249
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:249
 msgid "Nickname"
 msgstr "Nadimak"
 
 #: src/components/trading/TradingOverview.jsx:209
-#: src/electron/main.tsx:192
+#: src/electron/main.tsx:193
 msgid "No"
 msgstr "Ne"
 
@@ -1303,7 +1231,6 @@ msgid "No blocks farmed yet"
 msgstr "Još nema uzgojenih blokova"
 
 #: src/components/wallet/WalletHistory.tsx:102
-#: src/components/wallet.bak/WalletHistory.tsx:102
 msgid "No previous transactions"
 msgstr "Nema prethodnih transakcija"
 
@@ -1339,7 +1266,6 @@ msgstr "Nije dostupno"
 
 #: src/components/fullNode/card/FullNodeCardStatus.tsx:37
 #: src/components/wallet/WalletStatus.tsx:28
-#: src/components/wallet.bak/WalletStatus.tsx:28
 msgid "Not Synced"
 msgstr "Nije sinkronizirano"
 
@@ -1391,12 +1317,10 @@ msgid "Offers Created"
 msgstr "Ponude kreirane"
 
 #: src/components/wallet/standard/WalletStandard.tsx:527
-#: src/components/wallet.bak/standard/WalletStandard.tsx:485
 msgid "On average there is one minute between each transaction block. Unless there is congestion you can expect your transaction to be included in less than a minute."
 msgstr "U prosjeku je potrebna jedna minuta između svakog transakcijskog bloka. Ukoliko nema zastoja, možeš očekivati uključenje svoje transakcije u manje od minute."
 
 #: src/components/wallet/WalletHistory.tsx:23
-#: src/components/wallet.bak/WalletHistory.tsx:23
 msgid "Outgoing"
 msgstr "Odlazni"
 
@@ -1418,28 +1342,21 @@ msgstr "Zadnje vrijeme"
 
 #: src/components/plotNFT/PlotNFTState.tsx:43
 #: src/components/wallet/WalletHistory.tsx:53
-#: src/components/wallet.bak/WalletHistory.tsx:53
 msgid "Pending"
 msgstr "Na čekanju"
 
 #: src/components/wallet/card/WalletCardPendingBalance.tsx:24
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:574
-#: src/components/wallet.bak/card/WalletCardPendingBalance.tsx:24
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:573
 msgid "Pending Balance"
 msgstr "Iznos na čekanju"
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:24
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:579
-#: src/components/wallet.bak/card/WalletCardPendingChange.tsx:24
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:578
 msgid "Pending Change"
 msgstr "Promjena na čekanju"
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:27
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:569
-#: src/components/wallet.bak/card/WalletCardPendingTotalBalance.tsx:27
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:568
 msgid "Pending Total Balance"
 msgstr "Ukupan iznos na čekanju"
 
@@ -1453,21 +1370,16 @@ msgid "Please add a trade pair"
 msgstr "Dodaj par za razmjenu"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:670
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:668
 msgid "Please enter 0 fee. Positive fees not supported yet for RL."
 msgstr "Unesi 0 za naknadu. Pozitivne naknade još nisu podržane za RL."
 
 #: src/components/wallet/create/createRLAdmin.jsx:140
-#: src/components/wallet.bak/create/createRLAdmin.jsx:140
 msgid "Please enter a valid initial coin amount"
 msgstr "Unesi ispravan iznos za početni novčić"
 
 #: src/components/wallet/create/createNewColouredCoin.jsx:69
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:641
 #: src/components/wallet/standard/WalletStandard.tsx:434
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:69
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:639
-#: src/components/wallet.bak/standard/WalletStandard.tsx:432
 msgid "Please enter a valid numeric amount"
 msgstr "Unesi ispravan numerički iznos"
 
@@ -1475,32 +1387,22 @@ msgstr "Unesi ispravan numerički iznos"
 #: src/components/wallet/create/createNewColouredCoin.jsx:79
 #: src/components/wallet/create/createRLAdmin.jsx:150
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:651
-#: src/components/wallet.bak/create/createExistingColouredCoin.jsx:70
-#: src/components/wallet.bak/create/createNewColouredCoin.jsx:79
-#: src/components/wallet.bak/create/createRLAdmin.jsx:150
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:649
-#: src/components/wallet.bak/standard/WalletStandard.tsx:444
 msgid "Please enter a valid numeric fee"
 msgstr "Unesi ispravnu numerički naknadu"
 
 #: src/components/wallet/create/createRLAdmin.jsx:100
-#: src/components/wallet.bak/create/createRLAdmin.jsx:100
 msgid "Please enter a valid numeric interval length"
 msgstr "Unesi ispravnu numeričku duljinu intervala"
 
 #: src/components/wallet/create/createRLAdmin.jsx:115
-#: src/components/wallet.bak/create/createRLAdmin.jsx:115
 msgid "Please enter a valid numeric spendable amount"
 msgstr "Unesi ispravan numerički iznos za potrošnju"
 
 #: src/components/wallet/create/createRLAdmin.jsx:125
-#: src/components/wallet.bak/create/createRLAdmin.jsx:125
 msgid "Please enter a valid pubkey"
 msgstr "Unesi ispravan pubkey"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:625
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:623
-#: src/components/wallet.bak/standard/WalletStandard.tsx:420
 msgid "Please finish syncing before making a transaction"
 msgstr "Završi sinkroniziranje prije kreiranja transakcije"
 
@@ -1689,11 +1591,11 @@ msgstr ""
 msgid "Pool Reward Amount"
 msgstr "Iznos nagrade Bazena"
 
-#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:38
+#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:39
 msgid "Pool does not provide relative_lock_height."
 msgstr ""
 
-#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:35
+#: src/components/plotNFT/select/PlotNFTSelectPool.tsx:36
 msgid "Pool does not provide target_puzzle_hash."
 msgstr ""
 
@@ -1765,11 +1667,10 @@ msgid "Proofs Found"
 msgstr "Pronađeni dokazi"
 
 #: src/components/pool/PoolInfo.tsx:22
-msgid "Protocol Version"
-msgstr ""
+#~ msgid "Protocol Version"
+#~ msgstr ""
 
 #: src/components/wallet/create/createRLAdmin.jsx:297
-#: src/components/wallet.bak/create/createRLAdmin.jsx:297
 msgid "Pubkey"
 msgstr "Pubkey"
 
@@ -1806,36 +1707,28 @@ msgstr "Maksimalno korištenje RAM-a"
 #~ msgstr ""
 
 #: src/components/wallet/create/WalletCreate.jsx:124
-#: src/components/wallet.bak/create/WalletCreate.jsx:124
 msgid "Rate Limited"
 msgstr "Ograničeno"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:392
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:439
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:391
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:438
 msgid "Rate Limited Info"
 msgstr "Informacije ograničenja"
 
 #: src/components/wallet/create/WalletCreate.jsx:214
-#: src/components/wallet.bak/create/WalletCreate.jsx:214
 msgid "Rate Limited Options"
 msgstr "Opcije ograničenja"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:274
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:273
 msgid "Rate Limited User Wallet Setup"
 msgstr "Podešavanje ograničenog korisničkog novčanika"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:650
 #: src/components/wallet/standard/WalletStandard.tsx:634
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:650
-#: src/components/wallet.bak/standard/WalletStandard.tsx:576
 msgid "Receive Address"
 msgstr "Prijemna adresa"
 
 #: src/components/wallet/create/WalletCreate.jsx:282
-#: src/components/wallet.bak/create/WalletCreate.jsx:282
 msgid "Recover DID wallet"
 msgstr "Povrati DID novčanik"
 
@@ -1845,10 +1738,10 @@ msgid "Refresh Plots"
 msgstr "Osvježi zemljišta"
 
 #: src/components/pool/PoolInfo.tsx:32
-msgid "Relative Lock Height"
-msgstr ""
+#~ msgid "Relative Lock Height"
+#~ msgstr ""
 
-#: src/electron/main.tsx:374
+#: src/electron/main.tsx:380
 msgid "Release Notes"
 msgstr "Bilješke o izdanju"
 
@@ -1857,11 +1750,10 @@ msgid "Removing"
 msgstr "Uklanjam"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:265
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:265
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: src/electron/main.tsx:393
+#: src/electron/main.tsx:399
 msgid "Report an Issue..."
 msgstr "Prijavi problem..."
 
@@ -1929,7 +1821,6 @@ msgid "Select Temporary Directory"
 msgstr "Odaberi Privremeni Direktorij"
 
 #: src/components/wallet/create/WalletCreate.jsx:108
-#: src/components/wallet.bak/create/WalletCreate.jsx:108
 msgid "Select Wallet Type"
 msgstr "Odaberi vrstu Novčanika"
 
@@ -1977,19 +1868,14 @@ msgstr "Prodaj"
 #: src/components/wallet/coloured/WalletColoured.tsx:620
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:759
 #: src/components/wallet/standard/WalletStandard.tsx:584
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:620
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:748
-#: src/components/wallet.bak/standard/WalletStandard.tsx:542
 msgid "Send"
 msgstr "Pošalji"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:461
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:460
 msgid "Send this info packet to your Rate Limited Wallet user who must use it to complete setup of their wallet:"
 msgstr "Pošalji ovaj informacijski paket svome korisniku ograničenog novčanika koji ga mora iskoristiti za završetak postavljanja njegovog novčanika:"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:280
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:279
 msgid "Send your pubkey to your Rate Limited Wallet admin:"
 msgstr "Pošalji svoj pubkey svome administratoru ograničenog novčanika:"
 
@@ -2030,38 +1916,30 @@ msgstr ""
 msgid "Something went wrong"
 msgstr ""
 
-#: src/electron/main.tsx:470
+#: src/electron/main.tsx:476
 msgid "Speech"
 msgstr "Govor"
 
 #: src/components/wallet/create/createRLAdmin.jsx:230
-#: src/components/wallet.bak/create/createRLAdmin.jsx:230
 msgid "Spendable Amount"
 msgstr "Potrošni iznos"
 
 #: src/components/wallet/create/createRLAdmin.jsx:202
-#: src/components/wallet.bak/create/createRLAdmin.jsx:202
 msgid "Spendable Amount Per Interval"
 msgstr "Potrošni iznos po intervalu"
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:24
 #: src/components/wallet/coloured/WalletColoured.tsx:384
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:549
-#: src/components/wallet.bak/card/WalletCardSpendableBalance.tsx:24
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:384
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:548
 msgid "Spendable Balance"
 msgstr "Potrošni saldo"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:397
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:444
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:396
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:443
 msgid "Spending Interval (number of blocks): {interval}"
 msgstr "Interval potrošnje (broj blokova): {interval}"
 
 #: src/components/wallet/create/createRLAdmin.jsx:197
-#: src/components/wallet.bak/create/createRLAdmin.jsx:197
 msgid "Spending Interval Length (number of blocks)"
 msgstr "Duljina intervala potrošnje (broj blokova)"
 
@@ -2072,8 +1950,8 @@ msgstr ""
 
 #: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (chia per interval): {0}"
-msgstr "Limit potrošnje (chia po intervalu): {0}"
+#~ msgid "Spending Limit (chia per interval): {0}"
+#~ msgstr "Limit potrošnje (chia po intervalu): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -2089,9 +1967,6 @@ msgstr "Stanje"
 #: src/components/wallet/WalletHistory.tsx:55
 #: src/components/wallet/WalletStatusCard.tsx:22
 #: src/components/wallet/Wallets.tsx:118
-#: src/components/wallet.bak/WalletHistory.tsx:55
-#: src/components/wallet.bak/WalletStatusCard.tsx:22
-#: src/components/wallet.bak/Wallets.tsx:118
 msgid "Status"
 msgstr "Stanje"
 
@@ -2128,13 +2003,11 @@ msgstr "Stanje:"
 #~ msgstr "Sub Block at height {0} in the Chia blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:348
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
 msgstr "Poslano"
 
 #: src/components/fullNode/card/FullNodeCardStatus.tsx:43
 #: src/components/wallet/WalletStatus.tsx:33
-#: src/components/wallet.bak/WalletStatus.tsx:33
 msgid "Synced"
 msgstr "Sinkronizirano"
 
@@ -2142,7 +2015,6 @@ msgstr "Sinkronizirano"
 #: src/components/farm/card/FarmCardStatus.tsx:18
 #: src/components/plot/PlotStatus.tsx:18
 #: src/components/wallet/WalletStatus.tsx:38
-#: src/components/wallet.bak/WalletStatus.tsx:38
 msgid "Syncing"
 msgstr "Sinkroniziram"
 
@@ -2175,8 +2047,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/pool/PoolInfo.tsx:37
-msgid "Target Puzzle Hash"
-msgstr ""
+#~ msgid "Target Puzzle Hash"
+#~ msgstr ""
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:18
 #~ msgid "Temporary files are created during the plotting process which exceeds the size of the final plot files. Make sure you have enough space. <0>Learn more</0>"
@@ -2271,20 +2143,18 @@ msgid "This feature is available only from the GUI."
 msgstr "Ova mogućnost je dostupna samo iz GUI."
 
 #: src/components/wallet.bak/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
-msgstr "Ovo je iznos Chia koji trenutno možeš koristiti za transakcije. Ne uključuje nagrade na čekanju, transakcije na čekanju i Chia koje si potrošio, ali još nisu u blockchainu."
+#~ msgid "This is the amount of Chia that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Chia that you have just spent but is not yet in the blockchain."
+#~ msgstr "Ovo je iznos Chia koji trenutno možeš koristiti za transakcije. Ne uključuje nagrade na čekanju, transakcije na čekanju i Chia koje si potrošio, ali još nisu u blockchainu."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
 msgid "This is the amount of Dortthat you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Dortthat you have just spent but is not yet in the blockchain."
 msgstr ""
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
-#: src/components/wallet.bak/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
 msgstr "Ovo je promjena na čekanju, što su novčići koje si poslao sam sebi, ali još nisu potvrđeni."
 
 #: src/components/wallet/card/WalletCardPendingBalance.tsx:26
-#: src/components/wallet.bak/card/WalletCardPendingBalance.tsx:26
 msgid "This is the sum of the incoming and outgoing pending transactions (not yet included into the blockchain). This does not include farming rewards."
 msgstr "Ovo je ukupan zbroj ulaznih i izlaznih transakcija na čekanju (koje još nisu uključene u blockchain). Ovo ne uključuje nagrade uzgoja."
 
@@ -2302,11 +2172,10 @@ msgid "This is the total amount of Dortin the blockchain at the current peak sub
 msgstr ""
 
 #: src/components/wallet.bak/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Ovo je ukupan iznos Chia u blockchainu na trenutnom najvisem pod bloku koji je kontroliran sa tvojim privatnim ključevima. Uključuje zamrznute nagrade, ali ne i ulazne ili odlazne transakcije na čekanju."
+#~ msgid "This is the total amount of chia in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+#~ msgstr "Ovo je ukupan iznos Chia u blockchainu na trenutnom najvisem pod bloku koji je kontroliran sa tvojim privatnim ključevima. Uključuje zamrznute nagrade, ali ne i ulazne ili odlazne transakcije na čekanju."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
-#: src/components/wallet.bak/card/WalletCardPendingTotalBalance.tsx:29
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
 msgstr "Ovo je ukupan saldo + saldo na čekanju: ono što će tvoj saldo biti nakon što sve transakcije na čekanju budu potvrđene."
 
@@ -2365,7 +2234,6 @@ msgid "Timestamp"
 msgstr "Vremenska oznaka"
 
 #: src/components/wallet/WalletHistory.tsx:42
-#: src/components/wallet.bak/WalletHistory.tsx:42
 msgid "To"
 msgstr "Za"
 
@@ -2373,9 +2241,6 @@ msgstr "Za"
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:48
 #: src/components/wallet/coloured/WalletColoured.tsx:379
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:544
-#: src/components/wallet.bak/card/WalletCardTotalBalance.tsx:32
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:379
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:543
 msgid "Total Balance"
 msgstr "Ukupno stanje"
 
@@ -2444,13 +2309,12 @@ msgid "Transactions Filter Hash"
 msgstr "Hash filtera transakcija"
 
 #: src/components/wallet/WalletHistory.tsx:25
-#: src/components/wallet.bak/WalletHistory.tsx:25
 msgid "Type"
 msgstr "Vrsta"
 
 #: src/components/plot/add/PlotAdd.tsx:101
-msgid "Unable to create plot NFT"
-msgstr ""
+#~ msgid "Unable to create plot NFT"
+#~ msgstr ""
 
 #: src/components/plotNFT/PlotNFTCard.tsx:150
 #: src/components/pool/PoolOverview.tsx:66
@@ -2475,8 +2339,6 @@ msgstr ""
 
 #: src/components/wallet/create/createRLAdmin.jsx:281
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:294
-#: src/components/wallet.bak/create/createRLAdmin.jsx:281
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:293
 msgid "User Pubkey"
 msgstr "Korisnički Pubkey"
 
@@ -2496,7 +2358,7 @@ msgstr ""
 msgid "Verify Pool Details"
 msgstr ""
 
-#: src/electron/main.tsx:295
+#: src/electron/main.tsx:301
 msgid "View"
 msgstr "Pregled"
 
@@ -2519,12 +2381,10 @@ msgid "View Pool Login Link"
 msgstr ""
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:563
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:562
 msgid "View pending balances"
 msgstr "Pregledaj stanja na čekanju"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:393
-#: src/components/wallet.bak/coloured/WalletColoured.tsx:393
 msgid "View pending balances..."
 msgstr "Pregledaj stanja na čekanju..."
 
@@ -2549,7 +2409,6 @@ msgstr ""
 
 #: src/components/pool/PoolOverview.tsx:185
 #: src/components/wallet/standard/WalletStandard.tsx:732
-#: src/components/wallet.bak/standard/WalletStandard.tsx:674
 msgid "Wallet Status:"
 msgstr ""
 
@@ -2583,7 +2442,6 @@ msgstr ""
 
 #: src/components/dashboard/DashboardSideBar.tsx:45
 #: src/components/wallet/Wallets.tsx:173
-#: src/components/wallet.bak/Wallets.tsx:173
 msgid "Wallets"
 msgstr "Novčanici"
 
@@ -2591,7 +2449,7 @@ msgstr "Novčanici"
 #~ msgid "Wallets.title"
 #~ msgstr ""
 
-#: src/components/plotNFT/PlotNFTAdd.tsx:57
+#: src/components/plotNFT/PlotNFTAdd.tsx:68
 msgid "Want to Join a Pool? Create a Plot NFT"
 msgstr ""
 
@@ -2628,16 +2486,14 @@ msgid "Welcome to Chia. Please log in with an existing key, or create a new key.
 msgstr "Dobrodošao u Chia. Prijavi se sa postojećim ključem, ili kreiraj novi."
 
 #: src/components/wallet/WalletAdd.tsx:66
-#: src/components/wallet.bak/WalletAdd.tsx:66
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
 msgstr "Dobrodošao! Navedene riječi se koriste kao sigurnosna kopija tvog Novćanika. Bez njih, nemas pristup svome novčaniku, drži ih sigurno! Zapiši svaku riječ točnim redoslijedom. (Redoslijed je bitan)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:317
-#: src/components/wallet.bak/rateLimited/WalletRateLimited.jsx:316
 msgid "When you receive the setup info packet from your admin, enter it below to complete your Rate Limited Wallet setup:"
 msgstr "Kada zaprimiš informacijski paket od administratora, unesi ga ispod za završetak postavljanja svoj ograničenog novčanika:"
 
-#: src/electron/main.tsx:340
+#: src/electron/main.tsx:346
 msgid "Window"
 msgstr "Prozor"
 
@@ -2647,7 +2503,7 @@ msgstr "Bez naknada"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:35
 #: src/components/trading/TradingOverview.jsx:209
-#: src/electron/main.tsx:193
+#: src/electron/main.tsx:194
 msgid "Yes"
 msgstr "Da"
 
@@ -2738,45 +2594,34 @@ msgstr "[Error 22] Datoteka nije pronađena. Vrlo vjerojatno jedno od tvojih zem
 
 #: src/components/wallet/WalletStatusCard.tsx:41
 #: src/components/wallet/Wallets.tsx:143
-#: src/components/wallet.bak/WalletStatusCard.tsx:41
-#: src/components/wallet.bak/Wallets.tsx:143
 msgid "connections:"
 msgstr "konekcije:"
 
 #: src/components/wallet/WalletStatusCard.tsx:33
 #: src/components/wallet/Wallets.tsx:135
-#: src/components/wallet.bak/WalletStatusCard.tsx:33
-#: src/components/wallet.bak/Wallets.tsx:135
 msgid "height:"
 msgstr "visina:"
 
 #: src/components/wallet/Wallets.tsx:129
-#: src/components/wallet.bak/Wallets.tsx:129
 msgid "not synced"
 msgstr "nije sinkronizirano"
 
 #: src/components/plot/add/PlotAdd.tsx:105
-msgid "p2_singleton_puzzle_hash is not defined"
-msgstr ""
+#~ msgid "p2_singleton_puzzle_hash is not defined"
+#~ msgstr ""
 
 #: src/components/wallet/WalletStatusCard.tsx:27
 #: src/components/wallet/Wallets.tsx:123
-#: src/components/wallet.bak/WalletStatusCard.tsx:27
-#: src/components/wallet.bak/Wallets.tsx:123
 msgid "status:"
 msgstr "stanje:"
 
 #: src/components/wallet/WalletStatusCard.tsx:29
 #: src/components/wallet/Wallets.tsx:128
-#: src/components/wallet.bak/WalletStatusCard.tsx:29
-#: src/components/wallet.bak/Wallets.tsx:128
 msgid "synced"
 msgstr "sinkronizirano"
 
 #: src/components/wallet/WalletStatusCard.tsx:29
 #: src/components/wallet/Wallets.tsx:127
-#: src/components/wallet.bak/WalletStatusCard.tsx:29
-#: src/components/wallet.bak/Wallets.tsx:127
 msgid "syncing"
 msgstr "sinkronizacija"
 

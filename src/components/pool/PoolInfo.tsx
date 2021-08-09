@@ -11,33 +11,33 @@ type Props = {
 export default function PoolInfo(props: Props) {
   const { poolInfo } = props;
 
-  const rows = [
-    {
-      key: 'fee',
-      label: <Trans>Fee</Trans>,
-      value: poolInfo.fee,
-    },
-    {
-      key: 'protocol_version',
-      label: <Trans>Protocol Version</Trans>,
-      value: poolInfo.protocol_version,
-    },
-    {
-      key: 'minimum_difficulty',
-      label: <Trans>Minimum Difficulty</Trans>,
-      value: poolInfo.minimum_difficulty,
-    },
-    {
-      key: 'relative_lock_height',
-      label: <Trans>Relative Lock Height</Trans>,
-      value: poolInfo.relative_lock_height,
-    },
-    {
-      key: 'target_puzzle_hash',
-      label: <Trans>Target Puzzle Hash</Trans>,
-      value: poolInfo.target_puzzle_hash,
-    },
-  ].filter((row) => row.value !== undefined);
+  // const rows = [
+  //   {
+  //     key: 'fee',
+  //     label: <Trans>Fee</Trans>,
+  //     value: poolInfo.fee,
+  //   },
+  //   {
+  //     key: 'protocol_version',
+  //     label: <Trans>Protocol Version</Trans>,
+  //     value: poolInfo.protocol_version,
+  //   },
+  //   {
+  //     key: 'minimum_difficulty',
+  //     label: <Trans>Minimum Difficulty</Trans>,
+  //     value: poolInfo.minimum_difficulty,
+  //   },
+  //   {
+  //     key: 'relative_lock_height',
+  //     label: <Trans>Relative Lock Height</Trans>,
+  //     value: poolInfo.relative_lock_height,
+  //   },
+  //   {
+  //     key: 'target_puzzle_hash',
+  //     label: <Trans>Target Puzzle Hash</Trans>,
+  //     value: poolInfo.target_puzzle_hash,
+  //   },
+  // ].filter((row) => row.value !== undefined);
 
   return (
     <Flex flexDirection="column" gap={2}>

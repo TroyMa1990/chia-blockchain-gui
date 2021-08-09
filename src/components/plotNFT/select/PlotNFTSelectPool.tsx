@@ -13,7 +13,7 @@ import getPoolInfo from '../../../util/getPoolInfo';
 import InitialTargetState from '../../../types/InitialTargetState';
 import { chia_to_mojo } from '../../../util/chia';
 import useStandardWallet from '../../../hooks/useStandardWallet';
-import PlotNFTSelectFaucet from './PlotNFTSelectFaucet';
+// import PlotNFTSelectFaucet from './PlotNFTSelectFaucet';
 
 export type SubmitData = {
   initialTargetState: InitialTargetState;
@@ -21,6 +21,7 @@ export type SubmitData = {
 };
 
 async function prepareSubmitData(data: FormData): SubmitData {
+  console.log("prepareSubmitData--")
   const { self, fee, poolUrl } = data;
   const initialTargetState = {
     state: self ? 'SELF_POOLING' : 'FARMING_TO_POOL',
@@ -98,21 +99,21 @@ const PlotNFTSelectPool = forwardRef((props: Props, ref) => {
     },
   });
 
-  useImperativeHandle(ref, () => ({
-    async getSubmitData() {
-      const data = methods.getValues();
+  // useImperativeHandle(ref, () => ({
+  //   async getSubmitData() {
+  //     const data = methods.getValues();
 
-      return prepareSubmitData(data);
-    },
-  }));
+  //     return prepareSubmitData(data);
+  //   },
+  // }));
 
   async function handleSubmit(data: FormData) {
     try {
       setLoading(true);
 
-      const submitData = await prepareSubmitData(data);
+      // const submitData = await prepareSubmitData(data);
 
-      await onSubmit(submitData);
+      await onSubmit();
     } finally {
       setLoading(false);
     }
@@ -122,20 +123,20 @@ const PlotNFTSelectPool = forwardRef((props: Props, ref) => {
     return <Loading />;
   }
 
-  if (!hasBalance) {
-    return (
-      <Flex flexDirection="column" gap={3}>
-        <PlotNFTSelectFaucet step={step} onCancel={onCancel} />
-        {!onCancel && (
-          <Flex gap={1}>
-            <Form methods={methods} onSubmit={handleSubmit}>
-              <FormBackButton variant="outlined" />
-            </Form>
-          </Flex>
-        )}
-      </Flex>
-    );
-  }
+  // if (!hasBalance) {
+  //   return (
+  //     <Flex flexDirection="column" gap={3}>
+  //       <PlotNFTSelectFaucet step={step} onCancel={onCancel} />
+  //       {!onCancel && (
+  //         <Flex gap={1}>
+  //           <Form methods={methods} onSubmit={handleSubmit}>
+  //             <FormBackButton variant="outlined" />
+  //           </Form>
+  //         </Flex>
+  //       )}
+  //     </Flex>
+  //   );
+  // }
 
   return (
     <Form methods={methods} onSubmit={handleSubmit}>

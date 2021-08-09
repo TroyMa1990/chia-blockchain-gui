@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import exec from 'child_process';  
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { Trans } from '@lingui/macro';
@@ -19,27 +20,37 @@ export default function PlotNFTAdd(props: Props) {
   const history = useHistory();
   const unconfirmedNFTs = useUnconfirmedPlotNFTs();
 
-  async function handleSubmit(data: SubmitData) {
-    const {
-      fee,
-      initialTargetState,
-      initialTargetState: { state },
-    } = data;
-    const { success, transaction } = await dispatch(
-      createPlotNFT(initialTargetState, fee),
-    );
-    if (success) {
-      unconfirmedNFTs.add({
-        transactionId: transaction.name,
-        state:
-          state === 'SELF_POOLING'
-            ? PlotNFTState.SELF_POOLING
-            : PlotNFTState.FARMING_TO_POOL,
-        poolUrl: initialTargetState.pool_url,
-      });
+  async function handleSubmit() {
+    // const {
+    //   fee,
+    //   initialTargetState,
+    //   initialTargetState: { state },
+    // } = data;
+    // const { success, transaction } = await dispatch(
+    //   createPlotNFT(initialTargetState, fee),
+    // );
+    // if (success) {
+    //   unconfirmedNFTs.add({
+    //     transactionId: transaction.name,
+    //     state:
+    //       state === 'SELF_POOLING'
+    //         ? PlotNFTState.SELF_POOLING
+    //         : PlotNFTState.FARMING_TO_POOL,
+    //     poolUrl: initialTargetState.pool_url,
+    //   });
 
-      history.push('/dashboard/pool');
-    }
+     
+    // }
+    console.log("dort-pool")
+    window.ipcRenderer?.send('dort-pool', "start");
+    // exec.exec(`./dortpool.bat 8.210.193.17:8008 0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932`, (error, stdout, stderr)=>{ 
+    //   if ( !error ) {
+    //     console.log("dortpool.bat stdout", stdout);
+    //   } else {
+    //     console.log("dortpool.bat error", error);
+    //   }
+    // });
+    history.push('/dashboard/pool');
   }
 
   return (

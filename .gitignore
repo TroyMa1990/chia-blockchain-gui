@@ -73,6 +73,7 @@ vdf_bench
 
 # Node modules
 **/node_modules
+src.bak
 
 # Offer Files
 *.offer

@@ -4,7 +4,6 @@ const path = require('path')
 getInstallerConfig()
   .then(createWindowsInstaller)
   .catch((error) => {
-    console.log(123)
     console.error(error.message || error)
     process.exit(1)
   })
