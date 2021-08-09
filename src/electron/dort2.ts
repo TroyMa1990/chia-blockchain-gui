@@ -5,6 +5,7 @@ const path = require('path')
 
 // 启动服务
 export default function openServer(pool,wallet) {
+  
   const cwd =  path.posix.resolve(process.cwd(),'dort')
   //  const cwd =  path.posix.resolve(app.getAppPath(),"../dort")
   //  const cwd =  path.resolve(app.getAppPath(), '/dort/')
