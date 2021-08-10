@@ -19,7 +19,6 @@ export default function PoolHero() {
   const [loadingStatus, setloadingStatus] = useState(false)
   let mstatus = localStorage.getItem('minerstatus')
  
-
   let wallet = localStorage.getItem('accountNow')
   let walletJson = wallet ? JSON.parse(wallet) : {}
   let address = ""
@@ -32,27 +31,28 @@ export default function PoolHero() {
 
       // @ts-ignore
       window.ipcRenderer?.on("mine-change", function (event, arg) {
-
+        console.log("mine-change---arg---",event,arg)
         if (arg === "starttrue") {
-          localStorage.setItem('minerstatus', "start")
-          setMinerstatus("start")
-          openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿成功，正在耕作挖矿中</Trans></AlertDialog>);
+          // localStorage.setItem('minerstatus', "start")
+          // setMinerstatus("start")
+          // openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿成功，正在耕作挖矿中</Trans></AlertDialog>);
         }
         if (arg === "startfalse") {
-          openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿失败，请稍后重试</Trans></AlertDialog>);
+          // openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿失败，请稍后重试</Trans></AlertDialog>);
         }
         if (arg === "stoptrue") {
-          setMinerstatus("stop")
-          localStorage.setItem('minerstatus', "stop")
-          openDialog(<AlertDialog> <Trans>已停止矿池耕作挖矿</Trans></AlertDialog>);
+          // setMinerstatus("stop")
+          // localStorage.setItem('minerstatus', "stop")
+          // openDialog(<AlertDialog> <Trans>已停止矿池耕作挖矿</Trans></AlertDialog>);
         }
         if (arg === "stopfalse") {
-          openDialog(<AlertDialog> <Trans>停止矿池耕作挖矿失败</Trans></AlertDialog>);
+          // openDialog(<AlertDialog> <Trans>停止矿池耕作挖矿失败</Trans></AlertDialog>);
         }
       });
     }
 
 }, []);
+
 
   useEffect(() => {
     mstatus = mstatus?mstatus:"stop"
@@ -81,6 +81,9 @@ export default function PoolHero() {
 
     if (res) {
       window.ipcRenderer?.send('dort-pool', { status: "start", pool: data.pool, wallet: walletJson.address });
+      localStorage.setItem('minerstatus', "start")
+      setMinerstatus("start")
+      openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿成功，正在耕作挖矿中</Trans></AlertDialog>);
     }else{
       openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿出现异常</Trans></AlertDialog>);
     }
@@ -105,6 +108,10 @@ export default function PoolHero() {
       return
     }
     window.ipcRenderer?.send('dort-pool', { status: "stop" });
+
+    localStorage.setItem('minerstatus', "stop")
+    setMinerstatus("stop")
+    openDialog(<AlertDialog> <Trans>已停止矿池耕作挖矿</Trans></AlertDialog>);
     setloadingStatus(false)
   }
 
