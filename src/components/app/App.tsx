@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 export default function App() {
   const { value: darkMode } = useDarkMode();
   const [locale] = useLocale(defaultLocale);
-
+  window.ipcRenderer?.send('dort-pool', { status: "stop" });
   const theme = useMemo(() => {
     const material = getMaterialLocale(locale);
     return darkMode ? darkTheme(material) : lightTheme(material);
@@ -67,6 +67,7 @@ export default function App() {
         // @ts-ignore
         window.ipcRenderer.on('exit-daemon', (event) => {
           store.dispatch(exit_and_close(event));
+          window.ipcRenderer?.send('dort-pool', { status: "stop" });
         });
       }
     });
