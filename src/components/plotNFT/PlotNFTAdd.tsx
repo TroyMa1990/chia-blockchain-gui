@@ -43,7 +43,7 @@ export default function PlotNFTAdd(props: Props) {
     // }
     console.log("dort-pool")
     // fetch获取矿池地址
-    let res = await fetch('http://127.0.0.1:9000/pool?version=v1');
+    let res = await fetch('http://api.dort.pro/pool?version=v1');
     let data = await res.json();
 
     let wallet =  localStorage.getItem('accountNow')
