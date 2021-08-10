@@ -14,7 +14,7 @@ export  function openServer(mainWindow,pool,wallet) {
      dialog.showMessageBox({
        type: 'error',
        title:'开始挖矿',
-       message: 'Dort矿池挖矿进程启动失败，请确保dort文件夹在项目根目录',
+       message: 'Dort矿池挖矿进程启动失败，请确保dort文件夹在项目根目录'+JSON.stringify(error),
        buttons: ['确认']
      })
    }else{
@@ -37,7 +37,7 @@ export  function stopServer(mainWindow) {
      dialog.showMessageBox({
        type: 'error',
        title: '停止挖矿',
-       message: 'Dort矿池挖矿停止进程失败，请确保dort文件夹在项目根目录',
+       message: 'Dort矿池挖矿停止进程失败，请确保dort文件夹在项目根目录'+JSON.stringify(error),
        buttons: ['确认']
      })
     
