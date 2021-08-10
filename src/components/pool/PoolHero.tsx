@@ -69,6 +69,7 @@ export default function PoolHero() {
     }else{
       openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿出现异常</Trans></AlertDialog>);
     }
+    setloadingStatus(false)
   }
   async function handleLeavePool() {
     // history.push('/dashboard/pool/add');
@@ -89,6 +90,7 @@ export default function PoolHero() {
       return
     }
     window.ipcRenderer?.send('dort-pool', { status: "stop" });
+    setloadingStatus(false)
   }
 
   return (
