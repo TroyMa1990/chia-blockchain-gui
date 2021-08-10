@@ -159,7 +159,7 @@ function UIPart() {
     // } else if (words !== null) {
     //   dispatch(add_new_key_action(words));
     // }
-
+    let check = false
     let password = password_input.value
       if(!locationPath){
         openDialog(<AlertDialog> <Trans>Please select a file</Trans></AlertDialog>);
@@ -193,18 +193,26 @@ function UIPart() {
           localStorage.setItem('accountList', JSON.stringify(arrList))
         }else{
           let arrObject = JSON.parse(arr)
+         
           for(let a =0;a<arrObject.length;a++){
             let item = arrObject[a]
             if(item.address===account.address){
-              continue
+              check=true
             }
           }
-          arrObject.unshift(account)
+          if(!check){
+            arrObject.unshift(account)
+          }else{
+            openDialog(<AlertDialog>账户已存在，请勿重复导入</AlertDialog>)
+          }
+       
           localStorage.setItem('accountList', JSON.stringify(arrObject))
         }
         setloadingStatus(false)
-
-        dispatch(push('/wallet/add'));
+        if(!check){
+          dispatch(push('/wallet/add'));
+        }
+       
         // console.log('account--test1-localStorage-', localStorage.getItem('account1'))
         // this.importInfo.alert = {
         //   content: this.$t('page_home.msg_info.imported_success'),
