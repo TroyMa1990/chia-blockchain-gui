@@ -1016,7 +1016,7 @@ export default function DistributedWallet(props) {
           <ManageDIDsCard wallet_id={id}></ManageDIDsCard>
           <CreateAttest wallet_id={id}></CreateAttest>
           <CashoutCard wallet_id={id}></CashoutCard>
-          <WalletHistory walletId={id} />
+          {/* <WalletHistory walletId={id} /> */}
         </Grid>
       ) : (
         ''

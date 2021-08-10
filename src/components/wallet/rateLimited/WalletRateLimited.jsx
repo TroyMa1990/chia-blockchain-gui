@@ -781,7 +781,7 @@ export default function RateLimitedWallet(props) {
             <RLDetailsCard wallet_id={id} />
             <BalanceCard wallet_id={id} />
             <SendCard wallet_id={id} />
-            <WalletHistory walletId={id} />
+            {/* <WalletHistory walletId={id} /> */}
           </Flex>
         );
       }

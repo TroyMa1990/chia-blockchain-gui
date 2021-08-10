@@ -737,7 +737,7 @@ export default function StandardWallet(props: StandardWalletProps) {
           <WalletCards wallet_id={wallet_id} />
           <SendCard wallet_id={wallet_id} />
           <AddressCard wallet_id={wallet_id} />
-          <WalletHistory walletId={wallet_id} />
+          {/* <WalletHistory walletId={wallet_id} /> */}
         </Flex>
       </Flex>
     </Flex>
