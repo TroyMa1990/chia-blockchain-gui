@@ -18,6 +18,10 @@ export default function PoolHero() {
   const [minerstatus, setMinerstatus] = useState("stop")
   const [loadingStatus, setloadingStatus] = useState(false)
   let mstatus = localStorage.getItem('minerstatus')
+  useEffect(() => {
+    setMinerstatus(mstatus);
+  }, [mstatus]);
+
   let wallet = localStorage.getItem('accountNow')
   let walletJson = wallet ? JSON.parse(wallet) : {}
   let address = ""
