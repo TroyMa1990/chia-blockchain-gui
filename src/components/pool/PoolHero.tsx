@@ -89,26 +89,29 @@ export default function PoolHero() {
     }
     setloadingStatus(false)
   }
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+    }
   async function handleLeavePool() {
     // history.push('/dashboard/pool/add');
     setloadingStatus(true)
     
-    let res 
-    try{
-      res = await fetch('http://api.dort.pro/pool?version=v1');
-    }catch(e){
-      openDialog(<AlertDialog> <Trans>停止矿池耕作挖矿出现异常</Trans></AlertDialog>);
-      setloadingStatus(false)
-      return
-    }
-    console.log("res--",res)
-    if(!res.ok){
-      openDialog(<AlertDialog> <Trans>停止矿池出现异常</Trans></AlertDialog>);
-      setloadingStatus(false)
-      return
-    }
+    // let res 
+    // try{
+    //   res = await fetch('http://api.dort.pro/pool?version=v1');
+    // }catch(e){
+    //   openDialog(<AlertDialog> <Trans>停止矿池耕作挖矿出现异常</Trans></AlertDialog>);
+    //   setloadingStatus(false)
+    //   return
+    // }
+    // console.log("res--",res)
+    // if(!res.ok){
+    //   openDialog(<AlertDialog> <Trans>停止矿池出现异常</Trans></AlertDialog>);
+    //   setloadingStatus(false)
+    //   return
+    // }
     window.ipcRenderer?.send('dort-pool', { status: "stop" });
-
+    await sleep(3000)
     localStorage.setItem('minerstatus', "stop")
     setMinerstatus("stop")
     openDialog(<AlertDialog> <Trans>已停止矿池耕作挖矿</Trans></AlertDialog>);
