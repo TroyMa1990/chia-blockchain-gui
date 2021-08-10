@@ -44,8 +44,8 @@ msgstr "Harvester Service กำลังทำงานอยู่บนเค
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About Chia Blockchain"
-msgstr "เกี่ยวกับ Chia Blockchain"
+msgid "About Dort Blockchain"
+msgstr "เกี่ยวกับ Dort Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -216,8 +216,8 @@ msgid "Block VDF Iterations"
 msgstr "การทำซ้ำของบล็อค VDF"
 
 #: src/components/block/Block.jsx:336
-msgid "Block at height {0} in the Chia blockchain"
-msgstr "ปริมาณของบล็อคใน Chia blockchain คือ {0}"
+msgid "Block at height {0} in the Dort Blockchain"
+msgstr "ปริมาณของบล็อคใน Dort Blockchain คือ {0}"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -264,7 +264,7 @@ msgstr "ซื้อ"
 #~ msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:170
-msgid "Can be backed up to mnemonic seed"
+msgid "Can be mining account"
 msgstr "สามารถสำรองข้อมูลเป็นรหัสนีโมนิคได้"
 
 #: src/components/core/components/ConfirmDialog/ConfirmDialog.tsx:86
@@ -313,8 +313,8 @@ msgid "Chia"
 msgstr "Chia"
 
 #: src/electron/main.tsx:358
-msgid "Chia Blockchain Wiki"
-msgstr "Chia Blockchain Wiki"
+msgid "Dort Blockchain Wiki"
+msgstr "Dort Blockchain Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:647
 msgid "Chia Wallet"
@@ -1179,7 +1179,7 @@ msgid "New Address"
 msgstr "เพิ่มที่อยู่ใหม่"
 
 #: src/components/wallet/WalletAdd.tsx:63
-msgid "New Wallet"
+msgid "Import Dort Wallet"
 msgstr "สร้างวอลเล็ตใหม่"
 
 #: src/components/block/Block.jsx:350
@@ -1736,7 +1736,7 @@ msgid "Report an Issue..."
 msgstr "รายงานปัญหา..."
 
 #: src/components/backup/BackupRestore.tsx:160
-msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
+msgid "Import Keystore"
 msgstr "กู้คืน Metadata สำหรับ Colored Coins และ Smart Wallets จากตัวสำรองข้อมูล"
 
 #: src/components/backup/BackupRestore.tsx:107
@@ -1886,7 +1886,7 @@ msgid "Skips adding a final directory to harvester for farming"
 msgstr "ข้ามการเพิ่มไดเร็กทอรีสุดท้ายไปยังผู้เก็บเกี่ยวสำหรับการฟาร์ม"
 
 #: src/components/pool/PoolHero.tsx:26
-msgid "Smooth out your XCH farming rewards by joining a pool."
+msgid "Smooth out your DTC farming rewards by joining a pool."
 msgstr ""
 
 #: src/components/plotNFT/PlotNFTGetPoolLoginLinkDialog.tsx:60
@@ -1971,8 +1971,8 @@ msgstr "สถานะ:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Chia blockchain"
-#~ msgstr "Sub Block at height {0} in the Chia blockchain"
+#~ msgid "Sub Block at height {0} in the Dort Blockchain"
+#~ msgstr "Sub Block at height {0} in the Dort Blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2444,11 +2444,11 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "น้ำหนักคือ Difficulty ที่เพิ่มทั้งหมดของ Sub Block ทั้งหมดขึ้นอยู่กับและรวมถึงนี้ด้วย"
 
 #: src/components/selectKey/SelectKey.tsx:141
-msgid "Welcome to Chia. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key"
 msgstr "ยินดีต้อนรับสู่ Chia กรุณาเข้าสู่ระบบด้วยคีย์ที่มีอยู่แล้ว หรือสร้างคีย์ใหม่"
 
 #: src/components/wallet/WalletAdd.tsx:66
-msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
+msgid "Welcome to the following steps for your wallet. After importing the keystore, you will automatically select the wallet you imported to connect the DORT ore pool as the farming and mining account, and farming and mining will also start automatically"
 msgstr "ยินดีต้อนรับ! กลุ่มคำต่อไปนี้จะถูกนำไปใช้สำหรับการสำรองข้อมูลวอลเล็ตของคุณ ถ้าไม่มีมัน คุณจะสูญเสียการเข้าถึงวอลเล็ตของคุณ โปรดเก็บมันอย่างปลอดภัย! กรุณาจดบันทึกทุก ๆ คำพร้อมกับลำดับตัวเลขด้านข้างอย่างถูกต้อง (ลำดับเป็นสิ่งสำคัญนะ)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:316

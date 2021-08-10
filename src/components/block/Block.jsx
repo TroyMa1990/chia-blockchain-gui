@@ -334,7 +334,7 @@ export default function Block() {
         title={
           <BlockTitle>
             <Trans>
-              Block at height {blockRecord.height} in the Chia blockchain
+              Block at height {blockRecord.height} in the Dort Blockchain
             </Trans>
           </BlockTitle>
         }

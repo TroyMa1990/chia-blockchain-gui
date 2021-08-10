@@ -27,7 +27,7 @@ export default async function WalletCardTotalBalance() {
   // const currencyCode = useCurrencyCode();
 
   // const value = getWeb3..;
-  const json = localStorage.getItem('account1')
+  const json = localStorage.getItem('accountNow')
   const object = json?JSON.parse(json):{}
  
   let loading = false

@@ -36,8 +36,8 @@ msgstr "'n Stroper (Harvester) is 'n robot wat werk op dieselfde masjien wat lan
 
 #: src/electron/main.tsx:365
 #: src/electron/main.tsx:443
-msgid "About Chia Blockchain"
-msgstr "Inligting oor Chia Blockchain"
+msgid "About Dort Blockchain"
+msgstr "Inligting oor Dort Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:85
 msgid "Accept"
@@ -187,8 +187,8 @@ msgid "Block VDF Iterations"
 msgstr "Block VDF Iterasies"
 
 #: src/components/block/Block.jsx:311
-msgid "Block at height {0} in the Chia blockchain"
-msgstr "Blok is op hoogte {0} in die Chia blockchain"
+msgid "Block at height {0} in the Dort Blockchain"
+msgstr "Blok is op hoogte {0} in die Dort Blockchain"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -235,7 +235,7 @@ msgstr "CC Beursie"
 #~ msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:89
-msgid "Can be backed up to mnemonic seed"
+msgid "Can be mining account"
 msgstr ""
 
 #: src/components/core/components/ConfirmDialog/ConfirmDialog.tsx:50
@@ -272,8 +272,8 @@ msgid "Chia"
 msgstr "Chia"
 
 #: src/electron/main.tsx:312
-msgid "Chia Blockchain Wiki"
-msgstr "Chia Blockchain Wiki"
+msgid "Dort Blockchain Wiki"
+msgstr "Dort Blockchain Wiki"
 
 #: src/components/wallet/Wallets.tsx:32
 msgid "Chia Wallet"
@@ -971,7 +971,7 @@ msgid "New Address"
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:32
-msgid "New Wallet"
+msgid "Import Dort Wallet"
 msgstr ""
 
 #: src/components/block/Block.jsx:325
@@ -1379,7 +1379,7 @@ msgid "Report an Issue..."
 msgstr ""
 
 #: src/components/backup/BackupRestore.tsx:107
-msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
+msgid "Import Keystore"
 msgstr ""
 
 #: src/components/backup/BackupRestore.tsx:107
@@ -1584,8 +1584,8 @@ msgstr ""
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Chia blockchain"
-#~ msgstr "Sub Block at height {0} in the Chia blockchain"
+#~ msgid "Sub Block at height {0} in the Dort Blockchain"
+#~ msgstr "Sub Block at height {0} in the Dort Blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:357
 msgid "Submit"
@@ -1938,11 +1938,11 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:77
-msgid "Welcome to Chia. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key"
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:35
-msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
+msgid "Welcome to the following steps for your wallet. After importing the keystore, you will automatically select the wallet you imported to connect the DORT ore pool as the farming and mining account, and farming and mining will also start automatically"
 msgstr ""
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:324

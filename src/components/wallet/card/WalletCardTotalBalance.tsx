@@ -32,7 +32,7 @@ export default  function WalletCardTotalBalance(props: Props) {
  
   useEffect( () => {
     async function ss(){
-      const json = localStorage.getItem('account1')
+      const json = localStorage.getItem('accountNow')
       const object = json?JSON.parse(json):{}
       const v = await getWeb3().eth.getBalance(object.address) 
       const nv = getWeb3().utils.fromWei(v, 'ether')

@@ -24,7 +24,7 @@ msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
 msgid "*Want to explore Chia’s blocks further? Check out <0>Chia Explorer</0> built by an open source developer."
-msgstr "* Bạn muốn khám phá thêm về Chia Blockchain? Xem <0> Chia Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
+msgstr "* Bạn muốn khám phá thêm về Dort Blockchain? Xem <0> Chia Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
 
 #: src/components/plot/add/PlotAddNFT.tsx:123
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "Harvester là một dịch vụ chạy trên một máy chứa các tệ
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About Chia Blockchain"
-msgstr "Về Chia Blockchain"
+msgid "About Dort Blockchain"
+msgstr "Về Dort Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -216,8 +216,8 @@ msgid "Block VDF Iterations"
 msgstr "Khối VDF lặp lại"
 
 #: src/components/block/Block.jsx:336
-msgid "Block at height {0} in the Chia blockchain"
-msgstr "Khối tại height {0} trong Chia blockchain"
+msgid "Block at height {0} in the Dort Blockchain"
+msgstr "Khối tại height {0} trong Dort Blockchain"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -264,7 +264,7 @@ msgstr "Mua"
 #~ msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:170
-msgid "Can be backed up to mnemonic seed"
+msgid "Can be mining account"
 msgstr "Có thể được sao lưu vào mnemonic seed"
 
 #: src/components/core/components/ConfirmDialog/ConfirmDialog.tsx:86
@@ -313,8 +313,8 @@ msgid "Chia"
 msgstr "Chia"
 
 #: src/electron/main.tsx:358
-msgid "Chia Blockchain Wiki"
-msgstr "Chia Blockchain Wiki"
+msgid "Dort Blockchain Wiki"
+msgstr "Dort Blockchain Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:647
 msgid "Chia Wallet"
@@ -1179,7 +1179,7 @@ msgid "New Address"
 msgstr "Địa chỉ ví mới"
 
 #: src/components/wallet/WalletAdd.tsx:63
-msgid "New Wallet"
+msgid "Import Dort Wallet"
 msgstr "Ví mới"
 
 #: src/components/block/Block.jsx:350
@@ -1736,7 +1736,7 @@ msgid "Report an Issue..."
 msgstr "Báo cáo vấn đề..."
 
 #: src/components/backup/BackupRestore.tsx:160
-msgid "Restore Metadata for Coloured Coins and other Smart Wallets from Backup"
+msgid "Import Keystore"
 msgstr "Khôi phục siêu dữ liệu cho  coin sắc màu và các ví thông minh khác từ bản sao lưu"
 
 #: src/components/backup/BackupRestore.tsx:107
@@ -1886,7 +1886,7 @@ msgid "Skips adding a final directory to harvester for farming"
 msgstr "Bỏ qua việc thêm thư mục cuối cùng vào harvester để farm"
 
 #: src/components/pool/PoolHero.tsx:26
-msgid "Smooth out your XCH farming rewards by joining a pool."
+msgid "Smooth out your DTC farming rewards by joining a pool."
 msgstr ""
 
 #: src/components/plotNFT/PlotNFTGetPoolLoginLinkDialog.tsx:60
@@ -1971,8 +1971,8 @@ msgstr "Tình trạng:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Chia blockchain"
-#~ msgstr "Sub Block at height {0} in the Chia blockchain"
+#~ msgid "Sub Block at height {0} in the Dort Blockchain"
+#~ msgstr "Sub Block at height {0} in the Dort Blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2444,11 +2444,11 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Trọng lượng là tổng độ khó cộng thêm của tất cả các khối phụ lên đến và bao gồm khối này"
 
 #: src/components/selectKey/SelectKey.tsx:141
-msgid "Welcome to Chia. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key"
 msgstr "Chào mừng đến với Chia. Vui lòng đăng nhập bằng khóa hiện có hoặc tạo khóa mới."
 
 #: src/components/wallet/WalletAdd.tsx:66
-msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
+msgid "Welcome to the following steps for your wallet. After importing the keystore, you will automatically select the wallet you imported to connect the DORT ore pool as the farming and mining account, and farming and mining will also start automatically"
 msgstr "Chào mừng! Các từ sau được sử dụng để sao lưu ví của bạn. Nếu không có chúng, bạn sẽ mất quyền truy cập vào ví của mình, hãy giữ chúng an toàn! Viết ra từng từ cùng với số thứ tự bên cạnh chúng. (Thứ tự là quan trọng)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:316

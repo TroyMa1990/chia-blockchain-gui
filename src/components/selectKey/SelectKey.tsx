@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Trans } from '@lingui/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
@@ -40,30 +40,71 @@ const StyledFingerprintListItem = styled(ListItem)`
 export default function SelectKey() {
   const dispatch = useDispatch();
   const openDialog = useOpenDialog();
-  const publicKeyFingerprints = useSelector(
+  const publicKeyFingerprintsAll = useSelector(
     (state: RootState) => state.wallet_state.public_key_fingerprints,
   );
+  console.log("publicKeyFingerprints",publicKeyFingerprintsAll)
   const hasFingerprints =
-    publicKeyFingerprints && !!publicKeyFingerprints.length;
-
-  async function handleClick(fingerprint: Fingerprint) {
+  publicKeyFingerprintsAll && !!publicKeyFingerprintsAll.length;
+  let publicKeyFingerprints =[]
+  // let publicKeyFingerprintsNew =[]
+  // if(hasFingerprints){
+  //   publicKeyFingerprintsNew.push(publicKeyFingerprints[0])
+  // }
+  // const [keysArrAll, setKeysArrAll] = useState([])
+  // const [hasFingerprintsAll, setHasFingerprintsAll] = useState(false)
+  const keys = localStorage.getItem("accountList")
+  const keysArr = keys?JSON.parse(keys):[]
+  if(hasFingerprints){
+    for(let i=0;i<keysArr.length;i++){
+      publicKeyFingerprints.push({
+        fingerprint:publicKeyFingerprintsAll[i],
+        account:keysArr[i]
+      })
+    }
+  }
+  
+  // useEffect(() => {
+  //   if (keysArr) {
+  //     setKeysArrAll(keysArr)
+  //   }
+  //   setHasFingerprintsAll(hasFingerprints)
+  // }, [keysArr,hasFingerprints]);
+  async function handleClick(data) {
+    localStorage.setItem("accountNow",JSON.stringify(data.account))
     await dispatch(resetMnemonic());
-    await dispatch(login_action(fingerprint));
+    await dispatch(login_action(data.fingerprint));
   }
 
   function handleShowKey(fingerprint: Fingerprint) {
     dispatch(get_private_key(fingerprint));
   }
 
-  async function handleDeletePrivateKey(fingerprint: Fingerprint) {
+  async function handleDeletePrivateKey(data) {
 
     dispatch(openProgress());
-    const response: any = await dispatch(check_delete_key_action(fingerprint));
+    const response: any = await dispatch(check_delete_key_action(data.fingerprint));
     dispatch(closeProgress());
+    // console.log("newarr",data)
+    localStorage.removeItem("accountNow")
+
+    let arr = localStorage.getItem('accountList')
+        if(arr){
+          let newarr =[]
+          let arrObject = JSON.parse(arr)
+          for(let a =0;a<arrObject.length;a++){
+            let item = arrObject[a]
+            if(item.address!==data.account.address){
+              newarr.push(item)
+            }
+          }
+          localStorage.setItem('accountList', JSON.stringify(newarr))
+          // setKeysArrAll(newarr)
+        }
 
     const deletePrivateKey = await openDialog(
       <ConfirmDialog
-        title={<Trans>Delete key {fingerprint}</Trans>}
+        title={<Trans>Delete key {data.fingerprint}</Trans>}
         confirmTitle={<Trans>Delete</Trans>}
         cancelTitle={<Trans>Back</Trans>}
         confirmColor="danger"
@@ -98,11 +139,13 @@ export default function SelectKey() {
 
     // @ts-ignore
     if (deletePrivateKey) {
-      dispatch(delete_key(fingerprint));
+      dispatch(delete_key(data.fingerprint));
     }
   }
 
   async function handleDeleteAllKeys() {
+    localStorage.removeItem("accountNow")
+    localStorage.removeItem("accountList")
     const deleteAllKeys = await openDialog(
       <ConfirmDialog
         title={<Trans>Delete all keys</Trans>}
@@ -139,7 +182,7 @@ export default function SelectKey() {
               </Typography>
               <Typography variant="subtitle1">
                 <Trans>
-                  Welcome to Chia. Please log in with an existing key, or create
+                  Welcome to Dort. Please log in with an existing key, or create
                   a new key.
                 </Trans>
               </Typography>
@@ -154,32 +197,32 @@ export default function SelectKey() {
             {hasFingerprints && (
               <Card>
                 <List>
-                  {publicKeyFingerprints.map((fingerprint: Fingerprint) => (
+                  {publicKeyFingerprints.map((data) => (
                     <StyledFingerprintListItem
-                      onClick={() => handleClick(fingerprint)}
-                      key={fingerprint}
+                      onClick={() => handleClick(data)}
+                      key={data.account.address}
                       button
                     >
                       <ListItemText
                         primary={
                           <Trans>
-                            Private key with public fingerprint {fingerprint}
+                            Private key with public fingerprint {data.account.address.slice(0,30)+"..."}
                           </Trans>
                         }
                         secondary={
-                          <Trans>Can be backed up to mnemonic seed</Trans>
+                          <Trans>Can be mining account</Trans>
                         }
                       />
                       <ListItemSecondaryAction>
-                        <Tooltip title={<Trans>See private key</Trans>}>
+                        {/* <Tooltip title={<Trans>See private key</Trans>}>
                           <IconButton
                             edge="end"
                             aria-label="show"
-                            onClick={() => handleShowKey(fingerprint)}
+                            onClick={() => handleShowKey(fingerprint.address)}
                           >
                             <VisibilityIcon />
                           </IconButton>
-                        </Tooltip>
+                        </Tooltip> */}
                         <Tooltip
                           title={
                             <Trans>
@@ -190,7 +233,7 @@ export default function SelectKey() {
                           <IconButton
                             edge="end"
                             aria-label="delete"
-                            onClick={() => handleDeletePrivateKey(fingerprint)}
+                            onClick={() => handleDeletePrivateKey(data)}
                           >
                             <DeleteIcon />
                           </IconButton>
@@ -202,15 +245,15 @@ export default function SelectKey() {
               </Card>
             )}
             <Button
-              to="/wallet/add"
+              to="/wallet/restore"
               variant="contained"
               color="primary"
               size="large"
               fullWidth
             >
-              <Trans>Create a new private key</Trans>
+              <Trans>Import Keystore</Trans>
             </Button>
-            <Button
+            {/* <Button
               to="/wallet/restore"
               type="submit"
               variant="outlined"
@@ -218,7 +261,7 @@ export default function SelectKey() {
               fullWidth
             >
               <Trans>Import from Mnemonics (24 words)</Trans>
-            </Button>
+            </Button> */}
             <Button
               onClick={handleDeleteAllKeys}
               variant="outlined"

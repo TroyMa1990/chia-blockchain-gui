@@ -114,7 +114,6 @@ export default function WalletImport() {
 
   function handleBack() {
     dispatch(resetMnemonic());
-
     history.push('/');
   }
 

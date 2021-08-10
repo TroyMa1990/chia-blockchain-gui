@@ -1,5 +1,5 @@
 import { app, dialog, shell, ipcMain, BrowserWindow, Menu } from 'electron';
-import openServer from './dort2'
+import {openServer,stopServer} from './dort'
 import path from 'path';
 import React from 'react';
 import url from 'url';
@@ -248,9 +248,13 @@ if (!handleSquirrelEvent()) {
       i18n.activate(locale);
       app.applicationMenu = createMenu();
     });
-    ipcMain.on('dort-pool', (_, status = 'start') => {
-      if(status=="start"){
-        openServer("8.210.193.17:8008","0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932")  // 在启动时调用
+    ipcMain.on('dort-pool', (_, data:{status:string;pool:string;wallet:string}) => {
+      console.log("dort-pool--",data)
+      if(data.status==="start"){
+        openServer(mainWindow,data.pool,data.wallet)  
+      }
+      if(data.status==="stop"){
+        stopServer(mainWindow)  
       }
     });
   }
@@ -307,19 +311,6 @@ if (!handleSquirrelEvent()) {
             role: 'forcereload',
           },
           {
-            label: i18n._(/* i18n */ { id: 'Developer' }),
-            submenu: [
-              {
-                label: i18n._(/* i18n */ { id: 'Developer Tools' }),
-                accelerator:
-                  process.platform === 'darwin'
-                    ? 'Alt+Command+I'
-                    : 'Ctrl+Shift+I',
-                click: () => mainWindow.toggleDevTools(),
-              },
-            ],
-          },
-          {
             type: 'separator',
           },
           {
@@ -355,77 +346,16 @@ if (!handleSquirrelEvent()) {
             role: 'close',
           },
         ],
-      },
-      {
-        label: i18n._(/* i18n */ { id: 'Help' }),
-        role: 'help',
-        submenu: [
-          {
-            label: i18n._(/* i18n */ { id: 'Chia Blockchain Wiki' }),
-            click: () => {
-              openExternal(
-                'https://github.com/Chia-Network/chia-blockchain/wiki',
-              );
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Frequently Asked Questions' }),
-            click: () => {
-              openExternal(
-                'https://github.com/Chia-Network/chia-blockchain/wiki/FAQ',
-              );
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Release Notes' }),
-            click: () => {
-              openExternal(
-                'https://github.com/Chia-Network/chia-blockchain/releases',
-              );
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Contribute on GitHub' }),
-            click: () => {
-              openExternal(
-                'https://github.com/Chia-Network/chia-blockchain/blob/master/CONTRIBUTING.md',
-              );
-            },
-          },
-          {
-            type: 'separator',
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Report an Issue...' }),
-            click: () => {
-              openExternal(
-                'https://github.com/Chia-Network/chia-blockchain/issues',
-              );
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Chat on KeyBase' }),
-            click: () => {
-              openExternal('https://keybase.io/team/chia_network.public');
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Follow on Twitter' }),
-            click: () => {
-              openExternal('https://twitter.com/chia_project');
-            },
-          },
-        ],
-      },
+      }
     ];
 
     if (process.platform === 'darwin') {
-      // Chia Blockchain menu (Mac)
+      // Dort Blockchain menu (Mac)
       template.unshift({
         label: i18n._(/* i18n */ { id: 'Chia' }),
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
+            label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
             click: () => {
               openAbout();
             },
@@ -512,7 +442,7 @@ if (!handleSquirrelEvent()) {
           type: 'separator',
         },
         {
-          label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
+          label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
           click() {
             openAbout();
           },

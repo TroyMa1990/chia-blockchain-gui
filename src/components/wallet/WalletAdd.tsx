@@ -14,7 +14,7 @@ import { Flex, Loading, Link, Logo } from '@chia/core';
 import { genereate_mnemonics, add_new_key_action } from '../../modules/message';
 import LayoutHero from '../layout/LayoutHero';
 import type { RootState } from '../../modules/rootReducer';
-
+ 
 const MnemonicField = (props: any) => (
   <Grid item xs={2}>
     <TextField
@@ -36,6 +36,7 @@ const MnemonicField = (props: any) => (
 );
 
 export default function WalletAdd() {
+ 
   const dispatch = useDispatch();
   const words = useSelector((state: RootState) => state.wallet_state.mnemonic);
 
@@ -45,6 +46,8 @@ export default function WalletAdd() {
   });
 
   function handleNext() {
+  
+ 
     dispatch(add_new_key_action(words));
   }
 
@@ -52,35 +55,33 @@ export default function WalletAdd() {
     <LayoutHero
       header={
         <Link to="/">
-          <ArrowBackIosIcon fontSize="large" color="secondary" />
+          <ArrowBackIosIcon fontSize="default" color="secondary" />
         </Link>
       }
     >
       <Container maxWidth="lg">
         <Flex flexDirection="column" gap={3} alignItems="center">
-          <Logo />
+       
           <Typography variant="h4" component="h1" gutterBottom>
-            <Trans>New Wallet</Trans>
+            <Trans>Import Dort Wallet</Trans>
           </Typography>
           <Typography variant="subtitle1" align="center">
             <Trans>
-              Welcome! The following words are used for your wallet backup.
-              Without them, you will lose access to your wallet, keep them safe!
-              Write down each word along with the order number next to them.
-              (Order is important)
+            Welcome! The following steps are used for your dort pool mine. Without them, you will lose access to your wallet, it cost some minutes, please be patience
             </Trans>
           </Typography>
           {words.length ? (
-            <Grid container spacing={2}>
-              {words.map((word: string, index: number) => (
-                <MnemonicField
-                  key={word}
-                  word={word}
-                  id={`id_${index + 1}`}
-                  index={index + 1}
-                />
-              ))}
-            </Grid>
+            // <Grid container spacing={2}>
+            //   {words.map((word: string, index: number) => (
+            //     <MnemonicField
+            //       key={word}
+            //       word={word}
+            //       id={`id_${index + 1}`}
+            //       index={index + 1}
+            //     />
+            //   ))}
+            // </Grid>
+            <></>
           ) : (
             <Loading />
           )}

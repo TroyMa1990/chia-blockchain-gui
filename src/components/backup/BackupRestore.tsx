@@ -1,4 +1,5 @@
-import React, { DragEvent } from 'react';
+import React, { DragEvent, useState, useEffect } from 'react';
+import { push } from 'connected-react-router';
 import { Trans } from '@lingui/macro';
 import styled from 'styled-components';
 import {
@@ -8,11 +9,22 @@ import {
   Grid,
   Typography,
   Container,
+  TextField,
 } from '@material-ui/core';
-import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
+import {
+  ButtonSelected,
+  CardStep,
+  Loading,
+  AlertDialog
+} from '@chia/core';
+import useOpenDialog from '../../hooks/useOpenDialog';
+
+import { ArrowBackIos as ArrowBackIosIcon, FlashAutoOutlined } from '@material-ui/icons';
+import useSelectFile from '../../hooks/useSelectDirectoryFile';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { Flex, Link } from '@chia/core';
+import LayoutLoading from '../layout/LayoutLoading';
 import {
   add_new_key_action,
   add_and_restore_from_backup,
@@ -34,6 +46,8 @@ import Wallet from '../../types/Wallet';
 import myStyle from '../../constants/style';
 import LayoutHero from '../layout/LayoutHero';
 import fs from 'fs';
+import FarmLastAttemptedProof from '../farm/FarmLastAttemptedProof';
+import { trTR } from '@material-ui/core/locale';
 
 const StyledDropPaper = styled(Paper)`
   background-color: ${({ theme }) =>
@@ -101,7 +115,20 @@ function WalletRow(props: WalletRowProps) {
 
 function UIPart() {
   const dispatch = useDispatch();
+  const selectDirectory = useSelectFile();
   const classes = myStyle();
+  let password_input = null
+  const openDialog = useOpenDialog();
+  const [hasWorkspaceLocation, setHasWorkspaceLocation] = useState(false)
+  const [locationPath, setLocationPath] = useState("")
+  const [loadingStatus, setloadingStatus] = useState(false)
+  let mstatus = false
+  useEffect(() => {
+    if (!mstatus) {
+      setHasWorkspaceLocation(mstatus)
+    }
+  }, [mstatus]);
+
   let words = useSelector(
     (state: RootState) => state.mnemonic_state.mnemonic_input,
   );
@@ -116,12 +143,76 @@ function UIPart() {
     }
   });
 
-  function handleSkip() {
-    if (fingerprint !== null) {
-      dispatch(login_and_skip_action(fingerprint));
-    } else if (words !== null) {
-      dispatch(add_new_key_action(words));
+  async function handleSelect() {
+    const location = await selectDirectory();
+    if (location) {
+      console.log("location", location)
+      setHasWorkspaceLocation(true)
+      setLocationPath(location)
     }
+  }
+
+ function handleImport() {
+    // console.log(12222)
+    // if (fingerprint !== null) {
+      // dispatch(login_and_skip_action(fingerprint));
+    // } else if (words !== null) {
+    //   dispatch(add_new_key_action(words));
+    // }
+
+    let password = password_input.value
+      if(!locationPath){
+        openDialog(<AlertDialog> <Trans>Please select a file</Trans></AlertDialog>);
+        return
+      }
+      if(!password){
+        openDialog(<AlertDialog> <Trans>Please input password</Trans></AlertDialog>);
+        return
+      }
+      setloadingStatus(true)
+      fs.readFile(locationPath, 'utf8', async (err, data) => {
+        if (err) {
+          openDialog(<AlertDialog>{err}</AlertDialog>);
+        }
+        let account
+      try{
+        account = await getWeb3().eth.accounts.decrypt(data,password)
+      }catch(e){
+        openDialog(<AlertDialog>{e.message}</AlertDialog>)
+        setloadingStatus(false)
+        return
+   
+      }
+        console.log("locationPath---", account);
+        //设置为当前账户
+        localStorage.setItem('accountNow', JSON.stringify(account))
+        //同时推入数组
+        let arr = localStorage.getItem('accountList')
+        if(!arr){
+          let arrList = [account]
+          localStorage.setItem('accountList', JSON.stringify(arrList))
+        }else{
+          let arrObject = JSON.parse(arr)
+          for(let a =0;a<arrObject.length;a++){
+            let item = arrObject[a]
+            if(item.address===account.address){
+              continue
+            }
+          }
+          arrObject.unshift(account)
+          localStorage.setItem('accountList', JSON.stringify(arrObject))
+        }
+        setloadingStatus(false)
+
+        dispatch(push('/wallet/add'));
+        // console.log('account--test1-localStorage-', localStorage.getItem('account1'))
+        // this.importInfo.alert = {
+        //   content: this.$t('page_home.msg_info.imported_success'),
+        //   type: 'success'
+        // }
+      })
+   
+
   }
 
   const handleDragEnter = (e: DragEvent<HTMLDivElement>) => {
@@ -144,16 +235,14 @@ function UIPart() {
     console.log(123);
     fs.readFile(file_path, 'utf8', (err, data) => {
       if (err) {
-        console.log("err--",err);
+        console.log("err--", err);
         // this.$message.error(this.$t('page_home.msg_info.error')+':' + err)
       }
-      console.log("privateKey---",data);
-      const account1 =  getWeb3().eth.accounts.privateKeyToAccount(data)
-      console.log('account--test1--', account1,JSON.stringify(account1))
-      const account2 =  getWeb3().eth.accounts.privateKeyToAccount("0xa65172109f14745fc2f1ef3ffc2c534a0474a958bc7ced0ec7f32d440dfe8efe")
-      console.log('account--test2--', account2)
-      localStorage.setItem('account1', JSON.stringify(account1))
-      console.log('account--test1-localStorage-',localStorage.getItem('account1'))
+      console.log("privateKey---", data);
+      const account1 = getWeb3().eth.accounts.privateKeyToAccount(data)
+
+      localStorage.setItem('accountNow', JSON.stringify(account1))
+      console.log('account--test1-localStorage-', localStorage.getItem('account1'))
       // this.importInfo.alert = {
       //   content: this.$t('page_home.msg_info.imported_success'),
       //   type: 'success'
@@ -168,6 +257,7 @@ function UIPart() {
   };
 
   return (
+  
     <LayoutHero
       header={
         <Link to="/">
@@ -175,16 +265,15 @@ function UIPart() {
         </Link>
       }
     >
-      <Container maxWidth="lg">
+        {loadingStatus?(<LayoutLoading> <Trans>Keystore Importing</Trans></LayoutLoading>):(<Container maxWidth="lg">
         <Flex flexDirection="column" gap={3} alignItems="center">
           <Typography variant="h5" component="h1" gutterBottom>
             <Trans>
-              Restore Metadata for Coloured Coins and other Smart Wallets from
-              Backup
+              Import your keystore and password
             </Trans>
           </Typography>
 
-          <StyledDropPaper
+          {/* <StyledDropPaper
             onDrop={(e) => handleDrop(e)}
             onDragOver={(e) => handleDragOver(e)}
             onDragEnter={(e) => handleDragEnter(e)}
@@ -193,22 +282,66 @@ function UIPart() {
             <Typography variant="subtitle1">
               <Trans>Drag and drop your backup file</Trans>
             </Typography>
-          </StyledDropPaper>
+          </StyledDropPaper> */}
+          <CardStep step="1" title={<Trans>Select Keystore Directory</Trans>}>
+            <Typography variant="subtitle1">
+              <Trans>
+                Select Keystore File Path Is {locationPath}
+              </Trans>
+            </Typography>
 
+            <Flex gap={2}>
+
+              <ButtonSelected
+                onClick={handleSelect}
+                size="large"
+                variant="outlined"
+                selected={hasWorkspaceLocation}
+                nowrap
+              >
+                {hasWorkspaceLocation ? (
+                  <Trans>Selected</Trans>
+                ) : (
+                  <Trans>Browse</Trans>
+                )}
+              </ButtonSelected>
+            </Flex>
+
+
+
+          </CardStep>
+
+         
           <Container maxWidth="xs">
+            <TextField
+
+              fullWidth
+
+              name="workspaceLocation"
+
+              variant="filled"
+              inputRef={(input) => {
+                password_input = input;
+              }}
+              type="password"
+              label={<Trans>Keystore Password</Trans>}
+              required
+            />
             <Button
-              onClick={handleSkip}
+              onClick={handleImport}
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
             >
-              <Trans>Safe To Skip</Trans>
+              <Trans>Import</Trans>
             </Button>
+           
           </Container>
         </Flex>
-      </Container>
+      </Container>)}
+      
     </LayoutHero>
   );
 }
@@ -375,8 +508,11 @@ function BackupDetails() {
 
 export default function RestoreBackup() {
   const view = useSelector((state: RootState) => state.backup_state.view);
-  if (view === presentBackupInfo) {
-    return <BackupDetails />;
-  }
+  // if (view === presentBackupInfo) {
+  //   return <BackupDetails />;
+  // }
   return <UIPart />;
 }
+
+
+

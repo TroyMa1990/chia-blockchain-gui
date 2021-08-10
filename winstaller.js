@@ -22,7 +22,7 @@ function getInstallerConfig () {
     outputDirectory: path.join(outPath, 'windows-installer'),
     certificateFile: 'win_code_sign_cert.p12',
     certificatePassword: process.env.WIN_CODE_SIGN_PASS,
-    exe: 'Chia.exe',
+    exe: 'Dort.exe',
     setupExe: 'ChiaSetup-' + process.env.CHIA_INSTALLER_VERSION + '.exe',
     setupIcon: path.join(rootPath, 'src', 'assets', 'img', 'chia.ico')
   })

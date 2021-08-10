@@ -75,11 +75,12 @@ export default function PlotAdd() {
     }
   }, [plotSize, setValue]);
 
-  const handleSubmit: SubmitHandler<FormData> = async (data) => {
+  const handleSubmit: SubmitHandler<FormData> = async () => {
     try {
       setLoading(true);
     
  
+     
       const { p2_singleton_puzzle_hash, delay, createNFT, ...rest } = data;
       const { farmerPublicKey, poolPublicKey } = rest;
 
@@ -168,7 +169,7 @@ export default function PlotAdd() {
         <PlotAddNumberOfPlots />
         <PlotAddSelectTemporaryDirectory />
         <PlotAddSelectFinalDirectory />
-        <PlotAddNFT ref={addNFTref} />
+        {/* <PlotAddNFT ref={addNFTref} /> */}
         <Flex gap={1}>
           <FormBackButton variant="outlined" />
           <ButtonLoading

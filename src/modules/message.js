@@ -213,12 +213,12 @@ export const add_new_key_action = (mnemonic) => (dispatch) =>
         dispatch(refreshAllState());
         dispatch(push('/dashboard'));
       } else {
-        if (response.data.word) {
-          dispatch(setIncorrectWord(response.data.word));
-          dispatch(push('/wallet/import'));
-        } else if (response.data.error === 'Invalid order of mnemonic words') {
-          dispatch(push('/wallet/import'));
-        }
+        // if (response.data.word) {
+        //   dispatch(setIncorrectWord(response.data.word));
+        //   dispatch(push('/wallet/import'));
+        // } else if (response.data.error === 'Invalid order of mnemonic words') {
+        //   dispatch(push('/wallet/import'));
+        // }
         const { error } = response.data;
         dispatch(openErrorDialog(error));
       }
@@ -395,13 +395,13 @@ export const login_action = (fingerprint) => (dispatch) => {
         if (error === 'not_initialized') {
           const { backup_info } = response.data;
           const { backup_path } = response.data;
-          dispatch(push('/wallet/restore'));
           if (backup_info && backup_path) {
             dispatch(setBackupInfo(backup_info));
             dispatch(selectFilePath(backup_path));
             dispatch(changeBackupView(presentBackupInfo));
           }
           // Go to restore from backup screen
+          dispatch(openErrorDialog(error));
         } else {
           dispatch(openErrorDialog(error));
         }

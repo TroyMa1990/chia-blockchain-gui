@@ -78,7 +78,7 @@ const catalogUkUA = require('../locales/uk-UA/messages');
 const catalogZh = require('../locales/zh-TW/messages');
 const catalogZhCN = require('../locales/zh-CN/messages');
 
-export const defaultLocale = 'en-US';
+export const defaultLocale = 'zh-CN';
 
 // https://www.codetwo.com/admins-blog/list-of-office-365-language-id/
 // https://www.venea.net/web/culture_code

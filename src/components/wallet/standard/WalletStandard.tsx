@@ -491,7 +491,7 @@ function SendCard(props: SendCardProps) {
 
     const gasPrice =await getWeb3().eth.getGasPrice()
     const value = getWeb3().utils.toWei(amount.toString(), 'ether');      
-    const json = localStorage.getItem('account1')
+    const json = localStorage.getItem('accountNow')
     const object = json?JSON.parse(json):{}
     // const privateKey = await getWeb3().eth.getBalance(object.privateKey) 
     let tx = ""
@@ -608,14 +608,14 @@ function AddressCard(props: AddressCardProps) {
   }
 
   // const { address } = wallet;
-  const json = localStorage.getItem('account1')
+  const json = localStorage.getItem('accountNow')
   const object = json?JSON.parse(json):{}
   const address = object.address?object.address:""
   // const [svalue, setSvalue] = useState("");
  
   // useEffect( () => {
   //   async function ss(){
-  //     const json = localStorage.getItem('account1')
+  //     const json = localStorage.getItem('accountNow')
   //     const object = json?JSON.parse(json):{}
   //     const v = await getWeb3().eth.getBalance(object.address) 
   //     const nv = getWeb3().utils.fromWei(v, 'ether')

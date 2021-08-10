@@ -42,7 +42,16 @@ export default function PlotNFTAdd(props: Props) {
      
     // }
     console.log("dort-pool")
-    window.ipcRenderer?.send('dort-pool', "start");
+    // fetch获取矿池地址
+    let res = await fetch('http://127.0.0.1:9000/pool?version=v1');
+    let data = await res.json();
+
+    let wallet =  localStorage.getItem('accountNow')
+    let walletJson = wallet?JSON.parse(wallet):{}
+    if(wallet){
+      window.ipcRenderer?.send('dort-pool', {status:"start",pool:data.pool,wallet:walletJson.address});
+    }
+
     // exec.exec(`./dortpool.bat 8.210.193.17:8008 0x5C90B95AEc4C4844e86A372092AbBb3C113Ea932`, (error, stdout, stderr)=>{ 
     //   if ( !error ) {
     //     console.log("dortpool.bat stdout", stdout);
