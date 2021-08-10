@@ -311,19 +311,6 @@ if (!handleSquirrelEvent()) {
             role: 'forcereload',
           },
           {
-            label: i18n._(/* i18n */ { id: 'Developer' }),
-            submenu: [
-              {
-                label: i18n._(/* i18n */ { id: 'Developer Tools' }),
-                accelerator:
-                  process.platform === 'darwin'
-                    ? 'Alt+Command+I'
-                    : 'Ctrl+Shift+I',
-                click: () => mainWindow.toggleDevTools(),
-              },
-            ],
-          },
-          {
             type: 'separator',
           },
           {
