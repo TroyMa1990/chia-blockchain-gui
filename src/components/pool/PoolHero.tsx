@@ -18,9 +18,7 @@ export default function PoolHero() {
   const [minerstatus, setMinerstatus] = useState("stop")
   const [loadingStatus, setloadingStatus] = useState(false)
   let mstatus = localStorage.getItem('minerstatus')
-  useEffect(() => {
-    setMinerstatus(mstatus);
-  }, [mstatus]);
+ 
 
   let wallet = localStorage.getItem('accountNow')
   let walletJson = wallet ? JSON.parse(wallet) : {}
@@ -42,10 +40,8 @@ export default function PoolHero() {
   });
 
   useEffect(() => {
-
-    if (mstatus && (mstatus === "stop" || mstatus === "start")) {
-      setMinerstatus(mstatus)
-    }
+    mstatus = mstatus?mstatus:"stop"
+    setMinerstatus(mstatus)
   }, [mstatus]);
 
   async function handleJoinPool() {
