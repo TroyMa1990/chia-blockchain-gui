@@ -64,11 +64,13 @@ export default function App() {
   useEffect(() => {
     window.addEventListener('load', () => {
       if (isElectron()) {
+        localStorage.removeItem('minerstatus')
         // @ts-ignore
         window.ipcRenderer.on('exit-daemon', (event) => {
           store.dispatch(exit_and_close(event));
           window.ipcRenderer?.send('dort-pool', { status: "stop" });
         });
+ 
       }
     });
   }, []);

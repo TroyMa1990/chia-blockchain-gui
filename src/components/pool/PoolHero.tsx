@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import isElectron from 'is-electron';
 import styled from 'styled-components';
 import { Trans } from '@lingui/macro';
 import { useHistory } from 'react-router-dom';
@@ -26,18 +26,33 @@ export default function PoolHero() {
   if(wallet){
     address=walletJson.address
   }
-  window.ipcRenderer?.on("mine-change", function (event, arg) {
-    console.log("mine-change event", event);
-    console.log("mine-change arg", arg);
-    if (arg === "starttrue") {
-      localStorage.setItem('minerstatus', "start")
-      setMinerstatus("start")
+  useEffect(() => {
+  
+    if (isElectron()) {
+
+      // @ts-ignore
+      window.ipcRenderer?.on("mine-change", function (event, arg) {
+
+        if (arg === "starttrue") {
+          localStorage.setItem('minerstatus', "start")
+          setMinerstatus("start")
+          openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿成功，正在耕作挖矿中</Trans></AlertDialog>);
+        }
+        if (arg === "startfalse") {
+          openDialog(<AlertDialog> <Trans>加入矿池耕作挖矿失败，请稍后重试</Trans></AlertDialog>);
+        }
+        if (arg === "stoptrue") {
+          setMinerstatus("stop")
+          localStorage.setItem('minerstatus', "stop")
+          openDialog(<AlertDialog> <Trans>已停止矿池耕作挖矿</Trans></AlertDialog>);
+        }
+        if (arg === "stopfalse") {
+          openDialog(<AlertDialog> <Trans>停止矿池耕作挖矿失败</Trans></AlertDialog>);
+        }
+      });
     }
-    if (arg === "stoptrue") {
-      setMinerstatus("stop")
-      localStorage.setItem('minerstatus', "stop")
-    }
-  });
+
+}, []);
 
   useEffect(() => {
     mstatus = mstatus?mstatus:"stop"

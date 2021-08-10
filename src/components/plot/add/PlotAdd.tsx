@@ -75,7 +75,7 @@ export default function PlotAdd() {
     }
   }, [plotSize, setValue]);
 
-  const handleSubmit: SubmitHandler<FormData> = async () => {
+  const handleSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       setLoading(true);
     
