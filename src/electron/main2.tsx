@@ -249,7 +249,7 @@ if (!handleSquirrelEvent()) {
       app.applicationMenu = createMenu();
     });
     ipcMain.on('dort-pool', (_, data:{status:string;pool:string;wallet:string}) => {
- 
+      console.log("dort-pool--",data)
       if(data.status==="start"){
         openServer(mainWindow,data.pool,data.wallet)  
       }
@@ -311,19 +311,6 @@ if (!handleSquirrelEvent()) {
             role: 'forcereload',
           },
           {
-            label: i18n._(/* i18n */ { id: 'Developer' }),
-            submenu: [
-              {
-                label: i18n._(/* i18n */ { id: 'Developer Tools' }),
-                accelerator:
-                  process.platform === 'darwin'
-                    ? 'Alt+Command+I'
-                    : 'Ctrl+Shift+I',
-                click: () => mainWindow.toggleDevTools(),
-              },
-            ],
-          },
-          {
             type: 'separator',
           },
           {
@@ -359,16 +346,16 @@ if (!handleSquirrelEvent()) {
             role: 'close',
           },
         ],
-      },
+      }
     ];
 
     if (process.platform === 'darwin') {
-      // Chia Blockchain menu (Mac)
+      // Dort Blockchain menu (Mac)
       template.unshift({
         label: i18n._(/* i18n */ { id: 'Chia' }),
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
+            label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
             click: () => {
               openAbout();
             },
@@ -406,7 +393,7 @@ if (!handleSquirrelEvent()) {
         submenu: [
           {
             role: 'close',
-          },
+          }
         ],
       });
 
@@ -424,7 +411,7 @@ if (!handleSquirrelEvent()) {
             {
               role: 'stopspeaking',
             },
-          ],
+          ]
         },
       );
 
@@ -444,24 +431,24 @@ if (!handleSquirrelEvent()) {
           {
             role: 'front',
           },
-        ],
+        ]
       });
     }
 
-    // if (process.platform === 'linux' || process.platform === 'win32') {
-    //   // Help menu (Windows, Linux)
-    //   template[4].submenu.push(
-    //     {
-    //       type: 'separator',
-    //     },
-    //     {
-    //       label: i18n._(/* i18n */ { id: 'About Chia Blockchain' }),
-    //       click() {
-    //         openAbout();
-    //       },
-    //     },
-    //   );
-    // }
+    if (process.platform === 'linux' || process.platform === 'win32') {
+      // Help menu (Windows, Linux)
+      template[4].submenu.push(
+        {
+          type: 'separator',
+        },
+        {
+          label: i18n._(/* i18n */ { id: 'About Dort Blockchain' }),
+          click() {
+            openAbout();
+          },
+        },
+      );
+    }
 
     return template;
   };

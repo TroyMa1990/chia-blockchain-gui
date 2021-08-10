@@ -49,7 +49,6 @@ export  function stopServer(mainWindow) {
        message: 'Dort挖矿进程已停止',
        buttons: ['确认']
      })
-  
    }
  })
 }
