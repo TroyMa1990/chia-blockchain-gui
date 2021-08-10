@@ -21,7 +21,6 @@ export type SubmitData = {
 };
 
 async function prepareSubmitData(data: FormData): SubmitData {
-  console.log("prepareSubmitData--")
   const { self, fee, poolUrl } = data;
   const initialTargetState = {
     state: self ? 'SELF_POOLING' : 'FARMING_TO_POOL',
@@ -99,21 +98,21 @@ const PlotNFTSelectPool = forwardRef((props: Props, ref) => {
     },
   });
 
-  // useImperativeHandle(ref, () => ({
-  //   async getSubmitData() {
-  //     const data = methods.getValues();
+  useImperativeHandle(ref, () => ({
+    async getSubmitData() {
+      const data = methods.getValues();
 
-  //     return prepareSubmitData(data);
-  //   },
-  // }));
+      return prepareSubmitData(data);
+    },
+  }));
 
   async function handleSubmit(data: FormData) {
     try {
       setLoading(true);
 
-      // const submitData = await prepareSubmitData(data);
+      const submitData = await prepareSubmitData(data);
 
-      await onSubmit();
+      await onSubmit(submitData);
     } finally {
       setLoading(false);
     }
