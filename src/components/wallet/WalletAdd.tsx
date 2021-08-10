@@ -81,11 +81,7 @@ export default function WalletAdd() {
             //     />
             //   ))}
             // </Grid>
-            <></>
-          ) : (
-            <Loading />
-          )}
-          <Container maxWidth="xs">
+            <Container maxWidth="xs">
             <Button
               onClick={handleNext}
               type="submit"
@@ -96,6 +92,10 @@ export default function WalletAdd() {
               <Trans>Next</Trans>
             </Button>
           </Container>
+          ) : (
+            <Loading />
+          )}
+     
         </Flex>
       </Container>
     </LayoutHero>
