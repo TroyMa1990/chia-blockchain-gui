@@ -1679,12 +1679,12 @@ msgstr "Previous Header Hash"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
-#~ msgstr "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
+#~ msgstr "Wallet address {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
 msgid "Private key {0}"
@@ -2548,7 +2548,7 @@ msgstr "Weight is the total added difficulty of all sub blocks up to and includi
 #~ msgstr "Welcome to Dort. Please log in with an existing key"
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

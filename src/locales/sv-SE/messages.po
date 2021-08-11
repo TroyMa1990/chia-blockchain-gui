@@ -1679,11 +1679,11 @@ msgstr "Föregående huvudhash"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Privat nyckel med publikt fingeravtryck {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2548,7 +2548,7 @@ msgstr "Vikt är den sammanlagda svårighetsgraden för alla underblock upp till
 #~ msgstr "Välkommen till Chia. Logga in med en existerande nyckel, eller skapa en ny nyckel."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

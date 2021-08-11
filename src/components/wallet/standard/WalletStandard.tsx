@@ -705,7 +705,7 @@ export default function StandardWallet(props: StandardWalletProps) {
             <Trans>Dort Wallet </Trans>
           </Typography>
         </Flex>
-        <More>
+        {/* <More>
           {({ onClose }) => (
             <Box>
               <MenuItem
@@ -723,7 +723,7 @@ export default function StandardWallet(props: StandardWalletProps) {
               </MenuItem>
             </Box>
           )}
-        </More>
+        </More> */}
       </Flex>
 
       <Flex flexDirection="column" gap={2}>

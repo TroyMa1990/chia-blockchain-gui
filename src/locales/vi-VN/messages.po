@@ -1625,7 +1625,7 @@ msgstr "Header Hash trước đó"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:165
-msgid "Private key with public fingerprint {fingerprint}"
+msgid "Wallet address {fingerprint}"
 msgstr "Khóa cá nhân với dấu vân tay công khai {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249

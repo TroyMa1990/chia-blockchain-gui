@@ -1679,11 +1679,11 @@ msgstr "Edellinen Tunnistetiiviste"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Yksityinen avain julkisella sormenjäljellä {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2548,7 +2548,7 @@ msgstr "Paino on kaikkien tähänastisten lohkojen vaikeuskerroin"
 #~ msgstr "Tervetuloa Chiaan. Kirjaudu sisään avaimella tai luo uusi avain."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

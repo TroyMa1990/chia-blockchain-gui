@@ -1851,11 +1851,11 @@ msgstr "Хэш предыдущего блока"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Приватный ключ с публичным отпечатком {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2720,7 +2720,7 @@ msgstr "Вес - это общая добавленная сложность в�
 #~ msgstr "Добро пожаловать в Чиа. Пожалуйста, войдите в систему с существующим ключом или создайте новый ключ."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

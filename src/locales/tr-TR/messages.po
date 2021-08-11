@@ -1679,11 +1679,11 @@ msgstr "Önceki Başlık Karması"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Herkese açık parmak izi ile gizli anahtar {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2548,7 +2548,7 @@ msgstr "Ağırlık, buna kadar ve buna dahil tüm alt blokların toplam zorluğu
 #~ msgstr "Chia'ya hoş geldiniz. Lütfen mevcut bir anahtarla giriş yapın veya yeni bir anahtar oluşturun."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

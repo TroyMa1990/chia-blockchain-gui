@@ -1679,11 +1679,11 @@ msgstr "Előző fejléc hash"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Privát kulcs nyilvános ujjlenyomattal {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2550,7 +2550,7 @@ msgstr "Az összes alblokk teljes hozzáadott nehézségének a súlya, egészen
 #~ msgstr "Üdvözöljük a Chia-ban. Kérem jelentkezzen be egy létező kulccsal, vagy készítsen egy új kulcsot magának."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

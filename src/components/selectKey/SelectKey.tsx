@@ -206,7 +206,7 @@ export default function SelectKey() {
                       <ListItemText
                         primary={
                           <Trans>
-                            Private key with public fingerprint {data.account.address.slice(0,30)+"..."}
+                            Wallet address {data.account.address.slice(0,30)+"..."}
                           </Trans>
                         }
                         secondary={

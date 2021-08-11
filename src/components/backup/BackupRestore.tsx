@@ -10,6 +10,7 @@ import {
   Typography,
   Container,
   TextField,
+  TextareaAutosize
 } from '@material-ui/core';
 import {
   ButtonSelected,
@@ -118,6 +119,7 @@ function UIPart() {
   const selectDirectory = useSelectFile();
   const classes = myStyle();
   let password_input = null
+  let keystore_input = null
   const openDialog = useOpenDialog();
   const [hasWorkspaceLocation, setHasWorkspaceLocation] = useState(false)
   const [locationPath, setLocationPath] = useState("")
@@ -151,75 +153,81 @@ function UIPart() {
       setLocationPath(location)
     }
   }
-
- function handleImport() {
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  async function handleImport() {
     // console.log(12222)
     // if (fingerprint !== null) {
-      // dispatch(login_and_skip_action(fingerprint));
+    // dispatch(login_and_skip_action(fingerprint));
     // } else if (words !== null) {
     //   dispatch(add_new_key_action(words));
     // }
+
     let check = false
     let password = password_input.value
-      if(!locationPath){
-        openDialog(<AlertDialog> <Trans>Please select a file</Trans></AlertDialog>);
-        return
-      }
-      if(!password){
-        openDialog(<AlertDialog> <Trans>Please input password</Trans></AlertDialog>);
-        return
-      }
-      setloadingStatus(true)
-      fs.readFile(locationPath, 'utf8', async (err, data) => {
-        if (err) {
-          openDialog(<AlertDialog>{err}</AlertDialog>);
+    let keystore = keystore_input.value
+    if (!keystore) {
+      openDialog(<AlertDialog> <Trans>Please input keystore</Trans></AlertDialog>);
+      return
+    }
+    if (!password) {
+      openDialog(<AlertDialog> <Trans>Please input password</Trans></AlertDialog>);
+      return
+    }
+    setloadingStatus(true)
+    // fs.readFile(locationPath, 'utf8', async (err, data) => {
+    // if (err) {
+    //   openDialog(<AlertDialog>{err}</AlertDialog>);
+    // }
+    await sleep(3000)
+    let account
+    try {
+      account = await getWeb3().eth.accounts.decrypt(keystore, password)
+
+    } catch (e) {
+      openDialog(<AlertDialog>{e.message}</AlertDialog>)
+      setloadingStatus(false)
+      return
+
+    }
+    console.log("locationPath---", account);
+    //设置为当前账户
+    localStorage.setItem('accountNow', JSON.stringify(account))
+    //同时推入数组
+    let arr = localStorage.getItem('accountList')
+    if (!arr) {
+      let arrList = [account]
+      localStorage.setItem('accountList', JSON.stringify(arrList))
+    } else {
+      let arrObject = JSON.parse(arr)
+
+      for (let a = 0; a < arrObject.length; a++) {
+        let item = arrObject[a]
+        if (item.address === account.address) {
+          check = true
         }
-        let account
-      try{
-        account = await getWeb3().eth.accounts.decrypt(data,password)
-      }catch(e){
-        openDialog(<AlertDialog>{e.message}</AlertDialog>)
-        setloadingStatus(false)
-        return
-   
       }
-        console.log("locationPath---", account);
-        //设置为当前账户
-        localStorage.setItem('accountNow', JSON.stringify(account))
-        //同时推入数组
-        let arr = localStorage.getItem('accountList')
-        if(!arr){
-          let arrList = [account]
-          localStorage.setItem('accountList', JSON.stringify(arrList))
-        }else{
-          let arrObject = JSON.parse(arr)
-         
-          for(let a =0;a<arrObject.length;a++){
-            let item = arrObject[a]
-            if(item.address===account.address){
-              check=true
-            }
-          }
-          if(!check){
-            arrObject.unshift(account)
-          }else{
-            openDialog(<AlertDialog>账户已存在，请勿重复导入</AlertDialog>)
-          }
-       
-          localStorage.setItem('accountList', JSON.stringify(arrObject))
-        }
-        setloadingStatus(false)
-        if(!check){
-          dispatch(push('/wallet/add'));
-        }
-       
-        // console.log('account--test1-localStorage-', localStorage.getItem('account1'))
-        // this.importInfo.alert = {
-        //   content: this.$t('page_home.msg_info.imported_success'),
-        //   type: 'success'
-        // }
-      })
-   
+      if (!check) {
+        arrObject.unshift(account)
+      } else {
+        openDialog(<AlertDialog>账户已存在，请勿重复导入</AlertDialog>)
+      }
+
+      localStorage.setItem('accountList', JSON.stringify(arrObject))
+    }
+    setloadingStatus(false)
+    if (!check) {
+      dispatch(push('/wallet/add'));
+    }
+
+    // console.log('account--test1-localStorage-', localStorage.getItem('account1'))
+    // this.importInfo.alert = {
+    //   content: this.$t('page_home.msg_info.imported_success'),
+    //   type: 'success'
+    // }
+    // })
+
 
   }
 
@@ -265,7 +273,7 @@ function UIPart() {
   };
 
   return (
-  
+
     <LayoutHero
       header={
         <Link to="/">
@@ -273,7 +281,7 @@ function UIPart() {
         </Link>
       }
     >
-        {loadingStatus?(<LayoutLoading> <Trans>Keystore Importing</Trans></LayoutLoading>):(<Container maxWidth="lg">
+      {loadingStatus ? (<LayoutLoading> <Trans>Keystore Importing</Trans></LayoutLoading>) : (<Container maxWidth="lg">
         <Flex flexDirection="column" gap={3} alignItems="center">
           <Typography variant="h5" component="h1" gutterBottom>
             <Trans>
@@ -291,7 +299,7 @@ function UIPart() {
               <Trans>Drag and drop your backup file</Trans>
             </Typography>
           </StyledDropPaper> */}
-          <CardStep step="1" title={<Trans>Select Keystore Directory</Trans>}>
+          {/* <CardStep step="1" title={<Trans>Select Keystore Directory</Trans>}>
             <Typography variant="subtitle1">
               <Trans>
                 Select Keystore File Path Is {locationPath}
@@ -317,16 +325,27 @@ function UIPart() {
 
 
 
-          </CardStep>
+          </CardStep> */}
 
-         
           <Container maxWidth="xs">
             <TextField
-
               fullWidth
+              id="filled-multiline-static"
+              required
+              multiline
+              rows={4}
+              inputRef={(input) => {
+                keystore_input = input;
+              }}
+              label={<Trans>Keystore</Trans>}
+              variant="filled"
+            />
+          </Container>
+          <Container maxWidth="xs">
 
+            <TextField
+              fullWidth
               name="workspaceLocation"
-
               variant="filled"
               inputRef={(input) => {
                 password_input = input;
@@ -345,11 +364,11 @@ function UIPart() {
             >
               <Trans>Import</Trans>
             </Button>
-           
+
           </Container>
         </Flex>
       </Container>)}
-      
+
     </LayoutHero>
   );
 }
@@ -521,6 +540,4 @@ export default function RestoreBackup() {
   // }
   return <UIPart />;
 }
-
-
 

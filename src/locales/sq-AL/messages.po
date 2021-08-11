@@ -1679,11 +1679,11 @@ msgstr "Headeri i mëparshëm Hash"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "Çelës privat me gjurmë gishtash publike {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2548,7 +2548,7 @@ msgstr "Pesha është vështirësia totale e shtuar e të gjitha nën blloqeve d
 #~ msgstr "Mirësevini në Chia. Ju lutemi identifikohuni me një çelës ekzistues, ose krijoni një çelës të ri."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

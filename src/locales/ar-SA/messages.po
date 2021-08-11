@@ -1679,11 +1679,11 @@ msgstr "تجزئة العنوان السابق"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
+msgid "Wallet address"
 msgstr ""
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "مفتاح خاص ببصمة إصبع عامة {fingerprint}"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2548,7 +2548,7 @@ msgstr "الوزن هو الصعوبة المضافة الكلية لجميع ا
 #~ msgstr "مرحبا بكم في تشيا. الرجاء تسجيل الدخول باستخدام مفتاح موجود, أو إنشاء مفتاح جديد."
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66

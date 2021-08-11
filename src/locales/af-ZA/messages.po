@@ -1281,7 +1281,7 @@ msgstr ""
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:87
-msgid "Private key with public fingerprint {fingerprint}"
+msgid "Wallet address {fingerprint}"
 msgstr ""
 
 #: src/middleware/middleware_api.jsx:247

@@ -1679,11 +1679,11 @@ msgstr "上个区块的头部哈希"
 #~ msgstr "Previous Sub Block Hash"
 
 #: src/components/selectKey/SelectKey.tsx:208
-msgid "Private key with public fingerprint {0}"
-msgstr ""
+msgid "Wallet address"
+msgstr "钱包地址"
 
 #: src/components/selectKey/SelectKey.tsx:165
-#~ msgid "Private key with public fingerprint {fingerprint}"
+#~ msgid "Wallet address {fingerprint}"
 #~ msgstr "公共指纹为 {fingerprint} 的私钥"
 
 #: src/middleware/middleware_api.jsx:249
@@ -2544,7 +2544,7 @@ msgstr "权重是施加给所有子块包括目前这块的额外的困难度."
 #~ msgstr "欢迎来到Dort。请用已有的密钥登录，或者创建一个新的密钥。"
 
 #: src/components/selectKey/SelectKey.tsx:184
-msgid "Welcome to Dort. Please log in with an existing key, or create a new key."
+msgid "Welcome to Dort. Please log in with an existing key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:66
@@ -2553,7 +2553,7 @@ msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:69
 msgid "Welcome! The following steps are used for your dort pool mine. Without them, you will lose access to your wallet, it cost some minutes, please be patience"
-msgstr "欢迎！以下步骤用于您的dort耕种挖矿。如果没有这些步骤，您将无法使用您的钱包，这需要几分钟的时间，请保持耐心"
+msgstr "欢迎！以下步骤用于您的dort耕种挖矿。如果没有这些步骤，您将无法使用您的钱包，这需要几分钟的时间，请您保持耐心"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:317
 msgid "When you receive the setup info packet from your admin, enter it below to complete your Rate Limited Wallet setup:"
