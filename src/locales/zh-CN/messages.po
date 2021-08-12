@@ -814,8 +814,8 @@ msgid "Farmer public key:"
 msgstr "农民公钥："
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:33
-msgid "Farmers earn block rewards and transaction fees by committing spare space to the network to help secure transactions. This is where your farm will be once you add a plot. <0>Learn more</0>"
-msgstr "农民们通过贡献自己的空余存储空间，可以帮助提高整个网络的安全性，进而获得区块奖励和交易费用的奖励。当你的第一块农田开垦完成后，这里就是你的农场。<0>了解更多</0>"
+msgid "Farmers earn block rewards and transaction fees by committing spare space to the network to help secure transactions. This is where your farm will be once you add a plot."
+msgstr "农民们通过贡献自己的空余存储空间，可以帮助提高整个网络的安全性，进而获得区块奖励和交易费用的奖励。当你的第一块农田开垦完成后，这里就是你的农场。"
 
 #: src/components/farm/Farm.tsx:23
 #: src/components/farm/FarmerStatus.tsx:18
@@ -2591,8 +2591,8 @@ msgstr "你现在可以使用这个农田NFT开垦新农田，但是在同步完
 #~ msgstr "You do not need to be synched or connected to Plot. Temporary files are created during the plotting process which exceed the size of the final plot files. Make sure you have enough space. <0>Learn more</0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:63
-msgid "You do not need to be synched or connected to plot. Temporary files are created during the plotting process which exceed the size of the final plot files. Make sure you have enough space. <0>Learn more</0>"
-msgstr "不需要同步或者连接到网络节点就可以开垦农田。在开垦过程中产生的临时文件尺寸会大于最终的农田大小。请确认你有足够的存储空间。<0>了解更多</0>"
+msgid "You do not need to be synched or connected to plot. Temporary files are created during the plotting process which exceed the size of the final plot files. Make sure you have enough space."
+msgstr "不需要同步或者连接到网络节点就可以开垦农田。在开垦过程中产生的临时文件尺寸会大于最终的农田大小。请确认你有足够的存储空间。"
 
 #: src/components/core/components/FormBackButton/FormBackButton.tsx:29
 msgid "You have made changes. Do you want to discard them?"
