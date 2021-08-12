@@ -60,7 +60,7 @@ export default function FarmLatestBlockChallenges() {
         rowsPerPage={5}
         pages
       />
-      <Typography variant="caption">
+      {/* <Typography variant="caption">
         <Trans>
           *Want to explore Chia’s blocks further? Check out{' '}
           <Link
@@ -72,7 +72,7 @@ export default function FarmLatestBlockChallenges() {
           </Link>{' '}
           built by an open source developer.
         </Trans>
-      </Typography>
+      </Typography> */}
     </Card>
   );
 }
