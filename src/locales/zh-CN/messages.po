@@ -1878,7 +1878,7 @@ msgstr "选择您希望保存农田文件的最终输出文件夹。我们建议
 
 #: src/components/plot/add/PlotAddSelectTemporaryDirectory.tsx:41
 msgid "Select the temporary destination for the folder where you would like the plot to be stored. We recommend you use a fast drive."
-msgstr "Select the temporary destination for the folder where you would like the plot to be stored. We recommend you use a fast drive."
+msgstr "为要存储打印的文件夹选择临时目标。我们建议您使用高速硬盘（固态硬盘）。"
 
 #: src/components/plot/add/PlotAddNFT.tsx:81
 msgid "Select your Plot NFT"

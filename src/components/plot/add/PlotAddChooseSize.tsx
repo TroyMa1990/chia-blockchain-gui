@@ -64,12 +64,6 @@ export default function PlotAddChooseSize() {
           {
             'You do not need to be synched or connected to plot. Temporary files are created during the plotting process which exceed the size of the final plot files. Make sure you have enough space. '
           }
-          <Link
-            target="_blank"
-            href="https://github.com/Chia-Network/chia-blockchain/wiki/k-sizes"
-          >
-            Learn more
-          </Link>
         </Trans>
       </Typography>
 
