@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { Trans } from '@lingui/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { Button, ConfirmDialog, Flex, Logo } from '@chia/core';
+import { Button, ConfirmDialog, Flex, Logo,AlertDialog} from '@chia/core';
 import { Alert } from '@material-ui/lab';
 import {
   Card,
@@ -71,7 +71,16 @@ export default function SelectKey() {
   //   setHasFingerprintsAll(hasFingerprints)
   // }, [keysArr,hasFingerprints]);
   async function handleClick(data) {
-    localStorage.setItem("accountNow",JSON.stringify(data.account))
+    let currentAccount = localStorage.getItem("accountNow")
+    let currentAccountObj = currentAccount?JSON.parse(currentAccount):{}
+    let minerStatus =  localStorage.getItem('minerstatus')
+    if(currentAccount&&currentAccountObj.address&& data.account&&data.account.address&&currentAccountObj.address ==data.account.address&&minerStatus&&minerStatus=="start"){
+      window.ipcRenderer?.send('dort-pool', { status: "stop" });
+      localStorage.setItem('minerstatus', "stop")
+      openDialog(<AlertDialog> <Trans>切换钱包地址，已停止矿池耕作挖矿</Trans></AlertDialog>);
+    }
+
+    localStorage.setItem("accountNow",JSON.stringify(data.account)) 
     await dispatch(resetMnemonic());
     await dispatch(login_action(data.fingerprint));
   }
