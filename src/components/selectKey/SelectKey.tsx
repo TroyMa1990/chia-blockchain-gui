@@ -74,7 +74,7 @@ export default function SelectKey() {
     let currentAccount = localStorage.getItem("accountNow")
     let currentAccountObj = currentAccount?JSON.parse(currentAccount):{}
     let minerStatus =  localStorage.getItem('minerstatus')
-    if(currentAccount&&currentAccountObj.address&& data.account&&data.account.address&&currentAccountObj.address ==data.account.address&&minerStatus&&minerStatus=="start"){
+    if(currentAccount&&currentAccountObj.address&& data.account&&data.account.address&&currentAccountObj.address !=data.account.address&&minerStatus&&minerStatus=="start"){
       window.ipcRenderer?.send('dort-pool', { status: "stop" });
       localStorage.setItem('minerstatus', "stop")
       openDialog(<AlertDialog> <Trans>切换钱包地址，已停止矿池耕作挖矿</Trans></AlertDialog>);
